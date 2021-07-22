@@ -1,0 +1,4 @@
+/Users/josemanuelromoperedo/Dropbox/Github/C++/EmbeddedString/Builds/XCode/build/CMakeFiles/EStringXcode.dir
+/Users/josemanuelromoperedo/Dropbox/Github/C++/EmbeddedString/Builds/XCode/build/CMakeFiles/ALL_BUILD.dir
+/Users/josemanuelromoperedo/Dropbox/Github/C++/EmbeddedString/Builds/XCode/build/CMakeFiles/ZERO_CHECK.dir
+/Users/josemanuelromoperedo/Dropbox/Github/C++/EmbeddedString/Builds/XCode/build/src/EmbeddedString/CMakeFiles/EString.dir

@@ -1,0 +1,2 @@
+add_subdirectory(EmbeddedString)
+include_directories(EmbeddedString)
