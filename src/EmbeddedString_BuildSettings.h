@@ -40,6 +40,14 @@
     // C++
 
     #ifdef __MACOS_X__
+
+        #include <iostream>
+        #include <chrono>
+
+        #define PROGMEM_MACRO
+
+    #ifdef __arm__
+
         #include <iostream>
         #include <chrono>
 
