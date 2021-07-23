@@ -6,6 +6,5 @@ include_directories(src/EmbeddedString)
 
 add_subdirectory(src)
 
-
 add_executable( EStringLinux main.cpp ) 
 target_link_libraries( EStringLinux EString )
