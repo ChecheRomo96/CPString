@@ -16,7 +16,7 @@
     ///////////////////////////////////////////////////////////////////////////////////
     // PSOC Creator
 
-    #else if defined(PSOC_CREATOR)
+    #elif defined(PSOC_CREATOR)
     
         /*
         #ifdef __cplusplus
@@ -37,14 +37,14 @@
     ///////////////////////////////////////////////////////////////////////////////////
     // C++
 
-    #else if defined(__MACOS_X__)
+    #elif defined(__MACOS_X__)
 
         #include <iostream>
         #include <chrono>
 
         #define PROGMEM_MACRO
         
-    #else if defined(linux)
+    #elif defined(linux)
 
         sdfsdfsf
 
