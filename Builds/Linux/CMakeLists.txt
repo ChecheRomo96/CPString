@@ -5,8 +5,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(src)
 
-include_directories(src/EmbeddedString)
-include_directories(src/EmbeddedString/EmbeddedString_Flash)
+#include_directories(src/EmbeddedString)
+#include_directories(src/EmbeddedString/EmbeddedString_Flash)
 
-add_executable( EStringXcode main.cpp ) 
-target_link_libraries( EStringXcode EString )
+add_executable( EStringLinux main.cpp ) 
+target_link_libraries( EStringLinux EString )
