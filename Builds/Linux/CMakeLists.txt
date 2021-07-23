@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.14)
 project(EStringXcode CXX)
 set(CMAKE_CXX_STANDARD 14) 
 #set(CMAKE_CXX_STANDARD_REQUIRED OFF)
-include_directories(src/EmbeddedString)
+include_directories(src/EmbeddedString/src)
 
 add_subdirectory(src)
 
