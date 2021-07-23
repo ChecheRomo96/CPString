@@ -46,7 +46,7 @@
 
         #define PROGMEM_MACRO
 
-    #ifdef __arm__
+    #ifdef __linux__
 
         #include <iostream>
         #include <chrono>
