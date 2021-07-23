@@ -1,5 +1,3 @@
 add_subdirectory(EmbeddedString_Flash)
-
-
 add_library(EString STATIC EmbeddedString.cpp)
 link_libraries(EString EStringFlash)
