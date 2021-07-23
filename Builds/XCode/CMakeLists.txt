@@ -9,3 +9,4 @@ include_directories(src/EmbeddedString)
 include_directories(src/EmbeddedString/EmbeddedString_Flash)
 
 add_executable( EStringXcode main.cpp ) 
+target_link_libraries( EStringXcode EString )
