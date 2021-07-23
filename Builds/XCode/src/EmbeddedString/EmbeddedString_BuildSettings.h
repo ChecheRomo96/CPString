@@ -12,12 +12,11 @@
     #ifdef ARDUINO
         #include <Arduino.h>
         #define PROGMEM_MACRO PROGMEM
-    #endif
 
     ///////////////////////////////////////////////////////////////////////////////////
     // PSOC Creator
 
-    #ifdef PSOC_CREATOR
+    #elif defined(PSOC_CREATOR)
     
         /*
         #ifdef __cplusplus
@@ -34,12 +33,26 @@
         #include <stdint.h>
 
         #define PROGMEM_MACRO
-    #endif
 
     ///////////////////////////////////////////////////////////////////////////////////
     // C++
 
-    #ifdef __MACOS_X__
+    #elif defined(__MACOS_X__)
+
+        #include <iostream>
+        #include <chrono>
+
+        #define PROGMEM_MACRO
+        
+    #elif defined(linux)
+        sdfsdf
+        #include <iostream>
+        #include <chrono>
+
+        #define PROGMEM_MACRO
+        
+    #else
+
         #include <iostream>
         #include <chrono>
 
