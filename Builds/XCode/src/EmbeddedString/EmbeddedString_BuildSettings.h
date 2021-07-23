@@ -45,13 +45,6 @@
         #define PROGMEM_MACRO
         
     #elif defined(linux)
-        sdfsdf
-        #include <iostream>
-        #include <chrono>
-
-        #define PROGMEM_MACRO
-        
-    #else
 
         #include <iostream>
         #include <chrono>
