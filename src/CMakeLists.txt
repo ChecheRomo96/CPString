@@ -7,4 +7,4 @@ target_include_directories(EString PUBLIC ${ESTRING_SRC_DIRECTORY})
 
 # Include Flash subdirectory and link it
 add_subdirectory(EmbeddedString_Flash)
-target_link_libraries(EString EStringFlash)
+target_link_libraries(EString PRIVATE EStringFlash)
