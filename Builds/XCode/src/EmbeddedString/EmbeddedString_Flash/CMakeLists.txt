@@ -1,1 +1,0 @@
-add_library(EStringFlash STATIC EmbeddedString_Flash.cpp)
