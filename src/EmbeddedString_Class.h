@@ -6,7 +6,7 @@
 
 	namespace EString
 	{
-		class String
+		class string
 		{
 			uint16_t _size;
 			char* _buffer;
@@ -15,114 +15,114 @@
 
 				////////////////////////////////////////////////////////////////////////////////////////////
 				// Constructors, Destructor and Clear 
-					String();
-					~String();
+					string();
+					~string();
 					void Clear();
 					void clear();
 				////////////////////////////////////////////////////////////////////////////////////////////
 				// Copy Constructor and assignment operator
 
 					////////////////////////////////////////////////////////////////////////////////////////
-					// String
-						String(const String& source);
-						String& operator=(const String& source);
+					// string
+						string(const string& source);
+						string& operator=(const string& source);
 					//
 					////////////////////////////////////////////////////////////////////////////////////////
 					// char *
-						explicit String(const char* source);
-						String(const char* source, uint16_t size);
-						String& operator=(const char* source);
+						explicit string(const char* source);
+						string(const char* source, uint16_t size);
+						string& operator=(const char* source);
 					////////////////////////////////////////////////////////////////////////////////////////
 					// int
 
 						////////////////////////////////////////////////////////////////////////////////////
 						// unsigned int
 
-							explicit String(const uint8_t source);
-							String(const uint8_t source, uint8_t base, bool LetterCase = EString::LowerCase);
-							String(const uint8_t source, const char* format, uint16_t size);
-							String& operator=(const uint8_t source);
+							explicit string(const uint8_t source);
+							string(const uint8_t source, uint8_t base, bool LetterCase = EString::LowerCase);
+							string(const uint8_t source, const char* format, uint16_t size);
+							string& operator=(const uint8_t source);
 
-							explicit String(const uint16_t source);
-							String(const uint16_t source, uint8_t base, bool LetterCase = EString::LowerCase);
-							String(const uint16_t source, const char* format, uint16_t size);
-							String& operator=(const uint16_t source);
+							explicit string(const uint16_t source);
+							string(const uint16_t source, uint8_t base, bool LetterCase = EString::LowerCase);
+							string(const uint16_t source, const char* format, uint16_t size);
+							string& operator=(const uint16_t source);
 
-							explicit String(const uint32_t source);
-							String(const uint32_t source, uint8_t base, bool LetterCase = EString::LowerCase);
-							String(const uint32_t source, const char* format, uint16_t size);
-							String& operator=(const uint32_t source);
+							explicit string(const uint32_t source);
+							string(const uint32_t source, uint8_t base, bool LetterCase = EString::LowerCase);
+							string(const uint32_t source, const char* format, uint16_t size);
+							string& operator=(const uint32_t source);
 
-							explicit String(const uint64_t source);
-							String(const uint64_t source, uint8_t base, bool LetterCase = EString::LowerCase);
-							String(const uint64_t source, const char* format, uint16_t size);
-							String& operator=(const uint64_t source);
+							explicit string(const uint64_t source);
+							string(const uint64_t source, uint8_t base, bool LetterCase = EString::LowerCase);
+							string(const uint64_t source, const char* format, uint16_t size);
+							string& operator=(const uint64_t source);
 						//
 						////////////////////////////////////////////////////////////////////////////////////
 						// signed int
 
-							explicit String(const int8_t source);
-							String(const int8_t source, uint8_t base, bool LetterCase = EString::LowerCase, bool absolute = EString::IntSigned);
-							String(const int8_t source, const char* format, uint16_t size);
-							String& operator=(const int8_t source);
+							explicit string(const int8_t source);
+							string(const int8_t source, uint8_t base, bool LetterCase = EString::LowerCase, bool absolute = EString::IntSigned);
+							string(const int8_t source, const char* format, uint16_t size);
+							string& operator=(const int8_t source);
 
-							explicit String(const int16_t source);
-							String(const int16_t source, uint8_t base, bool LetterCase = EString::LowerCase, bool absolute = EString::IntSigned);
-							String(const int16_t source, const char* format, uint16_t size);
-							String& operator=(const int16_t source);
+							explicit string(const int16_t source);
+							string(const int16_t source, uint8_t base, bool LetterCase = EString::LowerCase, bool absolute = EString::IntSigned);
+							string(const int16_t source, const char* format, uint16_t size);
+							string& operator=(const int16_t source);
 
-							explicit String(const int32_t source);
-							String(const int32_t source, uint8_t base, bool LetterCase = EString::LowerCase, bool absolute = EString::IntSigned);
-							String(const int32_t source, const char* format, uint16_t size);
-							String& operator=(const int32_t source);
+							explicit string(const int32_t source);
+							string(const int32_t source, uint8_t base, bool LetterCase = EString::LowerCase, bool absolute = EString::IntSigned);
+							string(const int32_t source, const char* format, uint16_t size);
+							string& operator=(const int32_t source);
 
-							explicit String(const int64_t source);
-							String(const int64_t source, uint8_t base, bool LetterCase = EString::LowerCase, bool absolute = EString::IntSigned);
-							String(const int64_t source, const char* format, uint16_t size);
-							String& operator=(const int64_t source);
+							explicit string(const int64_t source);
+							string(const int64_t source, uint8_t base, bool LetterCase = EString::LowerCase, bool absolute = EString::IntSigned);
+							string(const int64_t source, const char* format, uint16_t size);
+							string& operator=(const int64_t source);
 					//
 					////////////////////////////////////////////////////////////////////////////////////////
 					// float
-						explicit String(const float source);
-						String(const float source, uint8_t precision);
-						String& operator=(const float source);
+						explicit string(const float source);
+						string(const float source, uint8_t precision);
+						string& operator=(const float source);
 					////////////////////////////////////////////////////////////////////////////////////////
 					// double
-						explicit String(const double source);
-						String(const double source, uint8_t precision);
-						String& operator=(const double source);
+						explicit string(const double source);
+						string(const double source, uint8_t precision);
+						string& operator=(const double source);
 					//
 					////////////////////////////////////////////////////////////////////////////////////////
-					// String
+					// string
 						#if defined(ARDUINO)
-							explicit String(const ::String& source);
-							String& operator=(const ::String& source);
+							explicit string(const ::string& source);
+							string& operator=(const ::string& source);
 						#endif
 				//
 				////////////////////////////////////////////////////////////////////////////////////////////
 				// Equality and Inequality Operator
 
-					bool operator==(const String& rhs) const;
-					bool operator!=(const String& rhs) const;
+					bool operator==(const string& rhs) const;
+					bool operator!=(const string& rhs) const;
 				//
 				////////////////////////////////////////////////////////////////////////////////////////////
 				// Addition and Substraction Operator
 
 					////////////////////////////////////////////////////////////////////////////////////////
-					// String
-						String& operator+=(const String& rhs);
-						//String& operator-=(const String& rhs);
+					// string
+						string& operator+=(const string& rhs);
+						//string& operator-=(const string& rhs);
 
-						String operator+(const String& rhs) const;
-						//String operator-(const String& rhs) const;
+						string operator+(const string& rhs) const;
+						//string operator-(const string& rhs) const;
 					//
 					////////////////////////////////////////////////////////////////////////////////////////
 					// char*
-						String& operator+=(const char* rhs);
-						//String& operator-=(const String& rhs);
+						string& operator+=(const char* rhs);
+						//string& operator-=(const string& rhs);
 
-						String operator+(const char* rhs) const;
-						//String operator-(const String& rhs) const;
+						string operator+(const char* rhs) const;
+						//string operator-(const string& rhs) const;
 					//
 					////////////////////////////////////////////////////////////////////////////////////////
 					// Integers
@@ -130,32 +130,32 @@
 						////////////////////////////////////////////////////////////////////////////////////
 						// unsigned int
 
-							String& operator+=(const uint8_t rhs);
-							String operator+(const uint8_t rhs) const;
+							string& operator+=(const uint8_t rhs);
+							string operator+(const uint8_t rhs) const;
 
-							String& operator+=(const uint16_t rhs);
-							String operator+(const uint16_t rhs) const;
+							string& operator+=(const uint16_t rhs);
+							string operator+(const uint16_t rhs) const;
 
-							String& operator+=(const uint32_t rhs);
-							String operator+(const uint32_t rhs) const;
+							string& operator+=(const uint32_t rhs);
+							string operator+(const uint32_t rhs) const;
 
-							String& operator+=(const uint64_t rhs);
-							String operator+(const uint64_t rhs) const;
+							string& operator+=(const uint64_t rhs);
+							string operator+(const uint64_t rhs) const;
 						//
 						////////////////////////////////////////////////////////////////////////////////////
 						// signed int
 
-							String& operator+=(const int8_t rhs);
-							String operator+(const int8_t rhs) const;
+							string& operator+=(const int8_t rhs);
+							string operator+(const int8_t rhs) const;
 
-							String& operator+=(const int16_t rhs);
-							String operator+(const int16_t rhs) const;
+							string& operator+=(const int16_t rhs);
+							string operator+(const int16_t rhs) const;
 
-							String& operator+=(const int32_t rhs);
-							String operator+(const int32_t rhs) const;
+							string& operator+=(const int32_t rhs);
+							string operator+(const int32_t rhs) const;
 
-							String& operator+=(const int64_t rhs);
-							String operator+(const int64_t rhs) const;
+							string& operator+=(const int64_t rhs);
+							string operator+(const int64_t rhs) const;
 				//
 				////////////////////////////////////////////////////////////////////////////////////////////
 				// Subsctipt Array Operator
@@ -174,7 +174,7 @@
 					uint16_t size() const;
 				//
 				////////////////////////////////////////////////////////////////////////////////////////////
-				//String Cross Compatible Methods
+				//string Cross Compatible Methods
 
 					char* c_str() const;
 					uint16_t length() const;

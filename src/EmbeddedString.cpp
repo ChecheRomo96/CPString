@@ -9,7 +9,7 @@
 	
 	//////////////////////////////////////////////////
 	// Constructor
-		EString::String::String()
+		EString::string::string()
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -17,7 +17,7 @@
 	//
 	//////////////////////////////////////////////////
 	// Destructor
-		EString::String::~String()
+		EString::string::~string()
 		{
 			Clear();
 		}
@@ -25,7 +25,7 @@
 	//////////////////////////////////////////////////
 	// Clear
 
-		void EString::String::Clear()
+		void EString::string::Clear()
 		{
 			if(_buffer != NULL)
 			{
@@ -35,7 +35,7 @@
 			}
 		}
 
-		void EString::String::clear()
+		void EString::string::clear()
 		{
 			if(_buffer != NULL)
 			{
@@ -49,9 +49,9 @@
 // Copy Constructor and Equality Operator
 
 	////////////////////////////////////////////////////
-    // String
+    // string
 
-		EString::String::String(const String& source)
+		EString::string::string(const string& source)
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -63,7 +63,7 @@
 			}
 		}
 
-		EString::String& EString::String::operator=(const String& source)
+		EString::string& EString::string::operator=(const string& source)
 	    {
 	        if(this != &source)
 	        {
@@ -79,7 +79,7 @@
     ////////////////////////////////////////////////////
     // char *
 
-		EString::String::String(const char* source)
+		EString::string::string(const char* source)
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -96,7 +96,7 @@
 		}
 
 
-		EString::String::String(const char* source, uint16_t size)
+		EString::string::string(const char* source, uint16_t size)
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -122,7 +122,7 @@
 			}
 		}
 		
-		EString::String& EString::String::operator=(const char* source)
+		EString::string& EString::string::operator=(const char* source)
 	    {
 	    	if(source == NULL){(*this) = "";}
 			else
@@ -145,12 +145,12 @@
 		    ////////////////////////////////////////////////
 		    // uint8_t
 
-				EString::String::String(const uint8_t source)
+				EString::string::string(const uint8_t source)
 				{
-			    	(*this) = String(source,10,EString::UpperCase);
+			    	(*this) = string(source,10,EString::UpperCase);
 				}
 
-				EString::String::String(const uint8_t source, uint8_t base, bool LetterCase)
+				EString::string::string(const uint8_t source, uint8_t base, bool LetterCase)
 				{
 					char StringBases[base];
 					Flash::CopyBaseChars(StringBases,base,LetterCase);
@@ -175,7 +175,7 @@
 					_buffer[counter] = '\0';
 				}
 
-				EString::String::String(const uint8_t source, const char* format, uint16_t size)
+				EString::string::string(const uint8_t source, const char* format, uint16_t size)
 				{
 					char buffer[size];
 					sprintf(buffer,format,source);
@@ -187,21 +187,21 @@
 					}
 				}
 				
-				EString::String& EString::String::operator=(const uint8_t source)
+				EString::string& EString::string::operator=(const uint8_t source)
 			    {
-			    	(*this) = String(source,10,EString::UpperCase);
+			    	(*this) = string(source,10,EString::UpperCase);
 			        return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // uint16_t
 
-				EString::String::String(const uint16_t source)
+				EString::string::string(const uint16_t source)
 				{
-			    	(*this) = String(source,10,EString::UpperCase);
+			    	(*this) = string(source,10,EString::UpperCase);
 				}
 
-				EString::String::String(const uint16_t source, uint8_t base, bool LetterCase)
+				EString::string::string(const uint16_t source, uint8_t base, bool LetterCase)
 				{
 					char StringBases[base];
 					Flash::CopyBaseChars(StringBases,base,LetterCase);
@@ -226,7 +226,7 @@
 					_buffer[counter] = '\0';
 				}
 
-				EString::String::String(const uint16_t source, const char* format, uint16_t size)
+				EString::string::string(const uint16_t source, const char* format, uint16_t size)
 				{
 					char buffer[size];
 					sprintf(buffer,format,source);
@@ -238,21 +238,21 @@
 					}
 				}
 				
-				EString::String& EString::String::operator=(const uint16_t source)
+				EString::string& EString::string::operator=(const uint16_t source)
 			    {
-			    	(*this) = String(source,10,EString::UpperCase);
+			    	(*this) = string(source,10,EString::UpperCase);
 			        return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // uint32_t
 
-				EString::String::String(const uint32_t source)
+				EString::string::string(const uint32_t source)
 				{
-			    	(*this) = String(source,10,EString::UpperCase);
+			    	(*this) = string(source,10,EString::UpperCase);
 				}
 
-				EString::String::String(const uint32_t source, uint8_t base, bool LetterCase)
+				EString::string::string(const uint32_t source, uint8_t base, bool LetterCase)
 				{
 					char StringBases[base];
 					Flash::CopyBaseChars(StringBases,base,LetterCase);
@@ -277,7 +277,7 @@
 					_buffer[counter] = '\0';
 				}
 
-				EString::String::String(const uint32_t source, const char* format, uint16_t size)
+				EString::string::string(const uint32_t source, const char* format, uint16_t size)
 				{
 					char buffer[size];
 					sprintf(buffer,format,source);
@@ -289,21 +289,21 @@
 					}
 				}
 				
-				EString::String& EString::String::operator=(const uint32_t source)
+				EString::string& EString::string::operator=(const uint32_t source)
 			    {
-			    	(*this) = String(source,10,EString::UpperCase);
+			    	(*this) = string(source,10,EString::UpperCase);
 			        return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // uint64_t
 
-				EString::String::String(const uint64_t source)
+				EString::string::string(const uint64_t source)
 				{
-			    	(*this) = String(source,10,EString::UpperCase);
+			    	(*this) = string(source,10,EString::UpperCase);
 				}
 
-				EString::String::String(const uint64_t source, uint8_t base, bool LetterCase)
+				EString::string::string(const uint64_t source, uint8_t base, bool LetterCase)
 				{
 					char StringBases[base];
 					Flash::CopyBaseChars(StringBases,base,LetterCase);
@@ -328,7 +328,7 @@
 					_buffer[counter] = '\0';
 				}
 
-				EString::String::String(const uint64_t source, const char* format, uint16_t size)
+				EString::string::string(const uint64_t source, const char* format, uint16_t size)
 				{
 					char buffer[size];
 					sprintf(buffer,format,source);
@@ -340,9 +340,9 @@
 					}
 				}
 				
-				EString::String& EString::String::operator=(const uint64_t source)
+				EString::string& EString::string::operator=(const uint64_t source)
 			    {
-			    	(*this) = String(source,10,EString::UpperCase);
+			    	(*this) = string(source,10,EString::UpperCase);
 					return *this;
 			    }
 		//
@@ -352,16 +352,16 @@
 		    ////////////////////////////////////////////////
 		    // int8_t
 
-				EString::String::String(const int8_t source)
+				EString::string::string(const int8_t source)
 				{
-			    	(*this) = String(source,10,EString::UpperCase,EString::IntSigned);
+			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
 				}
 
-				EString::String::String(const int8_t source, uint8_t base, bool LetterCase, bool absolute)
+				EString::string::string(const int8_t source, uint8_t base, bool LetterCase, bool absolute)
 				{
 					if(absolute == EString::IntAbsolute)
 					{
-						(*this)=String((uint8_t)source,base,LetterCase);
+						(*this)=string((uint8_t)source,base,LetterCase);
 					}
 					else
 					{
@@ -403,7 +403,7 @@
 					}
 				}
 
-				EString::String::String(const int8_t source, const char* format, uint16_t size)
+				EString::string::string(const int8_t source, const char* format, uint16_t size)
 				{
 					char buffer[size];
 					sprintf(buffer,format,source);
@@ -415,26 +415,26 @@
 					}
 				}
 				
-				EString::String& EString::String::operator=(const int8_t source)
+				EString::string& EString::string::operator=(const int8_t source)
 			    {
-			    	(*this) = String(source,10,EString::UpperCase,EString::IntSigned);
+			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
 					return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // int16_t
 
-				EString::String::String(const int16_t source)
+				EString::string::string(const int16_t source)
 			    {
-			    	(*this) = String(source,10,EString::UpperCase,EString::IntSigned);
+			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
 			    }
 
-				EString::String::String(const int16_t source, uint8_t base, bool LetterCase, bool absolute)
+				EString::string::string(const int16_t source, uint8_t base, bool LetterCase, bool absolute)
 				{
 
 					if(absolute == EString::IntAbsolute)
 					{
-						(*this)=String((uint16_t)source,base,LetterCase);
+						(*this)=string((uint16_t)source,base,LetterCase);
 					}
 					else
 					{
@@ -476,7 +476,7 @@
 					}
 				}
 
-				EString::String::String(const int16_t source, const char* format, uint16_t size)
+				EString::string::string(const int16_t source, const char* format, uint16_t size)
 				{
 					char buffer[size];
 					sprintf(buffer,format,source);
@@ -488,26 +488,26 @@
 					}
 				}
 				
-				EString::String& EString::String::operator=(const int16_t source)
+				EString::string& EString::string::operator=(const int16_t source)
 			    {
-			    	(*this) = String(source,10,EString::UpperCase,EString::IntSigned);
+			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
 					return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // int32_t
 
-				EString::String::String(const int32_t source)
+				EString::string::string(const int32_t source)
 			    {
-			    	(*this) = String(source,10,EString::UpperCase,EString::IntSigned);
+			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
 			    }
 
-				EString::String::String(const int32_t source, uint8_t base, bool LetterCase, bool absolute)
+				EString::string::string(const int32_t source, uint8_t base, bool LetterCase, bool absolute)
 				{
 
 					if(absolute == EString::IntAbsolute)
 					{
-						(*this)=String((uint32_t)source,base,LetterCase);
+						(*this)=string((uint32_t)source,base,LetterCase);
 					}
 					else
 					{
@@ -549,7 +549,7 @@
 					}
 				}
 
-				EString::String::String(const int32_t source, const char* format, uint16_t size)
+				EString::string::string(const int32_t source, const char* format, uint16_t size)
 				{
 					char buffer[size];
 					sprintf(buffer,format,source);
@@ -561,25 +561,25 @@
 					}
 				}
 				
-				EString::String& EString::String::operator=(const int32_t source)
+				EString::string& EString::string::operator=(const int32_t source)
 			    {
-			    	(*this) = String(source,10,EString::UpperCase,EString::IntSigned);
+			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
 					return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // int64_t
 
-				EString::String::String(const int64_t source)
+				EString::string::string(const int64_t source)
 			    {
-			    	(*this) = String(source,10,EString::UpperCase,EString::IntSigned);
+			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
 			    }
 
-				EString::String::String(const int64_t source, uint8_t base, bool LetterCase, bool absolute)
+				EString::string::string(const int64_t source, uint8_t base, bool LetterCase, bool absolute)
 				{
 					if(absolute == EString::IntAbsolute)
 					{
-						(*this)=String((uint64_t)source,base,LetterCase);
+						(*this)=string((uint64_t)source,base,LetterCase);
 					}
 					else
 					{
@@ -621,7 +621,7 @@
 					}
 				}
 
-				EString::String::String(const int64_t source, const char* format, uint16_t size)
+				EString::string::string(const int64_t source, const char* format, uint16_t size)
 				{
 					char buffer[size];
 					sprintf(buffer,format,source);
@@ -633,16 +633,16 @@
 					}
 				}
 				
-				EString::String& EString::String::operator=(const int64_t source)
+				EString::string& EString::string::operator=(const int64_t source)
 			    {
-			    	(*this) = String(source,10,EString::UpperCase,EString::IntSigned);
+			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
 					return *this;
 			    }
 	//
 	////////////////////////////////////////////////////
     // float
 
-		EString::String::String(const float source)
+		EString::string::string(const float source)
 		{
 
 			#if defined(PSOC_CREATOR)
@@ -683,7 +683,7 @@
 		    #endif
 		}
 
-		EString::String::String(const float source, uint8_t precision)
+		EString::string::string(const float source, uint8_t precision)
 		{
 
 			#if defined(PSOC_CREATOR)
@@ -697,8 +697,8 @@
 		        
 		        _format[0] = '%';  _format[1] = ' ';
 		        
-		        String *str = NULL;
-		        str = new String(left_size);
+		        string *str = NULL;
+		        str = new string(left_size);
 		        
 		        int offset = 2;
 		        
@@ -711,7 +711,7 @@
 		        _format[offset++] = '.';
 		        
 		        delete str;
-		        str = new String(precision);
+		        str = new string(precision);
 		        
 		        for(uint8_t i = 0; i < str->length(); i++)
 		        {
@@ -752,9 +752,9 @@
 		    #endif
 		}
 
-		EString::String& EString::String::operator=(const float source)
+		EString::string& EString::string::operator=(const float source)
 		{
-			(*this) = String(source,3);
+			(*this) = string(source,3);
 
 			return (*this);
 		}
@@ -762,7 +762,7 @@
 	////////////////////////////////////////////////////
     // double
 
-		EString::String::String(const double source)
+		EString::string::string(const double source)
 		{
 
 			#if defined(PSOC_CREATOR)
@@ -794,7 +794,7 @@
 		    #endif
 		}
 
-		EString::String::String(const double source, uint8_t precision)
+		EString::string::string(const double source, uint8_t precision)
 		{
 
 			#if defined(PSOC_CREATOR)
@@ -808,8 +808,8 @@
 		        
 		        _format[0] = '%';  _format[1] = ' ';
 		        
-		        String *str = NULL;
-		        str = new String(left_size);
+		        string *str = NULL;
+		        str = new string(left_size);
 		        
 		        int offset = 2;
 		        
@@ -822,7 +822,7 @@
 		        _format[offset++] = '.';
 		        
 		        delete str;
-		        str = new String(precision);
+		        str = new string(precision);
 		        
 		        for(uint8_t i = 0; i < str->length(); i++)
 		        {
@@ -854,17 +854,17 @@
 		    #endif
 		}
 
-		EString::String& EString::String::operator=(const double source)
+		EString::string& EString::string::operator=(const double source)
 		{
-			(*this) = String(source);
+			(*this) = string(source);
 			return (*this);
 		}
 	//
     ////////////////////////////////////////////////////
-    // String
+    // string
 		#if defined(ARDUINO)
 
-			EString::String::String(const ::String& source)
+			EString::string::string(const ::string& source)
 			{
 				_buffer = NULL;
 				_size = 0;
@@ -876,7 +876,7 @@
 				}
 			}
 			
-			EString::String& EString::String::operator=(const ::String& source)
+			EString::string& EString::string::operator=(const ::string& source)
 		    {
 		    	resize(source.length()+1);
 				for(uint16_t i = 0; i < _size; i++)
@@ -893,18 +893,18 @@
     ////////////////////////////////////////////////////
     // Cast Operators
 		
-		EString::String::operator char*() const{return _buffer;}
+		EString::string::operator char*() const{return _buffer;}
 	//
     ////////////////////////////////////////////////////
     // Equality and Inequality Operators
 		
-		bool EString::String::operator==(const String& rhs) const
+		bool EString::string::operator==(const string& rhs) const
 		{
 			if(strcmp(_buffer,rhs)==0){return 1;}
 			else{return 0;}
 		}
 
-		bool EString::String::operator!=(const String& rhs) const
+		bool EString::string::operator!=(const string& rhs) const
 		{
 			if(strcmp(_buffer,rhs)==0){return 0;}
 			else{return 1;}
@@ -914,9 +914,9 @@
     // Addition Operators
 
 		/////////////////////////////////////////////////////////
-		// String
+		// string
 
-			EString::String& EString::String::operator+=(const EString::String& rhs)
+			EString::string& EString::string::operator+=(const EString::string& rhs)
 			{
 				uint16_t a = _size-1;
 				resize(_size + rhs.Size()-1);
@@ -924,28 +924,28 @@
 				return (*this);
 			}
 
-			EString::String EString::String::operator+(const EString::String& rhs) const
+			EString::string EString::string::operator+(const EString::string& rhs) const
 			{
 				//tmp += rhs;
-				return String(*this) += rhs;
+				return string(*this) += rhs;
 			}
 		//
 		/////////////////////////////////////////////////////////
 		// Char *
 
-			EString::String& EString::String::operator+=(const char* rhs)
+			EString::string& EString::string::operator+=(const char* rhs)
 			{
 				uint16_t a = _size-1;
-				String tmp(rhs);
+				string tmp(rhs);
 				resize(_size + tmp.Size()-1);
 				memcpy(_buffer+a,tmp,tmp.Size());
 				return (*this);
 			}
 
-			EString::String EString::String::operator+(const char* rhs) const
+			EString::string EString::string::operator+(const char* rhs) const
 			{
 				//tmp += rhs;
-				return String(*this) += rhs;
+				return string(*this) += rhs;
 			}
 		//
 		/////////////////////////////////////////////////////////
@@ -957,81 +957,81 @@
 				/////////////////////////////////////////////////
 				// uint8_t
 
-					EString::String& EString::String::operator+=(const uint8_t rhs)
+					EString::string& EString::string::operator+=(const uint8_t rhs)
 					{
 						uint16_t a = _size-1;
 
-						EString::String tmp(rhs);
+						EString::string tmp(rhs);
 
 						resize(_size + tmp.Size()-1);
 						memcpy(_buffer+a,tmp,tmp.Size());
 						return (*this);
 					}
 
-					EString::String EString::String::operator+(const uint8_t rhs) const
+					EString::string EString::string::operator+(const uint8_t rhs) const
 					{
 						//tmp += rhs;
-						return String(*this) += rhs;
+						return string(*this) += rhs;
 					}
 				//
 				/////////////////////////////////////////////////
 				// uint8_t
 
-					EString::String& EString::String::operator+=(const uint16_t rhs)
+					EString::string& EString::string::operator+=(const uint16_t rhs)
 					{
 						uint16_t a = _size-1;
 
-						String tmp(rhs);
+						string tmp(rhs);
 
 						resize(_size + tmp.Size()-1);
 						memcpy(_buffer+a,tmp,tmp.Size());
 						return (*this);
 					}
 
-					EString::String EString::String::operator+(const uint16_t rhs) const
+					EString::string EString::string::operator+(const uint16_t rhs) const
 					{
 						//tmp += rhs;
-						return String(*this) += rhs;
+						return string(*this) += rhs;
 					}
 				//
 				/////////////////////////////////////////////////
 				// uint8_t
 
-					EString::String& EString::String::operator+=(const uint32_t rhs)
+					EString::string& EString::string::operator+=(const uint32_t rhs)
 					{
 						uint16_t a = _size-1;
 
-						String tmp(rhs);
+						string tmp(rhs);
 
 						resize(_size + tmp.Size()-1);
 						memcpy(_buffer+a,tmp,tmp.Size());
 						return (*this);
 					}
 
-					EString::String EString::String::operator+(const uint32_t rhs) const
+					EString::string EString::string::operator+(const uint32_t rhs) const
 					{
 						//tmp += rhs;
-						return String(*this) += rhs;
+						return string(*this) += rhs;
 					}
 				//
 				/////////////////////////////////////////////////
 				// uint64_t
 
-					EString::String& EString::String::operator+=(const uint64_t rhs)
+					EString::string& EString::string::operator+=(const uint64_t rhs)
 					{
 						uint16_t a = _size-1;
 
-						String tmp(rhs);
+						string tmp(rhs);
 
 						resize(_size + tmp.Size()-1);
 						memcpy(_buffer+a,tmp,tmp.Size());
 						return (*this);
 					}
 
-					EString::String EString::String::operator+(const uint64_t rhs) const
+					EString::string EString::string::operator+(const uint64_t rhs) const
 					{
 						//tmp += rhs;
-						return String(*this) += rhs;
+						return string(*this) += rhs;
 					}
 			//
 			/////////////////////////////////////////////////////
@@ -1040,95 +1040,95 @@
 				/////////////////////////////////////////////////
 				// int8_t
 
-					EString::String& EString::String::operator+=(const int8_t rhs)
+					EString::string& EString::string::operator+=(const int8_t rhs)
 					{
 						uint16_t a = _size-1;
 
-						String tmp(rhs);
+						string tmp(rhs);
 
 						resize(_size + tmp.Size()-1);
 						memcpy(_buffer+a,tmp,tmp.Size());
 						return (*this);
 					}
 
-					EString::String EString::String::operator+(const int8_t rhs) const
+					EString::string EString::string::operator+(const int8_t rhs) const
 					{
 						//tmp += rhs;
-						return String(*this) += rhs;
+						return string(*this) += rhs;
 					}
 				//
 				/////////////////////////////////////////////////
 				// uint8_t
 
-					EString::String& EString::String::operator+=(const int16_t rhs)
+					EString::string& EString::string::operator+=(const int16_t rhs)
 					{
 						uint16_t a = _size-1;
 
-						String tmp(rhs);
+						string tmp(rhs);
 
 						resize(_size + tmp.Size()-1);
 						memcpy(_buffer+a,tmp,tmp.Size());
 						return (*this);
 					}
 
-					EString::String EString::String::operator+(const int16_t rhs) const
+					EString::string EString::string::operator+(const int16_t rhs) const
 					{
 						//tmp += rhs;
-						return String(*this) += rhs;
+						return string(*this) += rhs;
 					}
 				//
 				/////////////////////////////////////////////////
 				// uint8_t
 
-					EString::String& EString::String::operator+=(const int32_t rhs)
+					EString::string& EString::string::operator+=(const int32_t rhs)
 					{
 						uint16_t a = _size-1;
 
-						String tmp(rhs);
+						string tmp(rhs);
 
 						resize(_size + tmp.Size()-1);
 						memcpy(_buffer+a,tmp,tmp.Size());
 						return (*this);
 					}
 
-					EString::String EString::String::operator+(const int32_t rhs) const
+					EString::string EString::string::operator+(const int32_t rhs) const
 					{
 						//tmp += rhs;
-						return String(*this) += rhs;
+						return string(*this) += rhs;
 					}
 				//
 				/////////////////////////////////////////////////
 				// uint16_t6_t
 
-					EString::String& EString::String::operator+=(const int64_t rhs)
+					EString::string& EString::string::operator+=(const int64_t rhs)
 					{
 						uint16_t a = _size-1;
 
-						String tmp(rhs);
+						string tmp(rhs);
 
 						resize(_size + tmp.Size()-1);
 						memcpy(_buffer+a,tmp,tmp.Size());
 						return (*this);
 					}
 
-					EString::String EString::String::operator+(const int64_t rhs) const
+					EString::string EString::string::operator+(const int64_t rhs) const
 					{
 						//tmp += rhs;
-						return String(*this) += rhs;
+						return string(*this) += rhs;
 					}
 //
 //////////////////////////////////////////////////////
 // Getters
 
-	uint16_t EString::String::Size() const{return _size;}
-	uint16_t EString::String::size() const{return _size;}
+	uint16_t EString::string::Size() const{return _size;}
+	uint16_t EString::string::size() const{return _size;}
 
-	// String Cross Compatible Methods
-	uint16_t EString::String::length() const{return _size-1;}
-	char* EString::String::c_str() const{return _buffer;}
+	// string Cross Compatible Methods
+	uint16_t EString::string::length() const{return _size-1;}
+	char* EString::string::c_str() const{return _buffer;}
 
 
-	char EString::String::CharAt(uint16_t n) const
+	char EString::string::CharAt(uint16_t n) const
 	{
 		if(n < _size)
 		{
@@ -1140,7 +1140,7 @@
 //////////////////////////////////////////////////////
 // Private Methods
 
-	void EString::String::resize(uint16_t size, char c)
+	void EString::string::resize(uint16_t size, char c)
 	{
 		if(size==_size){return;}
 
