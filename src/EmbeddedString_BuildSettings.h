@@ -40,7 +40,6 @@
     #elif defined(__MACOS_X__)
 
         #include <iostream>
-        #include <chrono>
 
         #define PROGMEM_MACRO
         

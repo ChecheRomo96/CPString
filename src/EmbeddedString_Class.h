@@ -2,9 +2,8 @@
 #define EMBEDDED_STRING_CONTAINER_H
 
 	#include "EmbeddedString.h"
-	#include "EmbeddedString_Definitions.h"
 
-	namespace EString
+	namespace EmbeddedString
 	{
 		class string
 		{
@@ -39,22 +38,22 @@
 						// unsigned int
 
 							explicit string(const uint8_t source);
-							string(const uint8_t source, uint8_t base, bool LetterCase = EString::LowerCase);
+							string(const uint8_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode);
 							string(const uint8_t source, const char* format, uint16_t size);
 							string& operator=(const uint8_t source);
 
 							explicit string(const uint16_t source);
-							string(const uint16_t source, uint8_t base, bool LetterCase = EString::LowerCase);
+							string(const uint16_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode);
 							string(const uint16_t source, const char* format, uint16_t size);
 							string& operator=(const uint16_t source);
 
 							explicit string(const uint32_t source);
-							string(const uint32_t source, uint8_t base, bool LetterCase = EString::LowerCase);
+							string(const uint32_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode);
 							string(const uint32_t source, const char* format, uint16_t size);
 							string& operator=(const uint32_t source);
 
 							explicit string(const uint64_t source);
-							string(const uint64_t source, uint8_t base, bool LetterCase = EString::LowerCase);
+							string(const uint64_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode);
 							string(const uint64_t source, const char* format, uint16_t size);
 							string& operator=(const uint64_t source);
 						//
@@ -62,22 +61,22 @@
 						// signed int
 
 							explicit string(const int8_t source);
-							string(const int8_t source, uint8_t base, bool LetterCase = EString::LowerCase, bool absolute = EString::IntSigned);
+							string(const int8_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode, bool absolute = EString::IntFormat::Mode);
 							string(const int8_t source, const char* format, uint16_t size);
 							string& operator=(const int8_t source);
 
 							explicit string(const int16_t source);
-							string(const int16_t source, uint8_t base, bool LetterCase = EString::LowerCase, bool absolute = EString::IntSigned);
+							string(const int16_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode, bool absolute = EString::IntFormat::Mode);
 							string(const int16_t source, const char* format, uint16_t size);
 							string& operator=(const int16_t source);
 
 							explicit string(const int32_t source);
-							string(const int32_t source, uint8_t base, bool LetterCase = EString::LowerCase, bool absolute = EString::IntSigned);
+							string(const int32_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode, bool absolute = EString::IntFormat::Mode);
 							string(const int32_t source, const char* format, uint16_t size);
 							string& operator=(const int32_t source);
 
 							explicit string(const int64_t source);
-							string(const int64_t source, uint8_t base, bool LetterCase = EString::LowerCase, bool absolute = EString::IntSigned);
+							string(const int64_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode, bool absolute = EString::IntFormat::Mode);
 							string(const int64_t source, const char* format, uint16_t size);
 							string& operator=(const int64_t source);
 					//

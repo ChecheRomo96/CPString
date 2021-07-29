@@ -5,7 +5,7 @@
 	
 	#include "EmbeddedString_FlashDefinitions.h"
 	
-	namespace EString
+	namespace EmbeddedString
 	{
 		namespace Flash
 		{

@@ -4,12 +4,48 @@
 #include <stdio.h>
 #include <math.h>
 
+bool EmbeddedString::LetterCase::Mode = EmbeddedString::LetterCase::Upper;
+bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
+
+//////////////////////////////////////////////////////
+// Global Methods
+
+	void EmbeddedString::SetLetterCase(bool Mode)
+	{
+		EmbeddedString::LetterCase::Mode = Mode;
+	}
+
+	void EmbeddedString::SetLetterCase_Upper()
+	{
+		EmbeddedString::LetterCase::Mode = EmbeddedString::LetterCase::Upper;
+	}
+
+	void EmbeddedString::SetLetterCase_Lower()
+	{
+		EmbeddedString::LetterCase::Mode = EmbeddedString::LetterCase::Lower;
+	}
+
+	void EmbeddedString::SetIntFormat(bool Mode)
+	{
+		EmbeddedString::IntFormat::Mode = Mode;
+	}
+
+	void EmbeddedString::SetIntFormat_Signed()
+	{
+		EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Signed;
+	}
+
+	void EmbeddedString::SetIntFormat_Absolute()
+	{
+		EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Absolute;
+	}
+//
 //////////////////////////////////////////////////////
 // Constructor, Destructor and Clear
 	
 	//////////////////////////////////////////////////
 	// Constructor
-		EString::string::string()
+		EmbeddedString::string::string()
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -17,7 +53,7 @@
 	//
 	//////////////////////////////////////////////////
 	// Destructor
-		EString::string::~string()
+		EmbeddedString::string::~string()
 		{
 			Clear();
 		}
@@ -25,7 +61,7 @@
 	//////////////////////////////////////////////////
 	// Clear
 
-		void EString::string::Clear()
+		void EmbeddedString::string::Clear()
 		{
 			if(_buffer != NULL)
 			{
@@ -35,7 +71,7 @@
 			}
 		}
 
-		void EString::string::clear()
+		void EmbeddedString::string::clear()
 		{
 			if(_buffer != NULL)
 			{
@@ -51,7 +87,7 @@
 	////////////////////////////////////////////////////
     // string
 
-		EString::string::string(const string& source)
+		EmbeddedString::string::string(const string& source)
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -63,7 +99,7 @@
 			}
 		}
 
-		EString::string& EString::string::operator=(const string& source)
+		EmbeddedString::string& EmbeddedString::string::operator=(const string& source)
 	    {
 	        if(this != &source)
 	        {
@@ -79,7 +115,7 @@
     ////////////////////////////////////////////////////
     // char *
 
-		EString::string::string(const char* source)
+		EmbeddedString::string::string(const char* source)
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -96,7 +132,7 @@
 		}
 
 
-		EString::string::string(const char* source, uint16_t size)
+		EmbeddedString::string::string(const char* source, uint16_t size)
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -122,7 +158,7 @@
 			}
 		}
 		
-		EString::string& EString::string::operator=(const char* source)
+		EmbeddedString::string& EmbeddedString::string::operator=(const char* source)
 	    {
 	    	if(source == NULL){(*this) = "";}
 			else
@@ -145,13 +181,19 @@
 		    ////////////////////////////////////////////////
 		    // uint8_t
 
-				EString::string::string(const uint8_t source)
+				EmbeddedString::string::string(const uint8_t source)
 				{
-			    	(*this) = string(source,10,EString::UpperCase);
+					_buffer = NULL;
+					_size = 0;
+
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
 				}
 
-				EString::string::string(const uint8_t source, uint8_t base, bool LetterCase)
+				EmbeddedString::string::string(const uint8_t source, uint8_t base, bool LetterCase)
 				{
+                    _buffer = NULL;
+                    _size = 0;
+                    
 					char StringBases[base];
 					Flash::CopyBaseChars(StringBases,base,LetterCase);
 
@@ -175,8 +217,11 @@
 					_buffer[counter] = '\0';
 				}
 
-				EString::string::string(const uint8_t source, const char* format, uint16_t size)
+				EmbeddedString::string::string(const uint8_t source, const char* format, uint16_t size)
 				{
+					_buffer = NULL;
+					_size = 0;
+
 					char buffer[size];
 					sprintf(buffer,format,source);
 					resize(size);
@@ -187,22 +232,25 @@
 					}
 				}
 				
-				EString::string& EString::string::operator=(const uint8_t source)
+				EmbeddedString::string& EmbeddedString::string::operator=(const uint8_t source)
 			    {
-			    	(*this) = string(source,10,EString::UpperCase);
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
 			        return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // uint16_t
 
-				EString::string::string(const uint16_t source)
+				EmbeddedString::string::string(const uint16_t source)
 				{
-			    	(*this) = string(source,10,EString::UpperCase);
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
 				}
 
-				EString::string::string(const uint16_t source, uint8_t base, bool LetterCase)
+				EmbeddedString::string::string(const uint16_t source, uint8_t base, bool LetterCase)
 				{
+					_buffer = NULL;
+					_size = 0;
+
 					char StringBases[base];
 					Flash::CopyBaseChars(StringBases,base,LetterCase);
 
@@ -226,8 +274,11 @@
 					_buffer[counter] = '\0';
 				}
 
-				EString::string::string(const uint16_t source, const char* format, uint16_t size)
+				EmbeddedString::string::string(const uint16_t source, const char* format, uint16_t size)
 				{
+					_buffer = NULL;
+					_size = 0;
+
 					char buffer[size];
 					sprintf(buffer,format,source);
 					resize(size);
@@ -238,22 +289,25 @@
 					}
 				}
 				
-				EString::string& EString::string::operator=(const uint16_t source)
+				EmbeddedString::string& EmbeddedString::string::operator=(const uint16_t source)
 			    {
-			    	(*this) = string(source,10,EString::UpperCase);
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
 			        return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // uint32_t
 
-				EString::string::string(const uint32_t source)
+				EmbeddedString::string::string(const uint32_t source)
 				{
-			    	(*this) = string(source,10,EString::UpperCase);
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
 				}
 
-				EString::string::string(const uint32_t source, uint8_t base, bool LetterCase)
+				EmbeddedString::string::string(const uint32_t source, uint8_t base, bool LetterCase)
 				{
+					_buffer = NULL;
+					_size = 0;
+
 					char StringBases[base];
 					Flash::CopyBaseChars(StringBases,base,LetterCase);
 
@@ -277,8 +331,11 @@
 					_buffer[counter] = '\0';
 				}
 
-				EString::string::string(const uint32_t source, const char* format, uint16_t size)
+				EmbeddedString::string::string(const uint32_t source, const char* format, uint16_t size)
 				{
+					_buffer = NULL;
+					_size = 0;
+					
 					char buffer[size];
 					sprintf(buffer,format,source);
 					resize(size);
@@ -289,22 +346,28 @@
 					}
 				}
 				
-				EString::string& EString::string::operator=(const uint32_t source)
+				EmbeddedString::string& EmbeddedString::string::operator=(const uint32_t source)
 			    {
-			    	(*this) = string(source,10,EString::UpperCase);
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
 			        return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // uint64_t
 
-				EString::string::string(const uint64_t source)
+				EmbeddedString::string::string(const uint64_t source)
 				{
-			    	(*this) = string(source,10,EString::UpperCase);
+					_buffer = NULL;
+					_size = 0;
+					
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
 				}
 
-				EString::string::string(const uint64_t source, uint8_t base, bool LetterCase)
+				EmbeddedString::string::string(const uint64_t source, uint8_t base, bool LetterCase)
 				{
+					_buffer = NULL;
+					_size = 0;
+					
 					char StringBases[base];
 					Flash::CopyBaseChars(StringBases,base,LetterCase);
 
@@ -328,8 +391,11 @@
 					_buffer[counter] = '\0';
 				}
 
-				EString::string::string(const uint64_t source, const char* format, uint16_t size)
+				EmbeddedString::string::string(const uint64_t source, const char* format, uint16_t size)
 				{
+					_buffer = NULL;
+					_size = 0;
+					
 					char buffer[size];
 					sprintf(buffer,format,source);
 					resize(size);
@@ -340,9 +406,9 @@
 					}
 				}
 				
-				EString::string& EString::string::operator=(const uint64_t source)
+				EmbeddedString::string& EmbeddedString::string::operator=(const uint64_t source)
 			    {
-			    	(*this) = string(source,10,EString::UpperCase);
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
 					return *this;
 			    }
 		//
@@ -352,14 +418,20 @@
 		    ////////////////////////////////////////////////
 		    // int8_t
 
-				EString::string::string(const int8_t source)
+				EmbeddedString::string::string(const int8_t source)
 				{
-			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
+					_buffer = NULL;
+					_size = 0;
+					
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
 				}
 
-				EString::string::string(const int8_t source, uint8_t base, bool LetterCase, bool absolute)
+				EmbeddedString::string::string(const int8_t source, uint8_t base, bool LetterCase, bool absolute)
 				{
-					if(absolute == EString::IntAbsolute)
+					_buffer = NULL;
+					_size = 0;
+					
+					if(absolute == EmbeddedString::IntFormat::Absolute)
 					{
 						(*this)=string((uint8_t)source,base,LetterCase);
 					}
@@ -403,8 +475,11 @@
 					}
 				}
 
-				EString::string::string(const int8_t source, const char* format, uint16_t size)
+				EmbeddedString::string::string(const int8_t source, const char* format, uint16_t size)
 				{
+					_buffer = NULL;
+					_size = 0;
+					
 					char buffer[size];
 					sprintf(buffer,format,source);
 					resize(size);
@@ -415,24 +490,29 @@
 					}
 				}
 				
-				EString::string& EString::string::operator=(const int8_t source)
+				EmbeddedString::string& EmbeddedString::string::operator=(const int8_t source)
 			    {
-			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
 					return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // int16_t
 
-				EString::string::string(const int16_t source)
+				EmbeddedString::string::string(const int16_t source)
 			    {
-			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
+					_buffer = NULL;
+					_size = 0;
+					
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
 			    }
 
-				EString::string::string(const int16_t source, uint8_t base, bool LetterCase, bool absolute)
+				EmbeddedString::string::string(const int16_t source, uint8_t base, bool LetterCase, bool absolute)
 				{
-
-					if(absolute == EString::IntAbsolute)
+					_buffer = NULL;
+					_size = 0;
+					
+					if(absolute == EmbeddedString::IntFormat::Absolute)
 					{
 						(*this)=string((uint16_t)source,base,LetterCase);
 					}
@@ -476,8 +556,11 @@
 					}
 				}
 
-				EString::string::string(const int16_t source, const char* format, uint16_t size)
+				EmbeddedString::string::string(const int16_t source, const char* format, uint16_t size)
 				{
+					_buffer = NULL;
+					_size = 0;
+					
 					char buffer[size];
 					sprintf(buffer,format,source);
 					resize(size);
@@ -488,24 +571,29 @@
 					}
 				}
 				
-				EString::string& EString::string::operator=(const int16_t source)
+				EmbeddedString::string& EmbeddedString::string::operator=(const int16_t source)
 			    {
-			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
 					return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // int32_t
 
-				EString::string::string(const int32_t source)
+				EmbeddedString::string::string(const int32_t source)
 			    {
-			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
+					_buffer = NULL;
+					_size = 0;
+					
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
 			    }
 
-				EString::string::string(const int32_t source, uint8_t base, bool LetterCase, bool absolute)
+				EmbeddedString::string::string(const int32_t source, uint8_t base, bool LetterCase, bool absolute)
 				{
-
-					if(absolute == EString::IntAbsolute)
+					_buffer = NULL;
+					_size = 0;
+					
+					if(absolute == EmbeddedString::IntFormat::Absolute)
 					{
 						(*this)=string((uint32_t)source,base,LetterCase);
 					}
@@ -549,8 +637,11 @@
 					}
 				}
 
-				EString::string::string(const int32_t source, const char* format, uint16_t size)
+				EmbeddedString::string::string(const int32_t source, const char* format, uint16_t size)
 				{
+					_buffer = NULL;
+					_size = 0;
+					
 					char buffer[size];
 					sprintf(buffer,format,source);
 					resize(size);
@@ -561,23 +652,29 @@
 					}
 				}
 				
-				EString::string& EString::string::operator=(const int32_t source)
+				EmbeddedString::string& EmbeddedString::string::operator=(const int32_t source)
 			    {
-			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
 					return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // int64_t
 
-				EString::string::string(const int64_t source)
+				EmbeddedString::string::string(const int64_t source)
 			    {
-			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
+					_buffer = NULL;
+					_size = 0;
+					
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
 			    }
 
-				EString::string::string(const int64_t source, uint8_t base, bool LetterCase, bool absolute)
+				EmbeddedString::string::string(const int64_t source, uint8_t base, bool LetterCase, bool absolute)
 				{
-					if(absolute == EString::IntAbsolute)
+					_buffer = NULL;
+					_size = 0;
+					
+					if(absolute == EmbeddedString::IntFormat::Absolute)
 					{
 						(*this)=string((uint64_t)source,base,LetterCase);
 					}
@@ -621,8 +718,11 @@
 					}
 				}
 
-				EString::string::string(const int64_t source, const char* format, uint16_t size)
+				EmbeddedString::string::string(const int64_t source, const char* format, uint16_t size)
 				{
+					_buffer = NULL;
+					_size = 0;
+					
 					char buffer[size];
 					sprintf(buffer,format,source);
 					resize(size);
@@ -633,18 +733,20 @@
 					}
 				}
 				
-				EString::string& EString::string::operator=(const int64_t source)
+				EmbeddedString::string& EmbeddedString::string::operator=(const int64_t source)
 			    {
-			    	(*this) = string(source,10,EString::UpperCase,EString::IntSigned);
+			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
 					return *this;
 			    }
 	//
 	////////////////////////////////////////////////////
     // float
 
-		EString::string::string(const float source)
+		EmbeddedString::string::string(const float source)
 		{
-
+			_buffer = NULL;
+			_size = 0;
+					
 			#if defined(PSOC_CREATOR)
 		    
 		        uint8_t left_size  = log10(source)+1;
@@ -683,9 +785,11 @@
 		    #endif
 		}
 
-		EString::string::string(const float source, uint8_t precision)
+		EmbeddedString::string::string(const float source, uint8_t precision)
 		{
-
+			_buffer = NULL;
+			_size = 0;
+					
 			#if defined(PSOC_CREATOR)
 		    
 		        uint8_t left_size  = log10(source)+1;
@@ -752,7 +856,7 @@
 		    #endif
 		}
 
-		EString::string& EString::string::operator=(const float source)
+		EmbeddedString::string& EmbeddedString::string::operator=(const float source)
 		{
 			(*this) = string(source,3);
 
@@ -762,9 +866,11 @@
 	////////////////////////////////////////////////////
     // double
 
-		EString::string::string(const double source)
+		EmbeddedString::string::string(const double source)
 		{
-
+			_buffer = NULL;
+			_size = 0;
+					
 			#if defined(PSOC_CREATOR)
 		    
 		        uint8_t left_size  = log10(source)+1;
@@ -794,9 +900,11 @@
 		    #endif
 		}
 
-		EString::string::string(const double source, uint8_t precision)
+		EmbeddedString::string::string(const double source, uint8_t precision)
 		{
-
+			_buffer = NULL;
+			_size = 0;
+					
 			#if defined(PSOC_CREATOR)
 		    
 		        uint8_t left_size  = log10(source)+1;
@@ -854,7 +962,7 @@
 		    #endif
 		}
 
-		EString::string& EString::string::operator=(const double source)
+		EmbeddedString::string& EmbeddedString::string::operator=(const double source)
 		{
 			(*this) = string(source);
 			return (*this);
@@ -864,7 +972,7 @@
     // string
 		#if defined(ARDUINO)
 
-			EString::string::string(const ::string& source)
+			EmbeddedString::string::string(const ::string& source)
 			{
 				_buffer = NULL;
 				_size = 0;
@@ -876,7 +984,7 @@
 				}
 			}
 			
-			EString::string& EString::string::operator=(const ::string& source)
+			EmbeddedString::string& EmbeddedString::string::operator=(const ::string& source)
 		    {
 		    	resize(source.length()+1);
 				for(uint16_t i = 0; i < _size; i++)
@@ -893,18 +1001,18 @@
     ////////////////////////////////////////////////////
     // Cast Operators
 		
-		EString::string::operator char*() const{return _buffer;}
+		EmbeddedString::string::operator char*() const{return _buffer;}
 	//
     ////////////////////////////////////////////////////
     // Equality and Inequality Operators
 		
-		bool EString::string::operator==(const string& rhs) const
+		bool EmbeddedString::string::operator==(const string& rhs) const
 		{
 			if(strcmp(_buffer,rhs)==0){return 1;}
 			else{return 0;}
 		}
 
-		bool EString::string::operator!=(const string& rhs) const
+		bool EmbeddedString::string::operator!=(const string& rhs) const
 		{
 			if(strcmp(_buffer,rhs)==0){return 0;}
 			else{return 1;}
@@ -916,7 +1024,7 @@
 		/////////////////////////////////////////////////////////
 		// string
 
-			EString::string& EString::string::operator+=(const EString::string& rhs)
+			EmbeddedString::string& EmbeddedString::string::operator+=(const EmbeddedString::string& rhs)
 			{
 				uint16_t a = _size-1;
 				resize(_size + rhs.Size()-1);
@@ -924,7 +1032,7 @@
 				return (*this);
 			}
 
-			EString::string EString::string::operator+(const EString::string& rhs) const
+			EmbeddedString::string EmbeddedString::string::operator+(const EmbeddedString::string& rhs) const
 			{
 				//tmp += rhs;
 				return string(*this) += rhs;
@@ -933,7 +1041,7 @@
 		/////////////////////////////////////////////////////////
 		// Char *
 
-			EString::string& EString::string::operator+=(const char* rhs)
+			EmbeddedString::string& EmbeddedString::string::operator+=(const char* rhs)
 			{
 				uint16_t a = _size-1;
 				string tmp(rhs);
@@ -942,7 +1050,7 @@
 				return (*this);
 			}
 
-			EString::string EString::string::operator+(const char* rhs) const
+			EmbeddedString::string EmbeddedString::string::operator+(const char* rhs) const
 			{
 				//tmp += rhs;
 				return string(*this) += rhs;
@@ -957,18 +1065,18 @@
 				/////////////////////////////////////////////////
 				// uint8_t
 
-					EString::string& EString::string::operator+=(const uint8_t rhs)
+					EmbeddedString::string& EmbeddedString::string::operator+=(const uint8_t rhs)
 					{
 						uint16_t a = _size-1;
 
-						EString::string tmp(rhs);
+						EmbeddedString::string tmp(rhs);
 
 						resize(_size + tmp.Size()-1);
 						memcpy(_buffer+a,tmp,tmp.Size());
 						return (*this);
 					}
 
-					EString::string EString::string::operator+(const uint8_t rhs) const
+					EmbeddedString::string EmbeddedString::string::operator+(const uint8_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -977,7 +1085,7 @@
 				/////////////////////////////////////////////////
 				// uint8_t
 
-					EString::string& EString::string::operator+=(const uint16_t rhs)
+					EmbeddedString::string& EmbeddedString::string::operator+=(const uint16_t rhs)
 					{
 						uint16_t a = _size-1;
 
@@ -988,7 +1096,7 @@
 						return (*this);
 					}
 
-					EString::string EString::string::operator+(const uint16_t rhs) const
+					EmbeddedString::string EmbeddedString::string::operator+(const uint16_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -997,7 +1105,7 @@
 				/////////////////////////////////////////////////
 				// uint8_t
 
-					EString::string& EString::string::operator+=(const uint32_t rhs)
+					EmbeddedString::string& EmbeddedString::string::operator+=(const uint32_t rhs)
 					{
 						uint16_t a = _size-1;
 
@@ -1008,7 +1116,7 @@
 						return (*this);
 					}
 
-					EString::string EString::string::operator+(const uint32_t rhs) const
+					EmbeddedString::string EmbeddedString::string::operator+(const uint32_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -1017,7 +1125,7 @@
 				/////////////////////////////////////////////////
 				// uint64_t
 
-					EString::string& EString::string::operator+=(const uint64_t rhs)
+					EmbeddedString::string& EmbeddedString::string::operator+=(const uint64_t rhs)
 					{
 						uint16_t a = _size-1;
 
@@ -1028,7 +1136,7 @@
 						return (*this);
 					}
 
-					EString::string EString::string::operator+(const uint64_t rhs) const
+					EmbeddedString::string EmbeddedString::string::operator+(const uint64_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -1040,7 +1148,7 @@
 				/////////////////////////////////////////////////
 				// int8_t
 
-					EString::string& EString::string::operator+=(const int8_t rhs)
+					EmbeddedString::string& EmbeddedString::string::operator+=(const int8_t rhs)
 					{
 						uint16_t a = _size-1;
 
@@ -1051,7 +1159,7 @@
 						return (*this);
 					}
 
-					EString::string EString::string::operator+(const int8_t rhs) const
+					EmbeddedString::string EmbeddedString::string::operator+(const int8_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -1060,7 +1168,7 @@
 				/////////////////////////////////////////////////
 				// uint8_t
 
-					EString::string& EString::string::operator+=(const int16_t rhs)
+					EmbeddedString::string& EmbeddedString::string::operator+=(const int16_t rhs)
 					{
 						uint16_t a = _size-1;
 
@@ -1071,7 +1179,7 @@
 						return (*this);
 					}
 
-					EString::string EString::string::operator+(const int16_t rhs) const
+					EmbeddedString::string EmbeddedString::string::operator+(const int16_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -1080,7 +1188,7 @@
 				/////////////////////////////////////////////////
 				// uint8_t
 
-					EString::string& EString::string::operator+=(const int32_t rhs)
+					EmbeddedString::string& EmbeddedString::string::operator+=(const int32_t rhs)
 					{
 						uint16_t a = _size-1;
 
@@ -1091,7 +1199,7 @@
 						return (*this);
 					}
 
-					EString::string EString::string::operator+(const int32_t rhs) const
+					EmbeddedString::string EmbeddedString::string::operator+(const int32_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -1100,7 +1208,7 @@
 				/////////////////////////////////////////////////
 				// uint16_t6_t
 
-					EString::string& EString::string::operator+=(const int64_t rhs)
+					EmbeddedString::string& EmbeddedString::string::operator+=(const int64_t rhs)
 					{
 						uint16_t a = _size-1;
 
@@ -1111,7 +1219,7 @@
 						return (*this);
 					}
 
-					EString::string EString::string::operator+(const int64_t rhs) const
+					EmbeddedString::string EmbeddedString::string::operator+(const int64_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -1120,15 +1228,15 @@
 //////////////////////////////////////////////////////
 // Getters
 
-	uint16_t EString::string::Size() const{return _size;}
-	uint16_t EString::string::size() const{return _size;}
+	uint16_t EmbeddedString::string::Size() const{return _size;}
+	uint16_t EmbeddedString::string::size() const{return _size;}
 
 	// string Cross Compatible Methods
-	uint16_t EString::string::length() const{return _size-1;}
-	char* EString::string::c_str() const{return _buffer;}
+	uint16_t EmbeddedString::string::length() const{return _size-1;}
+	char* EmbeddedString::string::c_str() const{return _buffer;}
 
 
-	char EString::string::CharAt(uint16_t n) const
+	char EmbeddedString::string::CharAt(uint16_t n) const
 	{
 		if(n < _size)
 		{
@@ -1140,7 +1248,7 @@
 //////////////////////////////////////////////////////
 // Private Methods
 
-	void EString::string::resize(uint16_t size, char c)
+	void EmbeddedString::string::resize(uint16_t size, char c)
 	{
 		if(size==_size){return;}
 

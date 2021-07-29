@@ -3,7 +3,7 @@
 
 int main()
 {
-    std::cout<<EString::String("Hello World\n");
+    std::cout<<EString::string("Hello World\n");
     
     return 0;
 }

@@ -3,13 +3,21 @@
 
     #include <EmbeddedString_BuildSettings.h>
     
-	namespace EString
+	namespace EmbeddedString
 	{
-		static constexpr bool LowerCase = 0;
-		static constexpr bool UpperCase = 1;
+		namespace LetterCase
+		{
+			extern bool Mode;
+			static constexpr bool Lower = 0;
+			static constexpr bool Upper = 1;
+		}
 
-		static constexpr bool IntSigned = 0;
-		static constexpr bool IntAbsolute = 1;
+		namespace IntFormat
+		{
+			extern bool Mode;
+			static constexpr bool Signed = 0;
+			static constexpr bool Absolute = 1;
+		}
 	}
 	
 

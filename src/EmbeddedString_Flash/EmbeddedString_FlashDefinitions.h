@@ -3,7 +3,7 @@
 
 	#include <EmbeddedString_BuildSettings.h>
 
-	namespace EString
+	namespace EmbeddedString
 	{
 		namespace Flash
 		{
