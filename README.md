@@ -6,7 +6,9 @@ Library for unifiying Strings across multiple systems
 
 1.- Clone or download package.
 
-2.- From terminal go to the the download directory
+2.- Open terminal and go to the the download directory (Replace <path_to_directory> with the path to the directory you downloaded) 
+
+	cd <path_to_directory>/EmbeddedString
 
 3.- Run 
 
