@@ -7,6 +7,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(src)
 
-if( ESTRING_BUILD_TESTS  STREQUAL "ON")
-	add_subdirectory(tests)
+if( ESTRING_BUILD_EXAMPLES  STREQUAL "ON")
+	add_subdirectory(examples)
 endif()
