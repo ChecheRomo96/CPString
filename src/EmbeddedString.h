@@ -1,9 +1,6 @@
 #ifndef EMBEDDED_STRING_H
 #define EMBEDDED_STRING_H
 
-	#define EMBEDDED_STRING
-	#define ESTRING_VERSION "0.01"
-
 	namespace EmbeddedString
 	{
 		void SetLetterCase(bool Mode);

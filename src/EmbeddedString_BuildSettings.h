@@ -4,8 +4,6 @@
     #include <stdint.h>
     #include <stdlib.h>
 
-    #include "EmbeddedString_CompileSetup.h"
-
     ///////////////////////////////////////////////////////////////////////////////////
     // Arduino IDE
 

@@ -12,7 +12,7 @@ int main()
     std::cin>>a;
     std::cout<<"\nYou gave me the number "<<(uint)a<<".\n\n";
     
-    std::cout<<EString::string("We'll store this value as a uint variable called a.\n");
+    std::cout<<EString::string("We'll store this value as a uint variable called a.\n\n");
     std::cout<<EString::string("Printing a on base 2  { string(a,2 ) }: ")<<EString::string(a,2 )<<".\n";
     std::cout<<EString::string("Printing a on base 4  { string(a,4 ) }: ")<<EString::string(a,4 )<<".\n";
     std::cout<<EString::string("Printing a on base 8  { string(a,8 ) }: ")<<EString::string(a,8 )<<".\n";
@@ -20,7 +20,7 @@ int main()
     std::cout<<EString::string("Printing a on base 16 { string(a,16) }: ")<<EString::string(a,16)<<".\n";
     
     std::cout<<EString::string("\nBy default the letters on the output are Upper case.\n");
-    std::cout<<EString::string("We can change that by calling EString::SetLetterCase(EString::LetterCase::Lower)\n");
+    std::cout<<EString::string("We can change that by calling EString::SetLetterCase(EString::LetterCase::Lower)\n\n");
 
     EString::SetLetterCase(EString::LetterCase::Lower);
     std::cout<<EString::string("Let's print the values of a again\n\n");
@@ -35,7 +35,7 @@ int main()
 
   	std::cout<<EString::string("\nNow give me a negative integer.\n\n");
     std::cin>>b;
-    std::cout<<"\nYou gave me the number "<<(uint)a<<".\n\n";
+    std::cout<<"\nYou gave me the number "<<(uint)b<<".\n\n";
     
     std::cout<<EString::string("We'll store this value as a int variable called b.\n");
     std::cout<<EString::string("Printing b on base 2  { string(b,2 ) }: ")<<EString::string(b,2 )<<".\n";
@@ -45,9 +45,11 @@ int main()
     std::cout<<EString::string("Printing b on base 16 { string(b,16) }: ")<<EString::string(b,16)<<".\n";
     
     std::cout<<EString::string("\nBy default int conversion is signed.\n");
-    std::cout<<EString::string("We can change that by calling EString::SetIntFormat(EString::IntFormat::Absolute)\n");
+    std::cout<<EString::string("We can change that by calling EString::SetIntFormat(EString::IntFormat::Absolute)\n\n");
+
     EString::SetIntFormat(EString::IntFormat::Absolute);
-    std::cout<<EString::string("Let's print the values of a again\n");
+    
+    std::cout<<EString::string("Let's print the values of b again\n\n");
 
     std::cout<<EString::string("Printing b on base 2  { string(b,2 ) }: ")<<EString::string(b,2 )<<".\n";
     std::cout<<EString::string("Printing b on base 4  { string(b,4 ) }: ")<<EString::string(b,4 )<<".\n";
