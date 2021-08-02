@@ -2,7 +2,7 @@
  
 Library for unifiying Strings across multiple systems
 
-<b>To install package:</b>
+<s = 12><b>To install package:</b></s>
 
 1.- Clone or download package.
 
