@@ -10,7 +10,7 @@ List of platforms where it has been tested.
 	Arduino IDE
 	PSoC Creator IDE
 
-##Steps to install package:
+## Steps to install package:
 
 1.- Clone or download package.
 
@@ -31,7 +31,7 @@ List of platforms where it has been tested.
 	sudo make install
 
 
-##Steps to install as an Arduino Library:
+## Steps to install as an Arduino Library:
 
 Note that you must have git installed on your computer. To istall git through homebrew:
 
