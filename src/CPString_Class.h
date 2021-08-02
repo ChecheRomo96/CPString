@@ -1,9 +1,9 @@
-#ifndef EMBEDDED_STRING_CONTAINER_H
-#define EMBEDDED_STRING_CONTAINER_H
+#ifndef CROSS_PLATFORM_STRING_CONTAINER_H
+#define CROSS_PLATFORM_STRING_CONTAINER_H
 
-	#include "EmbeddedString.h"
+	#include "CPString.h"
 
-	namespace EmbeddedString
+	namespace CrossPlatformString
 	{
 		class string
 		{
@@ -18,6 +18,7 @@
 					~string();
 					void Clear();
 					void clear();
+				//
 				////////////////////////////////////////////////////////////////////////////////////////////
 				// Copy Constructor and assignment operator
 
@@ -38,22 +39,22 @@
 						// unsigned int
 
 							explicit string(const uint8_t source);
-							string(const uint8_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode);
+							string(const uint8_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode);
 							string(const uint8_t source, const char* format, uint16_t size);
 							string& operator=(const uint8_t source);
 
 							explicit string(const uint16_t source);
-							string(const uint16_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode);
+							string(const uint16_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode);
 							string(const uint16_t source, const char* format, uint16_t size);
 							string& operator=(const uint16_t source);
 
 							explicit string(const uint32_t source);
-							string(const uint32_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode);
+							string(const uint32_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode);
 							string(const uint32_t source, const char* format, uint16_t size);
 							string& operator=(const uint32_t source);
 
 							explicit string(const uint64_t source);
-							string(const uint64_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode);
+							string(const uint64_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode);
 							string(const uint64_t source, const char* format, uint16_t size);
 							string& operator=(const uint64_t source);
 						//
@@ -61,22 +62,22 @@
 						// signed int
 
 							explicit string(const int8_t source);
-							string(const int8_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode, bool absolute = EString::IntFormat::Mode);
+							string(const int8_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode, bool absolute = CPString::IntFormat::Mode);
 							string(const int8_t source, const char* format, uint16_t size);
 							string& operator=(const int8_t source);
 
 							explicit string(const int16_t source);
-							string(const int16_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode, bool absolute = EString::IntFormat::Mode);
+							string(const int16_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode, bool absolute = CPString::IntFormat::Mode);
 							string(const int16_t source, const char* format, uint16_t size);
 							string& operator=(const int16_t source);
 
 							explicit string(const int32_t source);
-							string(const int32_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode, bool absolute = EString::IntFormat::Mode);
+							string(const int32_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode, bool absolute = CPString::IntFormat::Mode);
 							string(const int32_t source, const char* format, uint16_t size);
 							string& operator=(const int32_t source);
 
 							explicit string(const int64_t source);
-							string(const int64_t source, uint8_t base, bool LetterCase = EString::LetterCase::Mode, bool absolute = EString::IntFormat::Mode);
+							string(const int64_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode, bool absolute = CPString::IntFormat::Mode);
 							string(const int64_t source, const char* format, uint16_t size);
 							string& operator=(const int64_t source);
 					//
@@ -189,4 +190,4 @@
 	}
 
 
-#endif//EMBEDDED_STRING_CONTAINER_H
+#endif//CROSS_PLATFORM_STRING_CONTAINER_H

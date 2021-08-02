@@ -1,9 +1,9 @@
-#ifndef EMBEDDED_STRING_FLASH_DEFINITIONS_H
-#define EMBEDDED_STRING_FLASH_DEFINITIONS_H
+#ifndef CROSS_PLATFORM_STRING_FLASH_DEFINITIONS_H
+#define CROSS_PLATFORM_STRING_FLASH_DEFINITIONS_H
 
-	#include <EmbeddedString_BuildSettings.h>
+	#include <CPString_BuildSettings.h>
 
-	namespace EmbeddedString
+	namespace CrossPlatformString
 	{
 		namespace Flash
 		{
@@ -24,4 +24,4 @@
 
 	
 
-#endif//EMBEDDED_STRING_FLASH_DEFINITIONS_H
+#endif//CROSS_PLATFORM_STRING_FLASH_DEFINITIONS_H

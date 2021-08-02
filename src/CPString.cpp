@@ -1,43 +1,43 @@
-#include "EmbeddedString.h"
+#include "CPString.h"
 
 #include <string.h>
 #include <stdio.h>
 #include <math.h>
 
-bool EmbeddedString::LetterCase::Mode = EmbeddedString::LetterCase::Upper;
-bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
+bool CPString::LetterCase::Mode = CPString::LetterCase::Upper;
+bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 //////////////////////////////////////////////////////
 // Global Methods
 
-	void EmbeddedString::SetLetterCase(bool Mode)
+	void CPString::SetLetterCase(bool Mode)
 	{
-		EmbeddedString::LetterCase::Mode = Mode;
+		CPString::LetterCase::Mode = Mode;
 	}
 
-	void EmbeddedString::SetLetterCase_Upper()
+	void CPString::SetLetterCase_Upper()
 	{
-		EmbeddedString::LetterCase::Mode = EmbeddedString::LetterCase::Upper;
+		CPString::LetterCase::Mode = CPString::LetterCase::Upper;
 	}
 
-	void EmbeddedString::SetLetterCase_Lower()
+	void CPString::SetLetterCase_Lower()
 	{
-		EmbeddedString::LetterCase::Mode = EmbeddedString::LetterCase::Lower;
+		CPString::LetterCase::Mode = CPString::LetterCase::Lower;
 	}
 
-	void EmbeddedString::SetIntFormat(bool Mode)
+	void CPString::SetIntFormat(bool Mode)
 	{
-		EmbeddedString::IntFormat::Mode = Mode;
+		CPString::IntFormat::Mode = Mode;
 	}
 
-	void EmbeddedString::SetIntFormat_Signed()
+	void CPString::SetIntFormat_Signed()
 	{
-		EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Signed;
+		CPString::IntFormat::Mode = CPString::IntFormat::Signed;
 	}
 
-	void EmbeddedString::SetIntFormat_Absolute()
+	void CPString::SetIntFormat_Absolute()
 	{
-		EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Absolute;
+		CPString::IntFormat::Mode = CPString::IntFormat::Absolute;
 	}
 //
 //////////////////////////////////////////////////////
@@ -45,7 +45,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 	
 	//////////////////////////////////////////////////
 	// Constructor
-		EmbeddedString::string::string()
+		CPString::string::string()
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -53,7 +53,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 	//
 	//////////////////////////////////////////////////
 	// Destructor
-		EmbeddedString::string::~string()
+		CPString::string::~string()
 		{
 			Clear();
 		}
@@ -61,7 +61,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 	//////////////////////////////////////////////////
 	// Clear
 
-		void EmbeddedString::string::Clear()
+		void CPString::string::Clear()
 		{
 			if(_buffer != NULL)
 			{
@@ -71,7 +71,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 			}
 		}
 
-		void EmbeddedString::string::clear()
+		void CPString::string::clear()
 		{
 			if(_buffer != NULL)
 			{
@@ -87,7 +87,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 	////////////////////////////////////////////////////
     // string
 
-		EmbeddedString::string::string(const string& source)
+		CPString::string::string(const string& source)
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -99,7 +99,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 			}
 		}
 
-		EmbeddedString::string& EmbeddedString::string::operator=(const string& source)
+		CPString::string& CPString::string::operator=(const string& source)
 	    {
 	        if(this != &source)
 	        {
@@ -115,7 +115,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
     ////////////////////////////////////////////////////
     // char *
 
-		EmbeddedString::string::string(const char* source)
+		CPString::string::string(const char* source)
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -132,7 +132,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 		}
 
 
-		EmbeddedString::string::string(const char* source, uint16_t size)
+		CPString::string::string(const char* source, uint16_t size)
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -158,7 +158,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 			}
 		}
 		
-		EmbeddedString::string& EmbeddedString::string::operator=(const char* source)
+		CPString::string& CPString::string::operator=(const char* source)
 	    {
 	    	if(source == NULL){(*this) = "";}
 			else
@@ -181,15 +181,15 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 		    ////////////////////////////////////////////////
 		    // uint8_t
 
-				EmbeddedString::string::string(const uint8_t source)
+				CPString::string::string(const uint8_t source)
 				{
 					_buffer = NULL;
 					_size = 0;
 
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode);
 				}
 
-				EmbeddedString::string::string(const uint8_t source, uint8_t base, bool LetterCase)
+				CPString::string::string(const uint8_t source, uint8_t base, bool LetterCase)
 				{
                     _buffer = NULL;
                     _size = 0;
@@ -217,7 +217,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					_buffer[counter] = '\0';
 				}
 
-				EmbeddedString::string::string(const uint8_t source, const char* format, uint16_t size)
+				CPString::string::string(const uint8_t source, const char* format, uint16_t size)
 				{
 					_buffer = NULL;
 					_size = 0;
@@ -232,21 +232,21 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					}
 				}
 				
-				EmbeddedString::string& EmbeddedString::string::operator=(const uint8_t source)
+				CPString::string& CPString::string::operator=(const uint8_t source)
 			    {
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode);
 			        return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // uint16_t
 
-				EmbeddedString::string::string(const uint16_t source)
+				CPString::string::string(const uint16_t source)
 				{
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode);
 				}
 
-				EmbeddedString::string::string(const uint16_t source, uint8_t base, bool LetterCase)
+				CPString::string::string(const uint16_t source, uint8_t base, bool LetterCase)
 				{
 					_buffer = NULL;
 					_size = 0;
@@ -274,7 +274,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					_buffer[counter] = '\0';
 				}
 
-				EmbeddedString::string::string(const uint16_t source, const char* format, uint16_t size)
+				CPString::string::string(const uint16_t source, const char* format, uint16_t size)
 				{
 					_buffer = NULL;
 					_size = 0;
@@ -289,21 +289,21 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					}
 				}
 				
-				EmbeddedString::string& EmbeddedString::string::operator=(const uint16_t source)
+				CPString::string& CPString::string::operator=(const uint16_t source)
 			    {
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode);
 			        return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // uint32_t
 
-				EmbeddedString::string::string(const uint32_t source)
+				CPString::string::string(const uint32_t source)
 				{
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode);
 				}
 
-				EmbeddedString::string::string(const uint32_t source, uint8_t base, bool LetterCase)
+				CPString::string::string(const uint32_t source, uint8_t base, bool LetterCase)
 				{
 					_buffer = NULL;
 					_size = 0;
@@ -331,7 +331,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					_buffer[counter] = '\0';
 				}
 
-				EmbeddedString::string::string(const uint32_t source, const char* format, uint16_t size)
+				CPString::string::string(const uint32_t source, const char* format, uint16_t size)
 				{
 					_buffer = NULL;
 					_size = 0;
@@ -346,24 +346,24 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					}
 				}
 				
-				EmbeddedString::string& EmbeddedString::string::operator=(const uint32_t source)
+				CPString::string& CPString::string::operator=(const uint32_t source)
 			    {
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode);
 			        return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // uint64_t
 
-				EmbeddedString::string::string(const uint64_t source)
+				CPString::string::string(const uint64_t source)
 				{
 					_buffer = NULL;
 					_size = 0;
 					
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode);
 				}
 
-				EmbeddedString::string::string(const uint64_t source, uint8_t base, bool LetterCase)
+				CPString::string::string(const uint64_t source, uint8_t base, bool LetterCase)
 				{
 					_buffer = NULL;
 					_size = 0;
@@ -391,7 +391,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					_buffer[counter] = '\0';
 				}
 
-				EmbeddedString::string::string(const uint64_t source, const char* format, uint16_t size)
+				CPString::string::string(const uint64_t source, const char* format, uint16_t size)
 				{
 					_buffer = NULL;
 					_size = 0;
@@ -406,9 +406,9 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					}
 				}
 				
-				EmbeddedString::string& EmbeddedString::string::operator=(const uint64_t source)
+				CPString::string& CPString::string::operator=(const uint64_t source)
 			    {
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode);
 					return *this;
 			    }
 		//
@@ -418,20 +418,20 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 		    ////////////////////////////////////////////////
 		    // int8_t
 
-				EmbeddedString::string::string(const int8_t source)
+				CPString::string::string(const int8_t source)
 				{
 					_buffer = NULL;
 					_size = 0;
 					
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode,CPString::IntFormat::Mode);
 				}
 
-				EmbeddedString::string::string(const int8_t source, uint8_t base, bool LetterCase, bool absolute)
+				CPString::string::string(const int8_t source, uint8_t base, bool LetterCase, bool absolute)
 				{
 					_buffer = NULL;
 					_size = 0;
 					
-					if(absolute == EmbeddedString::IntFormat::Absolute)
+					if(absolute == CPString::IntFormat::Absolute)
 					{
 						(*this)=string((uint8_t)source,base,LetterCase);
 					}
@@ -475,7 +475,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					}
 				}
 
-				EmbeddedString::string::string(const int8_t source, const char* format, uint16_t size)
+				CPString::string::string(const int8_t source, const char* format, uint16_t size)
 				{
 					_buffer = NULL;
 					_size = 0;
@@ -490,29 +490,29 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					}
 				}
 				
-				EmbeddedString::string& EmbeddedString::string::operator=(const int8_t source)
+				CPString::string& CPString::string::operator=(const int8_t source)
 			    {
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode,CPString::IntFormat::Mode);
 					return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // int16_t
 
-				EmbeddedString::string::string(const int16_t source)
+				CPString::string::string(const int16_t source)
 			    {
 					_buffer = NULL;
 					_size = 0;
 					
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode,CPString::IntFormat::Mode);
 			    }
 
-				EmbeddedString::string::string(const int16_t source, uint8_t base, bool LetterCase, bool absolute)
+				CPString::string::string(const int16_t source, uint8_t base, bool LetterCase, bool absolute)
 				{
 					_buffer = NULL;
 					_size = 0;
 					
-					if(absolute == EmbeddedString::IntFormat::Absolute)
+					if(absolute == CPString::IntFormat::Absolute)
 					{
 						(*this)=string((uint16_t)source,base,LetterCase);
 					}
@@ -556,7 +556,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					}
 				}
 
-				EmbeddedString::string::string(const int16_t source, const char* format, uint16_t size)
+				CPString::string::string(const int16_t source, const char* format, uint16_t size)
 				{
 					_buffer = NULL;
 					_size = 0;
@@ -571,29 +571,29 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					}
 				}
 				
-				EmbeddedString::string& EmbeddedString::string::operator=(const int16_t source)
+				CPString::string& CPString::string::operator=(const int16_t source)
 			    {
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode,CPString::IntFormat::Mode);
 					return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // int32_t
 
-				EmbeddedString::string::string(const int32_t source)
+				CPString::string::string(const int32_t source)
 			    {
 					_buffer = NULL;
 					_size = 0;
 					
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode,CPString::IntFormat::Mode);
 			    }
 
-				EmbeddedString::string::string(const int32_t source, uint8_t base, bool LetterCase, bool absolute)
+				CPString::string::string(const int32_t source, uint8_t base, bool LetterCase, bool absolute)
 				{
 					_buffer = NULL;
 					_size = 0;
 					
-					if(absolute == EmbeddedString::IntFormat::Absolute)
+					if(absolute == CPString::IntFormat::Absolute)
 					{
 						(*this)=string((uint32_t)source,base,LetterCase);
 					}
@@ -637,7 +637,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					}
 				}
 
-				EmbeddedString::string::string(const int32_t source, const char* format, uint16_t size)
+				CPString::string::string(const int32_t source, const char* format, uint16_t size)
 				{
 					_buffer = NULL;
 					_size = 0;
@@ -652,29 +652,29 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					}
 				}
 				
-				EmbeddedString::string& EmbeddedString::string::operator=(const int32_t source)
+				CPString::string& CPString::string::operator=(const int32_t source)
 			    {
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode,CPString::IntFormat::Mode);
 					return *this;
 			    }
 			//
 			////////////////////////////////////////////////
 		    // int64_t
 
-				EmbeddedString::string::string(const int64_t source)
+				CPString::string::string(const int64_t source)
 			    {
 					_buffer = NULL;
 					_size = 0;
 					
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode,CPString::IntFormat::Mode);
 			    }
 
-				EmbeddedString::string::string(const int64_t source, uint8_t base, bool LetterCase, bool absolute)
+				CPString::string::string(const int64_t source, uint8_t base, bool LetterCase, bool absolute)
 				{
 					_buffer = NULL;
 					_size = 0;
 					
-					if(absolute == EmbeddedString::IntFormat::Absolute)
+					if(absolute == CPString::IntFormat::Absolute)
 					{
 						(*this)=string((uint64_t)source,base,LetterCase);
 					}
@@ -718,7 +718,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					}
 				}
 
-				EmbeddedString::string::string(const int64_t source, const char* format, uint16_t size)
+				CPString::string::string(const int64_t source, const char* format, uint16_t size)
 				{
 					_buffer = NULL;
 					_size = 0;
@@ -733,16 +733,16 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 					}
 				}
 				
-				EmbeddedString::string& EmbeddedString::string::operator=(const int64_t source)
+				CPString::string& CPString::string::operator=(const int64_t source)
 			    {
-			    	(*this) = string(source,10,EmbeddedString::LetterCase::Mode,EmbeddedString::IntFormat::Mode);
+			    	(*this) = string(source,10,CPString::LetterCase::Mode,CPString::IntFormat::Mode);
 					return *this;
 			    }
 	//
 	////////////////////////////////////////////////////
     // float
 
-		EmbeddedString::string::string(const float source)
+		CPString::string::string(const float source)
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -785,7 +785,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 		    #endif
 		}
 
-		EmbeddedString::string::string(const float source, uint8_t precision)
+		CPString::string::string(const float source, uint8_t precision)
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -856,7 +856,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 		    #endif
 		}
 
-		EmbeddedString::string& EmbeddedString::string::operator=(const float source)
+		CPString::string& CPString::string::operator=(const float source)
 		{
 			(*this) = string(source,3);
 
@@ -866,7 +866,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 	////////////////////////////////////////////////////
     // double
 
-		EmbeddedString::string::string(const double source)
+		CPString::string::string(const double source)
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -900,7 +900,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 		    #endif
 		}
 
-		EmbeddedString::string::string(const double source, uint8_t precision)
+		CPString::string::string(const double source, uint8_t precision)
 		{
 			_buffer = NULL;
 			_size = 0;
@@ -962,7 +962,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 		    #endif
 		}
 
-		EmbeddedString::string& EmbeddedString::string::operator=(const double source)
+		CPString::string& CPString::string::operator=(const double source)
 		{
 			(*this) = string(source);
 			return (*this);
@@ -972,7 +972,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
     // string
 		#if defined(ARDUINO)
 
-			EmbeddedString::string::string(const ::string& source)
+			CPString::string::string(const ::string& source)
 			{
 				_buffer = NULL;
 				_size = 0;
@@ -984,7 +984,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 				}
 			}
 			
-			EmbeddedString::string& EmbeddedString::string::operator=(const ::string& source)
+			CPString::string& CPString::string::operator=(const ::string& source)
 		    {
 		    	resize(source.length()+1);
 				for(uint16_t i = 0; i < _size; i++)
@@ -1001,18 +1001,18 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
     ////////////////////////////////////////////////////
     // Cast Operators
 		
-		EmbeddedString::string::operator char*() const{return _buffer;}
+		CPString::string::operator char*() const{return _buffer;}
 	//
     ////////////////////////////////////////////////////
     // Equality and Inequality Operators
 		
-		bool EmbeddedString::string::operator==(const string& rhs) const
+		bool CPString::string::operator==(const string& rhs) const
 		{
 			if(strcmp(_buffer,rhs)==0){return 1;}
 			else{return 0;}
 		}
 
-		bool EmbeddedString::string::operator!=(const string& rhs) const
+		bool CPString::string::operator!=(const string& rhs) const
 		{
 			if(strcmp(_buffer,rhs)==0){return 0;}
 			else{return 1;}
@@ -1024,7 +1024,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 		/////////////////////////////////////////////////////////
 		// string
 
-			EmbeddedString::string& EmbeddedString::string::operator+=(const EmbeddedString::string& rhs)
+			CPString::string& CPString::string::operator+=(const CPString::string& rhs)
 			{
 				uint16_t a = _size-1;
 				resize(_size + rhs.Size()-1);
@@ -1032,7 +1032,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 				return (*this);
 			}
 
-			EmbeddedString::string EmbeddedString::string::operator+(const EmbeddedString::string& rhs) const
+			CPString::string CPString::string::operator+(const CPString::string& rhs) const
 			{
 				//tmp += rhs;
 				return string(*this) += rhs;
@@ -1041,7 +1041,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 		/////////////////////////////////////////////////////////
 		// Char *
 
-			EmbeddedString::string& EmbeddedString::string::operator+=(const char* rhs)
+			CPString::string& CPString::string::operator+=(const char* rhs)
 			{
 				uint16_t a = _size-1;
 				string tmp(rhs);
@@ -1050,7 +1050,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 				return (*this);
 			}
 
-			EmbeddedString::string EmbeddedString::string::operator+(const char* rhs) const
+			CPString::string CPString::string::operator+(const char* rhs) const
 			{
 				//tmp += rhs;
 				return string(*this) += rhs;
@@ -1065,18 +1065,18 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 				/////////////////////////////////////////////////
 				// uint8_t
 
-					EmbeddedString::string& EmbeddedString::string::operator+=(const uint8_t rhs)
+					CPString::string& CPString::string::operator+=(const uint8_t rhs)
 					{
 						uint16_t a = _size-1;
 
-						EmbeddedString::string tmp(rhs);
+						CPString::string tmp(rhs);
 
 						resize(_size + tmp.Size()-1);
 						memcpy(_buffer+a,tmp,tmp.Size());
 						return (*this);
 					}
 
-					EmbeddedString::string EmbeddedString::string::operator+(const uint8_t rhs) const
+					CPString::string CPString::string::operator+(const uint8_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -1085,7 +1085,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 				/////////////////////////////////////////////////
 				// uint8_t
 
-					EmbeddedString::string& EmbeddedString::string::operator+=(const uint16_t rhs)
+					CPString::string& CPString::string::operator+=(const uint16_t rhs)
 					{
 						uint16_t a = _size-1;
 
@@ -1096,7 +1096,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 						return (*this);
 					}
 
-					EmbeddedString::string EmbeddedString::string::operator+(const uint16_t rhs) const
+					CPString::string CPString::string::operator+(const uint16_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -1105,7 +1105,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 				/////////////////////////////////////////////////
 				// uint8_t
 
-					EmbeddedString::string& EmbeddedString::string::operator+=(const uint32_t rhs)
+					CPString::string& CPString::string::operator+=(const uint32_t rhs)
 					{
 						uint16_t a = _size-1;
 
@@ -1116,7 +1116,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 						return (*this);
 					}
 
-					EmbeddedString::string EmbeddedString::string::operator+(const uint32_t rhs) const
+					CPString::string CPString::string::operator+(const uint32_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -1125,7 +1125,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 				/////////////////////////////////////////////////
 				// uint64_t
 
-					EmbeddedString::string& EmbeddedString::string::operator+=(const uint64_t rhs)
+					CPString::string& CPString::string::operator+=(const uint64_t rhs)
 					{
 						uint16_t a = _size-1;
 
@@ -1136,7 +1136,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 						return (*this);
 					}
 
-					EmbeddedString::string EmbeddedString::string::operator+(const uint64_t rhs) const
+					CPString::string CPString::string::operator+(const uint64_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -1148,7 +1148,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 				/////////////////////////////////////////////////
 				// int8_t
 
-					EmbeddedString::string& EmbeddedString::string::operator+=(const int8_t rhs)
+					CPString::string& CPString::string::operator+=(const int8_t rhs)
 					{
 						uint16_t a = _size-1;
 
@@ -1159,7 +1159,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 						return (*this);
 					}
 
-					EmbeddedString::string EmbeddedString::string::operator+(const int8_t rhs) const
+					CPString::string CPString::string::operator+(const int8_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -1168,7 +1168,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 				/////////////////////////////////////////////////
 				// uint8_t
 
-					EmbeddedString::string& EmbeddedString::string::operator+=(const int16_t rhs)
+					CPString::string& CPString::string::operator+=(const int16_t rhs)
 					{
 						uint16_t a = _size-1;
 
@@ -1179,7 +1179,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 						return (*this);
 					}
 
-					EmbeddedString::string EmbeddedString::string::operator+(const int16_t rhs) const
+					CPString::string CPString::string::operator+(const int16_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -1188,7 +1188,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 				/////////////////////////////////////////////////
 				// uint8_t
 
-					EmbeddedString::string& EmbeddedString::string::operator+=(const int32_t rhs)
+					CPString::string& CPString::string::operator+=(const int32_t rhs)
 					{
 						uint16_t a = _size-1;
 
@@ -1199,7 +1199,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 						return (*this);
 					}
 
-					EmbeddedString::string EmbeddedString::string::operator+(const int32_t rhs) const
+					CPString::string CPString::string::operator+(const int32_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -1208,7 +1208,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 				/////////////////////////////////////////////////
 				// uint16_t6_t
 
-					EmbeddedString::string& EmbeddedString::string::operator+=(const int64_t rhs)
+					CPString::string& CPString::string::operator+=(const int64_t rhs)
 					{
 						uint16_t a = _size-1;
 
@@ -1219,7 +1219,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 						return (*this);
 					}
 
-					EmbeddedString::string EmbeddedString::string::operator+(const int64_t rhs) const
+					CPString::string CPString::string::operator+(const int64_t rhs) const
 					{
 						//tmp += rhs;
 						return string(*this) += rhs;
@@ -1228,15 +1228,15 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 //////////////////////////////////////////////////////
 // Getters
 
-	uint16_t EmbeddedString::string::Size() const{return _size;}
-	uint16_t EmbeddedString::string::size() const{return _size;}
+	uint16_t CPString::string::Size() const{return _size;}
+	uint16_t CPString::string::size() const{return _size;}
 
 	// string Cross Compatible Methods
-	uint16_t EmbeddedString::string::length() const{return _size-1;}
-	char* EmbeddedString::string::c_str() const{return _buffer;}
+	uint16_t CPString::string::length() const{return _size-1;}
+	char* CPString::string::c_str() const{return _buffer;}
 
 
-	char EmbeddedString::string::CharAt(uint16_t n) const
+	char CPString::string::CharAt(uint16_t n) const
 	{
 		if(n < _size)
 		{
@@ -1248,7 +1248,7 @@ bool EmbeddedString::IntFormat::Mode = EmbeddedString::IntFormat::Mode;
 //////////////////////////////////////////////////////
 // Private Methods
 
-	void EmbeddedString::string::resize(uint16_t size, char c)
+	void CPString::string::resize(uint16_t size, char c)
 	{
 		if(size==_size){return;}
 
