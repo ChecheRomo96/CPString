@@ -1,8 +1,16 @@
-# EmbeddedString
+# Cross-Platform String
  
-Library for unifiying Strings across multiple systems
+Library for unifiying Strings across multiple systems. These subdirectories contain a CMake build system. You can install the package with make to make it available in your computer, also you can "add" this subdirectory with cmake to compile the library when building your project. 
 
-<b>To install package:</b>
+This library complies with the Arduino Library Specification. To achieve this, a library.properties file has been included. Also there is a keywords.txt file so the IDE knows how to color keywords, examples are in the directory examples, 
+
+List of platforms where it has been tested.
+
+	c++ Compiled with on Mac Os X
+	Arduino IDE
+	PSoC Creator IDE
+
+<big><b>Steps to install package:</b></big>
 
 1.- Clone or download package.
 
@@ -22,3 +30,12 @@ Library for unifiying Strings across multiple systems
 	
 	sudo make install
 
+
+<b>Steps to install as an Arduino Library:</b>
+
+Note that you must have git installed on your computer. To istall git through homebrew:
+
+	brew install git
+
+
+1.- Go to your current arduino library 
