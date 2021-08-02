@@ -24,9 +24,13 @@ List of platforms where it has been tested.
 
 4.- Run 
 	
-	make
+	cmake .. -DCPSTRING_INSTALL="ON"
 
 5.- Run 
+	
+	make
+
+6.- Run 
 	
 	sudo make install
 
