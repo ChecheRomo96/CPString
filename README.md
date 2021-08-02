@@ -6,7 +6,7 @@ This library complies with the Arduino Library Specification. To achieve this, a
 
 List of platforms where it has been tested.
 
-	c++ Compiled with on Mac Os X
+	c++ Compiled thorugh cmake + make on Mac Os X
 	Arduino IDE
 	PSoC Creator IDE
 
@@ -30,12 +30,26 @@ List of platforms where it has been tested.
 	
 	sudo make install
 
+## Steps to uninstall package:
+
+1.- Remove the following directories
+
+	usr/local/lib/CPString
+	usr/local/include/CPString
 
 ## Steps to install as an Arduino Library:
+
+### a) download zip file
+
+If you downlaoded the zip file containing this repository extract ists contents and move the CPString_vX.X.X to your current Arduino Project library directory.
+
+Even though you did not installed through git you can update the package through it.
+
+### b) clone through git
 
 Note that you must have git installed on your computer. To istall git through homebrew:
 
 	brew install git
 
-
 1.- Go to your current arduino library 
+
