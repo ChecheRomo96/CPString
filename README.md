@@ -14,7 +14,7 @@ List of platforms where it has been tested.
 
 1.- Clone or download package.
 
-2.- Open terminal and go to the the download directory (Replace <path_to_directory> with the path to the directory you downloaded) 
+2.- Open terminal and go to the the download directory (Replace "<path_to_directory>" with the path to the directory you downloaded) 
 
 	cd <path_to_directory>/EmbeddedString
 
@@ -51,5 +51,16 @@ Note that you must have git installed on your computer. To istall git through ho
 
 	brew install git
 
-1.- Go to your current arduino library 
+1.- Go to your current Arduino Project library directory replace <myArduinoProjectDirectory> with your directory path.
+
+	cd <myArduinoProjectDirectory>/libraries
+
+2.- Clone through git
+
+	git clone https://github.com/ChecheRomo96/CPString.git
+
+3.- To update this repository, enter to the repository and pull the newer version
+
+	cd CPString
+	git pull
 
