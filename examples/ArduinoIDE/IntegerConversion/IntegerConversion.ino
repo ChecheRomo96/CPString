@@ -79,56 +79,56 @@ void setup()
 {
 	Serial.begin(115200);
 
-    Serial.print(EString::string("Hello this code snippet will test base conversion.\n"));
-    Serial.print(EString::string("We'll convert ints and uints to multiple bases.\n"));
+    Serial.print(CPString::string("Hello this code snippet will test base conversion.\n"));
+    Serial.print(CPString::string("We'll convert ints and uints to multiple bases.\n"));
 
-    Serial.print(EString::string("Give me a positive integer.\n\n");
+    Serial.print(CPString::string("Give me a positive integer.\n\n");
     uint a = GetSerialData();
     Serial.print("\nYou gave me the number "); Serial.print((uint)a); Serial.print(".\n\n";
     
-    Serial.print(EString::string("We'll store this value as a uint variable called a.\n\n"));
-    Serial.print(EString::string("Printing a on base 2  { string(a,2 ) }: ")); Serial.print(EString::string(a,2 )); Serial.print(".\n");
-    Serial.print(EString::string("Printing a on base 4  { string(a,4 ) }: ")); Serial.print(EString::string(a,4 )); Serial.print(".\n");
-    Serial.print(EString::string("Printing a on base 8  { string(a,8 ) }: ")); Serial.print(EString::string(a,8 )); Serial.print(".\n");
-    Serial.print(EString::string("Printing a on base 10 { string(a,10) }: ")); Serial.print(EString::string(a,10)); Serial.print(".\n");
-    Serial.print(EString::string("Printing a on base 16 { string(a,16) }: ")); Serial.print(EString::string(a,16)); Serial.print(".\n");
+    Serial.print(CPString::string("We'll store this value as a uint variable called a.\n\n"));
+    Serial.print(CPString::string("Printing a on base 2  { string(a,2 ) }: ")); Serial.print(CPString::string(a,2 )); Serial.print(".\n");
+    Serial.print(CPString::string("Printing a on base 4  { string(a,4 ) }: ")); Serial.print(CPString::string(a,4 )); Serial.print(".\n");
+    Serial.print(CPString::string("Printing a on base 8  { string(a,8 ) }: ")); Serial.print(CPString::string(a,8 )); Serial.print(".\n");
+    Serial.print(CPString::string("Printing a on base 10 { string(a,10) }: ")); Serial.print(CPString::string(a,10)); Serial.print(".\n");
+    Serial.print(CPString::string("Printing a on base 16 { string(a,16) }: ")); Serial.print(CPString::string(a,16)); Serial.print(".\n");
     
-    Serial.print(EString::string("\nBy default the letters on the output are Upper case.\n"));
-    Serial.print(EString::string("We can change that by calling EString::SetLetterCase(EString::LetterCase::Lower)\n\n"));
+    Serial.print(CPString::string("\nBy default the letters on the output are Upper case.\n"));
+    Serial.print(CPString::string("We can change that by calling CPString::SetLetterCase(CPString::LetterCase::Lower)\n\n"));
 
-    EString::SetLetterCase(EString::LetterCase::Lower));
-    Serial.print(EString::string("Let's print the values of a again\n\n"));
+    CPString::SetLetterCase(CPString::LetterCase::Lower));
+    Serial.print(CPString::string("Let's print the values of a again\n\n"));
 
-    Serial.print(EString::string("Printing a on base 2  { string(a,2 ) }: ")); Serial.print(EString::string(a,2 )); Serial.print(".\n");
-    Serial.print(EString::string("Printing a on base 4  { string(a,4 ) }: ")); Serial.print(EString::string(a,4 )); Serial.print(".\n");
-    Serial.print(EString::string("Printing a on base 8  { string(a,8 ) }: ")); Serial.print(EString::string(a,8 )); Serial.print(".\n");
-    Serial.print(EString::string("Printing a on base 10 { string(a,10) }: ")); Serial.print(EString::string(a,10)); Serial.print(".\n");
-    Serial.print(EString::string("Printing a on base 16 { string(a,16) }: ")); Serial.print(EString::string(a,16)); Serial.print(".\n");
+    Serial.print(CPString::string("Printing a on base 2  { string(a,2 ) }: ")); Serial.print(CPString::string(a,2 )); Serial.print(".\n");
+    Serial.print(CPString::string("Printing a on base 4  { string(a,4 ) }: ")); Serial.print(CPString::string(a,4 )); Serial.print(".\n");
+    Serial.print(CPString::string("Printing a on base 8  { string(a,8 ) }: ")); Serial.print(CPString::string(a,8 )); Serial.print(".\n");
+    Serial.print(CPString::string("Printing a on base 10 { string(a,10) }: ")); Serial.print(CPString::string(a,10)); Serial.print(".\n");
+    Serial.print(CPString::string("Printing a on base 16 { string(a,16) }: ")); Serial.print(CPString::string(a,16)); Serial.print(".\n");
     
 
-  	Serial.print(EString::string("\nNow give me a negative integer.\n\n"));
+  	Serial.print(CPString::string("\nNow give me a negative integer.\n\n"));
     int b = GetSerialData();
     Serial.print("\nYou gave me the number "); Serial.print((uint)b); Serial.print(".\n\n");
     
-    Serial.print(EString::string("We'll store this value as a int variable called b.\n");
-    Serial.print(EString::string("Printing b on base 2  { string(b,2 ) }: ")); Serial.print(EString::string(b,2 )); Serial.print(".\n");
-    Serial.print(EString::string("Printing b on base 4  { string(b,4 ) }: ")); Serial.print(EString::string(b,4 )); Serial.print(".\n");
-    Serial.print(EString::string("Printing b on base 8  { string(b,8 ) }: ")); Serial.print(EString::string(b,8 )); Serial.print(".\n");
-    Serial.print(EString::string("Printing b on base 10 { string(b,10) }: ")); Serial.print(EString::string(b,10)); Serial.print(".\n");
-    Serial.print(EString::string("Printing b on base 16 { string(b,16) }: ")); Serial.print(EString::string(b,16)); Serial.print(".\n");
+    Serial.print(CPString::string("We'll store this value as a int variable called b.\n");
+    Serial.print(CPString::string("Printing b on base 2  { string(b,2 ) }: ")); Serial.print(CPString::string(b,2 )); Serial.print(".\n");
+    Serial.print(CPString::string("Printing b on base 4  { string(b,4 ) }: ")); Serial.print(CPString::string(b,4 )); Serial.print(".\n");
+    Serial.print(CPString::string("Printing b on base 8  { string(b,8 ) }: ")); Serial.print(CPString::string(b,8 )); Serial.print(".\n");
+    Serial.print(CPString::string("Printing b on base 10 { string(b,10) }: ")); Serial.print(CPString::string(b,10)); Serial.print(".\n");
+    Serial.print(CPString::string("Printing b on base 16 { string(b,16) }: ")); Serial.print(CPString::string(b,16)); Serial.print(".\n");
     
-    Serial.print(EString::string("\nBy default int conversion is signed.\n"));
-    Serial.print(EString::string("We can change that by calling EString::SetIntFormat(EString::IntFormat::Absolute)\n\n"));
+    Serial.print(CPString::string("\nBy default int conversion is signed.\n"));
+    Serial.print(CPString::string("We can change that by calling CPString::SetIntFormat(CPString::IntFormat::Absolute)\n\n"));
 
-    EString::SetIntFormat(EString::IntFormat::Absolute));
+    CPString::SetIntFormat(CPString::IntFormat::Absolute));
     
-    Serial.print(EString::string("Let's print the values of b again\n\n"));
+    Serial.print(CPString::string("Let's print the values of b again\n\n"));
 
-    Serial.print(EString::string("Printing b on base 2  { string(b,2 ) }: ")); Serial.print(EString::string(b,2 )); Serial.print(".\n");
-    Serial.print(EString::string("Printing b on base 4  { string(b,4 ) }: ")); Serial.print(EString::string(b,4 )); Serial.print(".\n");
-    Serial.print(EString::string("Printing b on base 8  { string(b,8 ) }: ")); Serial.print(EString::string(b,8 )); Serial.print(".\n");
-    Serial.print(EString::string("Printing b on base 10 { string(b,10) }: ")); Serial.print(EString::string(b,10)); Serial.print(".\n");
-    Serial.print(EString::string("Printing b on base 16 { string(b,16) }: ")); Serial.print(EString::string(b,16)); Serial.print(".\n");
+    Serial.print(CPString::string("Printing b on base 2  { string(b,2 ) }: ")); Serial.print(CPString::string(b,2 )); Serial.print(".\n");
+    Serial.print(CPString::string("Printing b on base 4  { string(b,4 ) }: ")); Serial.print(CPString::string(b,4 )); Serial.print(".\n");
+    Serial.print(CPString::string("Printing b on base 8  { string(b,8 ) }: ")); Serial.print(CPString::string(b,8 )); Serial.print(".\n");
+    Serial.print(CPString::string("Printing b on base 10 { string(b,10) }: ")); Serial.print(CPString::string(b,10)); Serial.print(".\n");
+    Serial.print(CPString::string("Printing b on base 16 { string(b,16) }: ")); Serial.print(CPString::string(b,16)); Serial.print(".\n");
 }
 
 void loop()
