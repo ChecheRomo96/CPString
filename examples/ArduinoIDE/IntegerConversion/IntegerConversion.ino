@@ -80,56 +80,56 @@ void setup()
 {
   Serial.begin(115200);
 
-    Serial.print(string("Hello this code snippet will test base conversion.\n")); delay(3000);
-    Serial.print(string("We'll convert ints and uints to multiple bases.\n")); delay(3000);
+    Serial.print(string("Hello this code snippet will test base conversion.\n"));
+    Serial.print(string("We'll convert ints and uints to multiple bases.\n"));
 
     Serial.print(string("Give me a positive integer.\n\n"));
     int32_t a = GetSerialData();
-    Serial.print("\nYou gave me the number "); Serial.print((int32_t)a); Serial.print(F(".\n\n")); delay(2000);
+    Serial.print("\nYou gave me the number "); Serial.print((int32_t)a); Serial.print(F(".\n\n"));
     
     Serial.print(F("We'll store this value as a uint variable called a.\n\n"));
-    Serial.print(F("Printing a on base 2  { string(a,2 ) }: ")); Serial.print(string(a,2 )); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing a on base 4  { string(a,4 ) }: ")); Serial.print(string(a,4 )); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing a on base 8  { string(a,8 ) }: ")); Serial.print(string(a,8 )); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing a on base 10 { string(a,10) }: ")); Serial.print(string(a,10)); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing a on base 16 { string(a,16) }: ")); Serial.print(string(a,16)); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing a on base 2  { string(a,2 ) }: ")); Serial.print(string(a,2 )); Serial.print(F(".\n"));
+    Serial.print(F("Printing a on base 4  { string(a,4 ) }: ")); Serial.print(string(a,4 )); Serial.print(F(".\n"));
+    Serial.print(F("Printing a on base 8  { string(a,8 ) }: ")); Serial.print(string(a,8 )); Serial.print(F(".\n"));
+    Serial.print(F("Printing a on base 10 { string(a,10) }: ")); Serial.print(string(a,10)); Serial.print(F(".\n"));
+    Serial.print(F("Printing a on base 16 { string(a,16) }: ")); Serial.print(string(a,16)); Serial.print(F(".\n"));
     
-    Serial.print(F("\nBy default the letters on the output are Upper case.\n")); delay(3000);
-    Serial.print(F("We can change that by calling SetLetterCase(LetterCase::Lower)\n\n")); delay(3000);
+    Serial.print(F("\nBy default the letters on the output are Upper case.\n"));
+    Serial.print(F("We can change that by calling SetLetterCase(LetterCase::Lower)\n\n"));
 
     SetLetterCase(LetterCase::Lower);
-    Serial.print(F("Let's print the values of a again\n\n")); delay(2000);
+    Serial.print(F("Let's print the values of a again\n\n"));
 
-    Serial.print(F("Printing a on base 2  { string(a,2 ) }: ")); Serial.print(string(a,2 )); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing a on base 4  { string(a,4 ) }: ")); Serial.print(string(a,4 )); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing a on base 8  { string(a,8 ) }: ")); Serial.print(string(a,8 )); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing a on base 10 { string(a,10) }: ")); Serial.print(string(a,10)); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing a on base 16 { string(a,16) }: ")); Serial.print(string(a,16)); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing a on base 2  { string(a,2 ) }: ")); Serial.print(string(a,2 )); Serial.print(F(".\n"));
+    Serial.print(F("Printing a on base 4  { string(a,4 ) }: ")); Serial.print(string(a,4 )); Serial.print(F(".\n"));
+    Serial.print(F("Printing a on base 8  { string(a,8 ) }: ")); Serial.print(string(a,8 )); Serial.print(F(".\n"));
+    Serial.print(F("Printing a on base 10 { string(a,10) }: ")); Serial.print(string(a,10)); Serial.print(F(".\n"));
+    Serial.print(F("Printing a on base 16 { string(a,16) }: ")); Serial.print(string(a,16)); Serial.print(F(".\n"));
     
 
     Serial.print(string("\nNow give me a negative integer.\n\n"));
     int32_t b = GetSerialData();
-    Serial.print("\nYou gave me the number "); Serial.print((int32_t)b); Serial.print(".\n\n"); delay(2000);
+    Serial.print("\nYou gave me the number "); Serial.print((int32_t)b); Serial.print(".\n\n");
     
     Serial.print(F("We'll store this value as a int variable called b.\n"));
-    Serial.print(F("Printing b on base 2  { string(b,2 ) }: ")); Serial.print(string(b,2 )); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing b on base 4  { string(b,4 ) }: ")); Serial.print(string(b,4 )); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing b on base 8  { string(b,8 ) }: ")); Serial.print(string(b,8 )); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing b on base 10 { string(b,10) }: ")); Serial.print(string(b,10)); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing b on base 16 { string(b,16) }: ")); Serial.print(string(b,16)); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing b on base 2  { string(b,2 ) }: ")); Serial.print(string(b,2 )); Serial.print(F(".\n"));
+    Serial.print(F("Printing b on base 4  { string(b,4 ) }: ")); Serial.print(string(b,4 )); Serial.print(F(".\n"));
+    Serial.print(F("Printing b on base 8  { string(b,8 ) }: ")); Serial.print(string(b,8 )); Serial.print(F(".\n"));
+    Serial.print(F("Printing b on base 10 { string(b,10) }: ")); Serial.print(string(b,10)); Serial.print(F(".\n"));
+    Serial.print(F("Printing b on base 16 { string(b,16) }: ")); Serial.print(string(b,16)); Serial.print(F(".\n"));
     
-    Serial.print(F("\nBy default int conversion is signed.\n")); delay(3000);
-    Serial.print(F("We can change that by calling SetIntFormat(IntFormat::Absolute)\n\n")); delay(3000);
+    Serial.print(F("\nBy default int conversion is signed.\n"));
+    Serial.print(F("We can change that by calling SetIntFormat(IntFormat::Absolute)\n\n"));
 
     SetIntFormat(IntFormat::Absolute);
     
-    Serial.print(string("Let's print the values of b again\n\n")); delay(2000);
+    Serial.print(string("Let's print the values of b again\n\n"));
 
-    Serial.print(F("Printing b on base 2  { string(b,2 ) }: ")); Serial.print(string(b,2 )); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing b on base 4  { string(b,4 ) }: ")); Serial.print(string(b,4 )); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing b on base 8  { string(b,8 ) }: ")); Serial.print(string(b,8 )); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing b on base 10 { string(b,10) }: ")); Serial.print(string(b,10)); Serial.print(F(".\n")); delay(1000);
-    Serial.print(F("Printing b on base 16 { string(b,16) }: ")); Serial.print(string(b,16)); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing b on base 2  { string(b,2 ) }: ")); Serial.print(string(b,2 )); Serial.print(F(".\n"));
+    Serial.print(F("Printing b on base 4  { string(b,4 ) }: ")); Serial.print(string(b,4 )); Serial.print(F(".\n"));
+    Serial.print(F("Printing b on base 8  { string(b,8 ) }: ")); Serial.print(string(b,8 )); Serial.print(F(".\n"));
+    Serial.print(F("Printing b on base 10 { string(b,10) }: ")); Serial.print(string(b,10)); Serial.print(F(".\n"));
+    Serial.print(F("Printing b on base 16 { string(b,16) }: ")); Serial.print(string(b,16)); Serial.print(F(".\n"));
 }
 
 void loop()
