@@ -1,4 +1,3 @@
-#include <Arudino.h>
 #include <CPString.h>
 
 using namespace CPString;
