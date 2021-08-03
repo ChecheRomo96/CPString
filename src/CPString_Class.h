@@ -14,6 +14,7 @@
 
 				////////////////////////////////////////////////////////////////////////////////////////////
 				// Constructors, Destructor and Clear 
+
 					string();
 					~string();
 					void Clear();
@@ -32,6 +33,7 @@
 						explicit string(const char* source);
 						string(const char* source, uint16_t size);
 						string& operator=(const char* source);
+					//
 					////////////////////////////////////////////////////////////////////////////////////////
 					// int
 
@@ -80,12 +82,15 @@
 							string(const int64_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode, bool absolute = CPString::IntFormat::Mode);
 							string(const int64_t source, const char* format, uint16_t size);
 							string& operator=(const int64_t source);
+						//
+						////////////////////////////////////////////////////////////////////////////////////
 					//
 					////////////////////////////////////////////////////////////////////////////////////////
 					// float
 						explicit string(const float source);
 						string(const float source, uint8_t precision);
 						string& operator=(const float source);
+					//
 					////////////////////////////////////////////////////////////////////////////////////////
 					// double
 						explicit string(const double source);
@@ -93,10 +98,11 @@
 						string& operator=(const double source);
 					//
 					////////////////////////////////////////////////////////////////////////////////////////
-					// string
+					// Arduino String
+
 						#if defined(ARDUINO)
-							explicit string(const CPString::string& source);
-							string& operator=(const CPString::string& source);
+							explicit string(const String& source);
+							string& operator=(const String& source);
 						#endif
 				//
 				////////////////////////////////////////////////////////////////////////////////////////////

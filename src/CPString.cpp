@@ -972,7 +972,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
     // string
 		#if defined(ARDUINO)
 
-			CPString::string::string(const ::string& source)
+			CPString::string::string(const String& source)
 			{
 				_buffer = NULL;
 				_size = 0;
@@ -984,7 +984,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 				}
 			}
 			
-			CPString::string& CPString::string::operator=(const ::string& source)
+			CPString::string& CPString::string::operator=(const String& source)
 		    {
 		    	resize(source.length()+1);
 				for(uint16_t i = 0; i < _size; i++)
