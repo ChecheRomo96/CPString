@@ -95,8 +95,8 @@
 					////////////////////////////////////////////////////////////////////////////////////////
 					// string
 						#if defined(ARDUINO)
-							explicit string(const ::string& source);
-							string& operator=(const ::string& source);
+							explicit string(const CPString::string& source);
+							string& operator=(const CPString::string& source);
 						#endif
 				//
 				////////////////////////////////////////////////////////////////////////////////////////////

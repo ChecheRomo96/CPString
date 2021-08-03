@@ -1,4 +1,4 @@
-project(EString_BuildTest CXX)
+project(BuildTest CXX)
 set(CMAKE_CXX_STANDARD 14) 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 

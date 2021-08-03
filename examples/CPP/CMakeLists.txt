@@ -1,2 +1,2 @@
 add_subdirectory(BuildTest)
-add_subdirectory(NumberConversion)
+add_subdirectory(IntegerConversion)
