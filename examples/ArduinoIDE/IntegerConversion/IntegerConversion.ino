@@ -77,7 +77,7 @@ int32_t GetSerialData()
 
 void setup()
 {
-	Serial.begin();
+	Serial.begin(115200);
 
     Serial.print(EString::string("Hello this code snippet will test base conversion.\n"));
     Serial.print(EString::string("We'll convert ints and uints to multiple bases.\n"));
