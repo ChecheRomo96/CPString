@@ -17,7 +17,7 @@ list( APPEND HEADERS_LIST "${CMAKE_CURRENT_LIST_DIR}/CPString_Definitions.h")
 # Include Flash subdirectory
 add_subdirectory(Flash )
 
-# Create the CPString library (STATIC is not justified tho) and include the directories needed to compile
+# Create the CPString library (STATIC is not justified tho)
 add_library( CPString STATIC ${CPSTRING_SOURCES} )
 
 # Include directories for install and for build 
