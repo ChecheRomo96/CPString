@@ -4,132 +4,132 @@ using namespace CPString;
 
 int32_t GetSerialData()
 {
-	bool flag = 1;
+  bool flag = 1;
 
-	uint8_t BufferSize = 10;
-	uint8_t DataBuffer[BufferSize];
-	uint8_t DataIndex = 0;
+  uint8_t BufferSize = 12;
+  uint8_t DataBuffer[BufferSize];
+  uint8_t DataIndex = 0;
 
-	while(flag)
-	{
-		if(Serial.available() != 0)
-		{
-			uint8_t newData = Serial.read();
+  while(flag)
+  {
+    if(Serial.available() != 0)
+    {
+      uint8_t newData = Serial.read();
 
-			if(newData == '\n')
-			{
+      if(newData == '\n')
+      {
         
-				int32_t Value = 0;
-
-				if(DataBuffer[0] == '-')
-				{
-					switch(DataIndex)
-					{
-						default:
-						case 10: Value += ((DataBuffer[9] - '0') % 10)  * 100000000;
-						case 9 : Value += ((DataBuffer[8] - '0') % 10)  * 10000000;
-						case 8 : Value += ((DataBuffer[7] - '0') % 10)  * 1000000;
-						case 7 : Value += ((DataBuffer[6] - '0') % 10)  * 100000;
-						case 6 : Value += ((DataBuffer[5] - '0') % 10)  * 10000;
-						case 5 : Value += ((DataBuffer[4] - '0') % 10)  * 1000;
-						case 4 : Value += ((DataBuffer[3] - '0') % 10)  * 100;
-						case 3 : Value += ((DataBuffer[2] - '0') % 10)  * 10;
-						case 2 : Value += ((DataBuffer[1] - '0') % 10)  * 1; 
-						case 1 : 
-						case 0 : break;
-					}
-					Value *= -1;
-				}
-				else
-				{						
-					switch(DataIndex)
-					{
-						default:
-			            case 10: Value += ((DataBuffer[9] - '0') % 10)  * 1000000000;
-			            case 9 : Value += ((DataBuffer[8] - '0') % 10)  * 100000000;
-			            case 8 : Value += ((DataBuffer[7] - '0') % 10)  * 10000000;
-			            case 7 : Value += ((DataBuffer[6] - '0') % 10)  * 1000000;
-			            case 6 : Value += ((DataBuffer[5] - '0') % 10)  * 100000;
-			            case 5 : Value += ((DataBuffer[4] - '0') % 10)  * 10000;
-			            case 4 : Value += ((DataBuffer[3] - '0') % 10)  * 1000;
-			            case 3 : Value += ((DataBuffer[2] - '0') % 10)  * 100;
-			            case 2 : Value += ((DataBuffer[1] - '0') % 10)  * 10;
-			            case 1 : Value += ((DataBuffer[0] - '0') % 10)  * 1; 
-						case 0 : break;
-					}
-				}
+        int32_t Value = 0;
+                
+        if(DataBuffer[0] == '-')
+        {
+          switch(DataIndex)
+          {
+            default:
+            case 11: Value -= (uint32_t)((DataBuffer[DataIndex-10] - '0') % 10)  * (uint32_t)1000000000;
+            case 10: Value -= (uint32_t)((DataBuffer[DataIndex-9] - '0') % 10)  * (uint32_t)100000000;
+            case 9 : Value -= (uint32_t)((DataBuffer[DataIndex-8] - '0') % 10)  * (uint32_t)10000000;
+            case 8 : Value -= (uint32_t)((DataBuffer[DataIndex-7] - '0') % 10)  * (uint32_t)1000000;
+            case 7 : Value -= (uint32_t)((DataBuffer[DataIndex-6] - '0') % 10)  * (uint32_t)100000;
+            case 6 : Value -= (uint32_t)((DataBuffer[DataIndex-5] - '0') % 10)  * (uint32_t)10000;
+            case 5 : Value -= (uint32_t)((DataBuffer[DataIndex-4] - '0') % 10)  * (uint32_t)1000;
+            case 4 : Value -= (uint32_t)((DataBuffer[DataIndex-3] - '0') % 10)  * (uint32_t)100;
+            case 3 : Value -= (uint32_t)((DataBuffer[DataIndex-2] - '0') % 10)  * (uint32_t)10;
+            case 2 : Value -= (uint32_t)((DataBuffer[DataIndex-1] - '0') % 10)  * (uint32_t)1; 
+            case 1 : 
+            case 0 : break;
+          }
+        }
+        else
+        {           
+          switch(DataIndex)
+          {
+            default:
+            case 10: Value += (uint32_t)((DataBuffer[DataIndex-10] - '0') % 10)  * (uint32_t)1000000000;
+            case 9 : Value += (uint32_t)((DataBuffer[DataIndex-9 ] - '0') % 10)  * (uint32_t)100000000;
+            case 8 : Value += (uint32_t)((DataBuffer[DataIndex-8 ] - '0') % 10)  * (uint32_t)10000000;
+            case 7 : Value += (uint32_t)((DataBuffer[DataIndex-7 ] - '0') % 10)  * (uint32_t)1000000;
+            case 6 : Value += (uint32_t)((DataBuffer[DataIndex-6 ] - '0') % 10)  * (uint32_t)100000;
+            case 5 : Value += (uint32_t)((DataBuffer[DataIndex-5 ] - '0') % 10)  * (uint32_t)10000;
+            case 4 : Value += (uint32_t)((DataBuffer[DataIndex-4 ] - '0') % 10)  * (uint32_t)1000;
+            case 3 : Value += (uint32_t)((DataBuffer[DataIndex-3 ] - '0') % 10)  * (uint32_t)100;
+            case 2 : Value += (uint32_t)((DataBuffer[DataIndex-2 ] - '0') % 10)  * (uint32_t)10;
+            case 1 : Value += (uint32_t)((DataBuffer[DataIndex-1 ] - '0') % 10)  * (uint32_t)1; 
+            case 0 : break;
+          }
+        }
 
         flag = 0;
-				
+        
         return Value;
-			}
-			else
-			{
-				DataBuffer[DataIndex++] = newData;
+      }
+      else
+      {
+        DataBuffer[DataIndex++] = newData;
 
-				if(DataIndex >= BufferSize)
-				{
-					DataIndex  = 0;
-				}
-			}
-		}
-	}
+        if(DataIndex >= BufferSize)
+        {
+          DataIndex  = 0;
+        }
+      }
+    }
+  }
 }
 
 void setup()
 {
-	Serial.begin(115200);
+  Serial.begin(115200);
 
-    Serial.print(CPString::string("Hello this code snippet will test base conversion.\n"));
-    Serial.print(CPString::string("We'll convert ints and uints to multiple bases.\n"));
+    Serial.print(string("Hello this code snippet will test base conversion.\n")); delay(3000);
+    Serial.print(string("We'll convert ints and uints to multiple bases.\n")); delay(3000);
 
-    Serial.print(CPString::string("Give me a positive integer.\n\n"));
+    Serial.print(string("Give me a positive integer.\n\n"));
     int32_t a = GetSerialData();
-    Serial.print("\nYou gave me the number "); Serial.print((int32_t)a); Serial.print(".\n\n");
+    Serial.print("\nYou gave me the number "); Serial.print((int32_t)a); Serial.print(F(".\n\n")); delay(2000);
     
-    Serial.print(CPString::string("We'll store this value as a uint variable called a.\n\n"));
-    Serial.print(CPString::string("Printing a on base 2  { string(a,2 ) }: ")); Serial.print(CPString::string(a,2 )); Serial.print(".\n");
-    Serial.print(CPString::string("Printing a on base 4  { string(a,4 ) }: ")); Serial.print(CPString::string(a,4 )); Serial.print(".\n");
-    Serial.print(CPString::string("Printing a on base 8  { string(a,8 ) }: ")); Serial.print(CPString::string(a,8 )); Serial.print(".\n");
-    Serial.print(CPString::string("Printing a on base 10 { string(a,10) }: ")); Serial.print(CPString::string(a,10)); Serial.print(".\n");
-    Serial.print(CPString::string("Printing a on base 16 { string(a,16) }: ")); Serial.print(CPString::string(a,16)); Serial.print(".\n");
+    Serial.print(F("We'll store this value as a uint variable called a.\n\n"));
+    Serial.print(F("Printing a on base 2  { string(a,2 ) }: ")); Serial.print(string(a,2 )); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing a on base 4  { string(a,4 ) }: ")); Serial.print(string(a,4 )); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing a on base 8  { string(a,8 ) }: ")); Serial.print(string(a,8 )); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing a on base 10 { string(a,10) }: ")); Serial.print(string(a,10)); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing a on base 16 { string(a,16) }: ")); Serial.print(string(a,16)); Serial.print(F(".\n")); delay(1000);
     
-    Serial.print(CPString::string("\nBy default the letters on the output are Upper case.\n"));
-    Serial.print(CPString::string("We can change that by calling CPString::SetLetterCase(CPString::LetterCase::Lower)\n\n"));
+    Serial.print(F("\nBy default the letters on the output are Upper case.\n")); delay(3000);
+    Serial.print(F("We can change that by calling SetLetterCase(LetterCase::Lower)\n\n")); delay(3000);
 
-    CPString::SetLetterCase(CPString::LetterCase::Lower);
-    Serial.print(CPString::string("Let's print the values of a again\n\n"));
+    SetLetterCase(LetterCase::Lower);
+    Serial.print(F("Let's print the values of a again\n\n")); delay(2000);
 
-    Serial.print(CPString::string("Printing a on base 2  { string(a,2 ) }: ")); Serial.print(CPString::string(a,2 )); Serial.print(".\n");
-    Serial.print(CPString::string("Printing a on base 4  { string(a,4 ) }: ")); Serial.print(CPString::string(a,4 )); Serial.print(".\n");
-    Serial.print(CPString::string("Printing a on base 8  { string(a,8 ) }: ")); Serial.print(CPString::string(a,8 )); Serial.print(".\n");
-    Serial.print(CPString::string("Printing a on base 10 { string(a,10) }: ")); Serial.print(CPString::string(a,10)); Serial.print(".\n");
-    Serial.print(CPString::string("Printing a on base 16 { string(a,16) }: ")); Serial.print(CPString::string(a,16)); Serial.print(".\n");
+    Serial.print(F("Printing a on base 2  { string(a,2 ) }: ")); Serial.print(string(a,2 )); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing a on base 4  { string(a,4 ) }: ")); Serial.print(string(a,4 )); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing a on base 8  { string(a,8 ) }: ")); Serial.print(string(a,8 )); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing a on base 10 { string(a,10) }: ")); Serial.print(string(a,10)); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing a on base 16 { string(a,16) }: ")); Serial.print(string(a,16)); Serial.print(F(".\n")); delay(1000);
     
 
-  	Serial.print(CPString::string("\nNow give me a negative integer.\n\n"));
+    Serial.print(string("\nNow give me a negative integer.\n\n"));
     int32_t b = GetSerialData();
-    Serial.print("\nYou gave me the number "); Serial.print((int32_t)b); Serial.print(".\n\n");
+    Serial.print("\nYou gave me the number "); Serial.print((int32_t)b); Serial.print(".\n\n"); delay(2000);
     
-    Serial.print(CPString::string("We'll store this value as a int variable called b.\n"));
-    Serial.print(CPString::string("Printing b on base 2  { string(b,2 ) }: ")); Serial.print(CPString::string(b,2 )); Serial.print(".\n");
-    Serial.print(CPString::string("Printing b on base 4  { string(b,4 ) }: ")); Serial.print(CPString::string(b,4 )); Serial.print(".\n");
-    Serial.print(CPString::string("Printing b on base 8  { string(b,8 ) }: ")); Serial.print(CPString::string(b,8 )); Serial.print(".\n");
-    Serial.print(CPString::string("Printing b on base 10 { string(b,10) }: ")); Serial.print(CPString::string(b,10)); Serial.print(".\n");
-    Serial.print(CPString::string("Printing b on base 16 { string(b,16) }: ")); Serial.print(CPString::string(b,16)); Serial.print(".\n");
+    Serial.print(F("We'll store this value as a int variable called b.\n"));
+    Serial.print(F("Printing b on base 2  { string(b,2 ) }: ")); Serial.print(string(b,2 )); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing b on base 4  { string(b,4 ) }: ")); Serial.print(string(b,4 )); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing b on base 8  { string(b,8 ) }: ")); Serial.print(string(b,8 )); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing b on base 10 { string(b,10) }: ")); Serial.print(string(b,10)); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing b on base 16 { string(b,16) }: ")); Serial.print(string(b,16)); Serial.print(F(".\n")); delay(1000);
     
-    Serial.print(CPString::string("\nBy default int conversion is signed.\n"));
-    Serial.print(CPString::string("We can change that by calling CPString::SetIntFormat(CPString::IntFormat::Absolute)\n\n"));
+    Serial.print(F("\nBy default int conversion is signed.\n")); delay(3000);
+    Serial.print(F("We can change that by calling SetIntFormat(IntFormat::Absolute)\n\n")); delay(3000);
 
-    CPString::SetIntFormat(CPString::IntFormat::Absolute);
+    SetIntFormat(IntFormat::Absolute);
     
-    Serial.print(CPString::string("Let's print the values of b again\n\n"));
+    Serial.print(string("Let's print the values of b again\n\n")); delay(2000);
 
-    Serial.print(CPString::string("Printing b on base 2  { string(b,2 ) }: ")); Serial.print(CPString::string(b,2 )); Serial.print(".\n");
-    Serial.print(CPString::string("Printing b on base 4  { string(b,4 ) }: ")); Serial.print(CPString::string(b,4 )); Serial.print(".\n");
-    Serial.print(CPString::string("Printing b on base 8  { string(b,8 ) }: ")); Serial.print(CPString::string(b,8 )); Serial.print(".\n");
-    Serial.print(CPString::string("Printing b on base 10 { string(b,10) }: ")); Serial.print(CPString::string(b,10)); Serial.print(".\n");
-    Serial.print(CPString::string("Printing b on base 16 { string(b,16) }: ")); Serial.print(CPString::string(b,16)); Serial.print(".\n");
+    Serial.print(F("Printing b on base 2  { string(b,2 ) }: ")); Serial.print(string(b,2 )); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing b on base 4  { string(b,4 ) }: ")); Serial.print(string(b,4 )); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing b on base 8  { string(b,8 ) }: ")); Serial.print(string(b,8 )); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing b on base 10 { string(b,10) }: ")); Serial.print(string(b,10)); Serial.print(F(".\n")); delay(1000);
+    Serial.print(F("Printing b on base 16 { string(b,16) }: ")); Serial.print(string(b,16)); Serial.print(F(".\n")); delay(1000);
 }
 
 void loop()
