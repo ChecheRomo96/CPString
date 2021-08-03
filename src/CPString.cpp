@@ -970,6 +970,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 	//
     ////////////////////////////////////////////////////
     // string
+		
 		#if defined(ARDUINO)
 
 			CPString::string::string(const String& source)
