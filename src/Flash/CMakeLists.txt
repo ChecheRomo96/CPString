@@ -11,6 +11,7 @@ list( APPEND HEADERS_LIST "${CMAKE_CURRENT_LIST_DIR}/CPString_FlashDefinitions.h
 # Refresh Sources List at PARENT_SCOPE
 set(CPSTRING_SOURCES "${CPSTRING_SOURCES}" PARENT_SCOPE)
 
+# CPString install process
 if(CPSTRING_INSTALL STREQUAL "ON")
 
 	install(
