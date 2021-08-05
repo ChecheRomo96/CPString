@@ -1,9 +1,16 @@
 #include <iostream>
-#include <EmbeddedString.h>
+#include <CPString.h>
 
 int main()
 {
-    std::cout<<EString::string("Hello World\n");
+    // Const char array
+    std::cout<<CPString::string("01\n");
+    
+    //char array
+    char char_array[4] = {'0','2','\n','\0'};
+    std::cout<<CPString::string(char_array);
+    
+    
     
     return 0;
 }

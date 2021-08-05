@@ -7,8 +7,30 @@
 	{
 		class string
 		{
-			uint16_t _size;
-			char* _buffer;
+
+			    ////////////////////////////////////////////////////////////////////////////////////////////
+			    // Arduino
+
+			        #if defined(ARDUINO)
+						String _string;
+			        #endif
+			    //
+			    ////////////////////////////////////////////////////////////////////////////////////////////
+			    // PSoC Creator
+			    
+			        #if defined(PSOC_CREATOR)
+						uint16_t _size;
+						char* _buffer;
+			        #endif
+			    //
+			    ////////////////////////////////////////////////////////////////////////////////////////////
+			    // Desktop C++
+			    
+			        #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
+						std::string _string;
+			        #endif
+			    //
+			    ////////////////////////////////////////////////////////////////////////////////////////////
 
 			public:
 
@@ -17,7 +39,7 @@
 
 					string();
 					~string();
-					void Clear();
+
 					void clear();
 				//
 				////////////////////////////////////////////////////////////////////////////////////////////
@@ -25,14 +47,31 @@
 
 					////////////////////////////////////////////////////////////////////////////////////////
 					// string
-						string(const string& source);
-						string& operator=(const string& source);
+
+						string(const string& Source);
+						string& operator=(const string& Source);
+					//
+					////////////////////////////////////////////////////////////////////////////////////////
+					// std::string
+
+						#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
+							explicit string(const std::string& Source);
+							string& operator=(const std::string& Source);
+						#endif
+					//
+					////////////////////////////////////////////////////////////////////////////////////////
+					// Arduino String
+
+						#if defined(ARDUINO)
+							explicit string(const String& Source);
+							string& operator=(const String& Source);
+						#endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////////
 					// char *
-						explicit string(const char* source);
-						string(const char* source, uint16_t size);
-						string& operator=(const char* source);
+						explicit string(const char* Source);
+						string(const char* Source, unsigned int Size);
+						string& operator=(const char* Source);
 					//
 					////////////////////////////////////////////////////////////////////////////////////////
 					// int
@@ -40,157 +79,182 @@
 						////////////////////////////////////////////////////////////////////////////////////
 						// unsigned int
 
-							explicit string(const uint8_t source);
-							string(const uint8_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode);
-							string(const uint8_t source, const char* format, uint16_t size);
-							string& operator=(const uint8_t source);
+							string(const uint8_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
+							string(const uint8_t Source, const char* format, unsigned int Size);
+							string& operator=(const uint8_t Source);
 
-							explicit string(const uint16_t source);
-							string(const uint16_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode);
-							string(const uint16_t source, const char* format, uint16_t size);
-							string& operator=(const uint16_t source);
+							string(const uint16_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
+							string(const uint16_t Source, const char* format, unsigned int Size);
+							string& operator=(const uint16_t Source);
 
-							explicit string(const uint32_t source);
-							string(const uint32_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode);
-							string(const uint32_t source, const char* format, uint16_t size);
-							string& operator=(const uint32_t source);
+							string(const uint32_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
+							string(const uint32_t Source, const char* format, unsigned int Size);
+							string& operator=(const uint32_t Source);
 
-							explicit string(const uint64_t source);
-							string(const uint64_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode);
-							string(const uint64_t source, const char* format, uint16_t size);
-							string& operator=(const uint64_t source);
+							string(const uint64_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
+							string(const uint64_t Source, const char* format, unsigned int Size);
+							string& operator=(const uint64_t Source);
 						//
 						////////////////////////////////////////////////////////////////////////////////////
 						// signed int
 
-							explicit string(const int8_t source);
-							string(const int8_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode, bool absolute = CPString::IntFormat::Mode);
-							string(const int8_t source, const char* format, uint16_t size);
-							string& operator=(const int8_t source);
+							string(const int8_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool Absolute = CPString::IntFormat::Mode);
+							string(const int8_t Source, const char* format, unsigned int Size);
+							string& operator=(const int8_t Source);
 
-							explicit string(const int16_t source);
-							string(const int16_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode, bool absolute = CPString::IntFormat::Mode);
-							string(const int16_t source, const char* format, uint16_t size);
-							string& operator=(const int16_t source);
+							string(const int16_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool Absolute = CPString::IntFormat::Mode);
+							string(const int16_t Source, const char* format, unsigned int Size);
+							string& operator=(const int16_t Source);
 
-							explicit string(const int32_t source);
-							string(const int32_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode, bool absolute = CPString::IntFormat::Mode);
-							string(const int32_t source, const char* format, uint16_t size);
-							string& operator=(const int32_t source);
+							string(const int32_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool Absolute = CPString::IntFormat::Mode);
+							string(const int32_t Source, const char* format, unsigned int Size);
+							string& operator=(const int32_t Source);
 
-							explicit string(const int64_t source);
-							string(const int64_t source, uint8_t base, bool LetterCase = CPString::LetterCase::Mode, bool absolute = CPString::IntFormat::Mode);
-							string(const int64_t source, const char* format, uint16_t size);
-							string& operator=(const int64_t source);
+							string(const int64_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool Absolute = CPString::IntFormat::Mode);
+							string(const int64_t Source, const char* format, unsigned int Size);
+							string& operator=(const int64_t Source);
 						//
 						////////////////////////////////////////////////////////////////////////////////////
 					//
 					////////////////////////////////////////////////////////////////////////////////////////
 					// float
-						explicit string(const float source);
-						string(const float source, uint8_t precision);
-						string& operator=(const float source);
+
+						explicit string(const float Source);
+						string(const float Source, uint8_t precision);
+						string& operator=(const float Source);
 					//
 					////////////////////////////////////////////////////////////////////////////////////////
 					// double
-						explicit string(const double source);
-						string(const double source, uint8_t precision);
-						string& operator=(const double source);
+						
+						//explicit string(const double Source);
+						//string(const double Source, uint8_t precision);
+						//string& operator=(const double Source);
 					//
 					////////////////////////////////////////////////////////////////////////////////////////
-					// Arduino String
-
-						#if defined(ARDUINO)
-							explicit string(const String& source);
-							string& operator=(const String& source);
-						#endif
 				//
 				////////////////////////////////////////////////////////////////////////////////////////////
-				// Equality and Inequality Operator
-
-					bool operator==(const string& rhs) const;
-					bool operator!=(const string& rhs) const;
-				//
-				////////////////////////////////////////////////////////////////////////////////////////////
-				// Addition and Substraction Operator
+				// Operators
 
 					////////////////////////////////////////////////////////////////////////////////////////
-					// string
-						string& operator+=(const string& rhs);
-						//string& operator-=(const string& rhs);
-
-						string operator+(const string& rhs) const;
-						//string operator-(const string& rhs) const;
-					//
-					////////////////////////////////////////////////////////////////////////////////////////
-					// char*
-						string& operator+=(const char* rhs);
-						//string& operator-=(const string& rhs);
-
-						string operator+(const char* rhs) const;
-						//string operator-(const string& rhs) const;
-					//
-					////////////////////////////////////////////////////////////////////////////////////////
-					// Integers
+					// Cast Operators
 
 						////////////////////////////////////////////////////////////////////////////////////
-						// unsigned int
+						// std::string
 
-							string& operator+=(const uint8_t rhs);
-							string operator+(const uint8_t rhs) const;
-
-							string& operator+=(const uint16_t rhs);
-							string operator+(const uint16_t rhs) const;
-
-							string& operator+=(const uint32_t rhs);
-							string operator+(const uint32_t rhs) const;
-
-							string& operator+=(const uint64_t rhs);
-							string operator+(const uint64_t rhs) const;
+							#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
+                                operator std::string() const;
+							#endif
 						//
 						////////////////////////////////////////////////////////////////////////////////////
-						// signed int
+						// Arduino String
 
-							string& operator+=(const int8_t rhs);
-							string operator+(const int8_t rhs) const;
+							#if defined(ARDUINO)
+								std::string& operator String() const;
+							#endif
+						//
+						////////////////////////////////////////////////////////////////////////////////////
+					//
+					////////////////////////////////////////////////////////////////////////////////////////
+					// Equality and Inequality Operator
 
-							string& operator+=(const int16_t rhs);
-							string operator+(const int16_t rhs) const;
+						bool operator==(const string& rhs) const;
+						bool operator!=(const string& rhs) const;
+					//
+					////////////////////////////////////////////////////////////////////////////////////////
+					// Addition and Substraction Operator
 
-							string& operator+=(const int32_t rhs);
-							string operator+(const int32_t rhs) const;
+						////////////////////////////////////////////////////////////////////////////////////
+						// string
 
-							string& operator+=(const int64_t rhs);
-							string operator+(const int64_t rhs) const;
+							string& operator+=(const string& rhs);
+							//string& operator-=(const string& rhs);
+
+							string operator+(const string& rhs) const;
+							//string operator-(const string& rhs) const;
+						//
+						////////////////////////////////////////////////////////////////////////////////////
+						// char*
+							string& operator+=(const char* rhs);
+							//string& operator-=(const string& rhs);
+
+							string operator+(const char* rhs) const;
+							//string operator-(const string& rhs) const;
+						//
+						////////////////////////////////////////////////////////////////////////////////////
+						// Integers
+
+							////////////////////////////////////////////////////////////////////////////////////
+							// unsigned int
+
+								string& operator+=(const uint8_t rhs);
+								string operator+(const uint8_t rhs) const;
+
+								string& operator+=(const uint16_t rhs);
+								string operator+(const uint16_t rhs) const;
+
+								string& operator+=(const uint32_t rhs);
+								string operator+(const uint32_t rhs) const;
+
+								string& operator+=(const uint64_t rhs);
+								string operator+(const uint64_t rhs) const;
+							//
+							////////////////////////////////////////////////////////////////////////////////////
+							// signed int
+
+								string& operator+=(const int8_t rhs);
+								string operator+(const int8_t rhs) const;
+
+								string& operator+=(const int16_t rhs);
+								string operator+(const int16_t rhs) const;
+
+								string& operator+=(const int32_t rhs);
+								string operator+(const int32_t rhs) const;
+
+								string& operator+=(const int64_t rhs);
+								string operator+(const int64_t rhs) const;
+							//
+							////////////////////////////////////////////////////////////////////////////////////
+						//
+						////////////////////////////////////////////////////////////////////////////////////
+					//
+					////////////////////////////////////////////////////////////////////////////////////////
+					// Subsctipt Array Operator
+
+						char& operator[](const int i);
+						const char& operator[](const int i) const;
+					//
+					////////////////////////////////////////////////////////////////////////////////////////
+					// Streams
+						
+						#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
+                            friend std::ostream& operator<<(std::ostream& os, const CPString::string& String);
+						#endif
+					//
+					////////////////////////////////////////////////////////////////////////////////////////
 				//
 				////////////////////////////////////////////////////////////////////////////////////////////
-				// Subsctipt Array Operator
-					char& operator[](const int i){return _buffer[i];}
-					const char& operator[](const int i) const{return _buffer[i];}
-				//
-				////////////////////////////////////////////////////////////////////////////////////////////
-				// Cast Operators
+				// std::string Cross Compatible Methods
 
-					operator char*() const;
-				//
-				////////////////////////////////////////////////////////////////////////////////////////////
-				// Getters
-
-					uint16_t Size() const;
-					uint16_t size() const;
-				//
-				////////////////////////////////////////////////////////////////////////////////////////////
-				//string Cross Compatible Methods
-
-					char* c_str() const;
-					uint16_t length() const;
-					char CharAt(uint16_t n) const;
-					void resize(uint16_t size, char c = '\0');
+					unsigned int size() const;
+					unsigned int length() const;
+					const char* c_str() const;
+					const char& at(uint16_t n) const;
+					void resize(unsigned int Size, char new_chars = ' ');
 				//
 				////////////////////////////////////////////////////////////////////////////////////////////
 			
 			private:
 			
+				void _BaseConversion_uint8 (const uint8_t  Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
+				void _BaseConversion_uint16(const uint16_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
+				void _BaseConversion_uint32(const uint32_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
+				void _BaseConversion_uint64(const uint64_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
+
+			
+				void _BaseConversion_int8 (const int8_t  Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool IntFormat = CPString::IntFormat::Signed);
+				void _BaseConversion_int16(const int16_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool IntFormat = CPString::IntFormat::Signed);
+				void _BaseConversion_int32(const int32_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool IntFormat = CPString::IntFormat::Signed);
+				void _BaseConversion_int64(const int64_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool IntFormat = CPString::IntFormat::Signed);
 
 		};
 	}
