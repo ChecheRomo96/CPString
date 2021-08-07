@@ -542,8 +542,8 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 			    	////////////////////////////////////////////////////////////////////////////////////
 					// Initialization
 					////////////////////////////////////////////////////////////////////////////////////
-				    // PSoC Creator 
-				    
+				    // PSoC Creator
+                    
 				        #if defined(PSOC_CREATOR)
 
 							_buffer = NULL;
@@ -637,8 +637,8 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 			    	////////////////////////////////////////////////////////////////////////////////////
 					// Initialization
 					////////////////////////////////////////////////////////////////////////////////////
-				    // PSoC Creator 
-				    
+				    // PSoC Creator
+                    
 				        #if defined(PSOC_CREATOR)
 
 							_buffer = NULL;
@@ -1261,7 +1261,8 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 				#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
 			   		std::ostringstream buff;
-				    buff<<Source;
+                    buff.precision(Precision);
+				    buff<< std::fixed << Source ;
 				    _string = buff.str();  
 				#endif
 			//
@@ -1949,6 +1950,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 	        		{
 	        			(*this)[i] = new_chars;
 	        		}
+                    (*this)[Size-1] =  '\0';
 	        	}
 
 			#endif
@@ -2067,7 +2069,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[10];
+						char StringBases[Base];
 						Flash::CopyBaseChars(StringBases,Base,LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -2154,7 +2156,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[10];
+						char StringBases[Base];
 						Flash::CopyBaseChars(StringBases,Base,LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -2167,7 +2169,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 						char buffer[17];
 						uint8_t counter = 0;
-						uint8_t x = Source;
+						uint16_t x = Source;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2240,7 +2242,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[10];
+						char StringBases[Base];
 						Flash::CopyBaseChars(StringBases,Base,LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -2253,7 +2255,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 						char buffer[33];
 						uint8_t counter = 0;
-						uint8_t x = Source;
+						uint32_t x = Source;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2327,20 +2329,20 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[10];
+						char StringBases[Base];
 						Flash::CopyBaseChars(StringBases,Base,LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
 					////////////////////////////////////////////////////////////////////////////////////
-					// Initialize a buffer, max size would be 0xFFFFFFFFFFFFFFFE or 0xFFFFFFFFFFFFFFFF in Base 2
+					// Initialize a buffer, max size would be 0xFFFFFFFFFFFFFFFF or 0xFFFFFFFFFFFFFFFF in Base 2
 					// In such case size would be 64 for the data plus a null char
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
 						char buffer[65];
 						uint8_t counter = 0;
-						uint8_t x = Source;
+                        uint64_t x = Source;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2377,9 +2379,9 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 							for(uint8_t i = 0; i < counter; i++)
 							{
-								(*this)[i] = buffer[(counter-1)-i];
+								_string[i] = buffer[(counter-1)-i];
 							}
-							(*this)[counter] = '\0';
+                            _string[counter] = '\0';
 						#endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -2432,7 +2434,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[10];
+						char StringBases[Base];
 						Flash::CopyBaseChars(StringBases,Base,LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -2471,7 +2473,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 						while(x < 0)
 						{
-							buffer[counter] = StringBases[x%Base];
+							buffer[counter] = StringBases[(-x)%Base];
 							counter++;
 							x/=Base;
 						}
@@ -2550,7 +2552,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[10];
+						char StringBases[Base];
 						Flash::CopyBaseChars(StringBases,Base,LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -2589,7 +2591,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 						while(x < 0)
 						{
-							buffer[counter] = StringBases[x%Base];
+							buffer[counter] = StringBases[(-x)%Base];
 							counter++;
 							x/=Base;
 						}
@@ -2670,7 +2672,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[10];
+						char StringBases[Base];
 						Flash::CopyBaseChars(StringBases,Base,LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -2709,7 +2711,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 						while(x < 0)
 						{
-							buffer[counter] = StringBases[x%Base];
+							buffer[counter] = StringBases[(-x)%Base];
 							counter++;
 							x/=Base;
 						}
@@ -2788,7 +2790,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[10];
+						char StringBases[Base];
 						Flash::CopyBaseChars(StringBases,Base,LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -2827,7 +2829,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 						while(x < 0)
 						{
-							buffer[counter] = StringBases[x%Base];
+							buffer[counter] = StringBases[(-x)%Base];
 							counter++;
 							x/=Base;
 						}

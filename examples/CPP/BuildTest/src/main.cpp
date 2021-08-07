@@ -3,12 +3,11 @@
 
 int main()
 {
-    // Const char array
-    std::cout<<CPString::string("01\n");
+    //uint8_t base 2
+    float uint8 = 0.0000000012345678901234567890;
+    std::cout<<CPString::string(uint8 ,40 )<<std::endl;
+
     
-    //char array
-    char char_array[4] = {'0','2','\n','\0'};
-    std::cout<<CPString::string(char_array);
     
     
     
