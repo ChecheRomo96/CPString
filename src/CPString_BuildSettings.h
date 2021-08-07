@@ -1,12 +1,6 @@
 #ifndef CROSS_PLATFORM_STRING_BUILD_SETTINGS_H
 #define CROSS_PLATFORM_STRING_BUILD_SETTINGS_H
 
-    #include <stdint.h>
-    #include <stdlib.h>
-
-    
-    
-        
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Arduino IDE
 

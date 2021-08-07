@@ -1146,7 +1146,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 		    // Arduino String 
 
 			    #if defined (ARDUINO)
-			        _string = String(Source,Precision);
+			        _string = String(Source);
 			    #endif
 			//
 			////////////////////////////////////////////////////////////////////////////////////////////
@@ -1936,22 +1936,46 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		// Resize Implementation
 		////////////////////////////////////////////////////////////////////////////////////////////////
-	    // std::string and Arduino String
+	    // Arduino String
 
-	        #if defined(ARDUINO) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
+	        #if defined(ARDUINO)
+
+				////////////////////////////////////////////////////////////////////////////////////////
+				// Getting the current string length
+				////////////////////////////////////////////////////////////////////////////////////////
+			    // 
+			    	uint8_t OldLength = length();
+			    //
+			    ////////////////////////////////////////////////////////////////////////////////////////
+
+				////////////////////////////////////////////////////////////////////////////////////////
+				// Getting up the number of chars that are going to be maintained
+				////////////////////////////////////////////////////////////////////////////////////////
+				//
+			        if(Size<_size)
+			        {
+			        	_string.remove(Size, OldLength);
+			        }
+			        else
+			        {
+						for(uint16_t i = OldLength; i < Size; i++)
+						{
+							_string += new_chars;
+						}			        	
+			        }
+				//
+				////////////////////////////////////////////////////////////////////////////////////////
+
+			#endif
+	    //
+	    ////////////////////////////////////////////////////////////////////////////////////////////////
+	    // std::string
+
+	        #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
 
 	        	unsigned int OldLength = size();
 
-	        	_string.resize(Size);
-
-	        	if(Size > OldLength)
-	        	{
-	        		for (int i = OldLength; i < Size; i++)
-	        		{
-	        			(*this)[i] = new_chars;
-	        		}
-                    (*this)[Size-1] =  '\0';
-	        	}
+	        	_string.resize(Size, new_chars);
 
 			#endif
 	    //
@@ -1978,12 +2002,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 				// Getting the current string length
 				////////////////////////////////////////////////////////////////////////////////////////
 			    // 
-			    	uint8_t OldLength = 0;
-
-			    	if((_buffer != NULL)&&(_size > 1))
-					{
-						OldLength = length();
-					}
+			    	uint8_t OldLength = length();
 			    //
 			    ////////////////////////////////////////////////////////////////////////////////////////
 
