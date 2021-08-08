@@ -220,8 +220,8 @@
 					////////////////////////////////////////////////////////////////////////////////////////
 					// Subsctipt Array Operator
 
-						char& operator[](const int i);
-						const char& operator[](const int i) const;
+						char& operator[](const unsigned int i);
+						const char& operator[](const unsigned int i) const;
 					//
 					////////////////////////////////////////////////////////////////////////////////////////
 					// Streams
