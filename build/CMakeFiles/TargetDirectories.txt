@@ -1,7 +1,0 @@
-C:/Users/USER/Dropbox/GitHub/C++/CPString/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/USER/Dropbox/GitHub/C++/CPString/build/CMakeFiles/ZERO_CHECK.dir
-C:/Users/USER/Dropbox/GitHub/C++/CPString/build/src/CMakeFiles/CPString.dir
-C:/Users/USER/Dropbox/GitHub/C++/CPString/build/examples/CPP/BuildTest/CMakeFiles/ALL_BUILD.dir
-C:/Users/USER/Dropbox/GitHub/C++/CPString/build/examples/CPP/BuildTest/src/CMakeFiles/BuildTest.dir
-C:/Users/USER/Dropbox/GitHub/C++/CPString/build/examples/CPP/IntegerConversion/CMakeFiles/ALL_BUILD.dir
-C:/Users/USER/Dropbox/GitHub/C++/CPString/build/examples/CPP/IntegerConversion/src/CMakeFiles/IntegerConversion.dir
