@@ -402,10 +402,12 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					// Arduino String and std::string
 
 				        #if defined(ARDUINO) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
-							char buffer[Size+1]; 
+							char* buffer; 
+							buffer = new char[Size + 1];
 							sprintf(buffer,Format,Source);
 							buffer[Size] = '\0';
 							_string = buffer;
+							delete buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -497,10 +499,12 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					// Arduino String and std::string
 
 				        #if defined(ARDUINO) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
-							char buffer[Size+1]; 
-							sprintf(buffer,Format,Source);
+							char* buffer;
+							buffer = new char[Size + 1];
+							sprintf(buffer, Format, Source);
 							buffer[Size] = '\0';
 							_string = buffer;
+							delete buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -592,10 +596,12 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					// Arduino String and std::string
 
 				        #if defined(ARDUINO) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
-							char buffer[Size+1]; 
-							sprintf(buffer,Format,Source);
+							char* buffer;
+							buffer = new char[Size + 1];
+							sprintf(buffer, Format, Source);
 							buffer[Size] = '\0';
 							_string = buffer;
+							delete buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -686,11 +692,13 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Arduino String and std::string
 
-				        #if defined(ARDUINO) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
-							char buffer[Size+1]; 
-							sprintf(buffer,Format,Source);
+						#if defined(ARDUINO) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
+							char* buffer;
+							buffer = new char[Size + 1];
+							sprintf(buffer, Format, Source);
 							buffer[Size] = '\0';
 							_string = buffer;
+							delete buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -787,10 +795,12 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					// Arduino String and std::string
 
 				        #if defined(ARDUINO) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
-							char buffer[Size+1]; 
-							sprintf(buffer,Format,Source);
+							char* buffer;
+							buffer = new char[Size + 1];
+							sprintf(buffer, Format, Source);
 							buffer[Size] = '\0';
 							_string = buffer;
+							delete buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -882,10 +892,12 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					// Arduino String and std::string
 
 				        #if defined(ARDUINO) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
-							char buffer[Size+1]; 
-							sprintf(buffer,Format,Source);
+							char* buffer;
+							buffer = new char[Size + 1];
+							sprintf(buffer, Format, Source);
 							buffer[Size] = '\0';
 							_string = buffer;
+							delete buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -976,11 +988,13 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Arduino String and std::string
 
-				        #if defined(ARDUINO) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
-							char buffer[Size+1]; 
-							sprintf(buffer,Format,Source);
+						#if defined(ARDUINO) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
+							char* buffer;
+							buffer = new char[Size + 1];
+							sprintf(buffer, Format, Source);
 							buffer[Size] = '\0';
 							_string = buffer;
+							delete buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -1072,10 +1086,12 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					// Arduino String and std::string
 
 				        #if defined(ARDUINO) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
-							char buffer[Size+1]; 
-							sprintf(buffer,Format,Source);
+							char* buffer;
+							buffer = new char[Size + 1];
+							sprintf(buffer, Format, Source);
 							buffer[Size] = '\0';
 							_string = buffer;
+							delete buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -2088,7 +2104,8 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[Base];
+						char* StringBases;
+						StringBases = new char[Base];
 						Flash::CopyBaseChars(StringBases,Base,LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -2106,7 +2123,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 
 					////////////////////////////////////////////////////////////////////////////////////
-					// Transforming the data and saving it to a buffer
+					// Transforming the data, saving it to a buffer, and clear the StringBases Array
 					// This is done to count the number of char's needed
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
@@ -2117,6 +2134,8 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 							counter++;
 							x/=Base;
 						}
+
+						delete StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2175,8 +2194,9 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[Base];
-						Flash::CopyBaseChars(StringBases,Base,LetterCase);
+						char* StringBases;
+						StringBases = new char[Base];
+						Flash::CopyBaseChars(StringBases, Base, LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2204,6 +2224,8 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 							counter++;
 							x/=Base;
 						}
+
+						delete StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2261,8 +2283,9 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[Base];
-						Flash::CopyBaseChars(StringBases,Base,LetterCase);
+						char* StringBases;
+						StringBases = new char[Base];
+						Flash::CopyBaseChars(StringBases, Base, LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2290,6 +2313,8 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 							counter++;
 							x/=Base;
 						}
+
+						delete StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2348,8 +2373,9 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[Base];
-						Flash::CopyBaseChars(StringBases,Base,LetterCase);
+						char* StringBases;
+						StringBases = new char[Base];
+						Flash::CopyBaseChars(StringBases, Base, LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2377,6 +2403,8 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 							counter++;
 							x/=Base;
 						}
+
+						delete StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2453,8 +2481,9 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[Base];
-						Flash::CopyBaseChars(StringBases,Base,LetterCase);
+						char* StringBases;
+						StringBases = new char[Base];
+						Flash::CopyBaseChars(StringBases, Base, LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2496,6 +2525,8 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 							counter++;
 							x/=Base;
 						}
+
+						delete StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2560,7 +2591,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 						if(IntFormat == IntFormat::Absolute)
 						{
-							_BaseConversion_uint8(Source, Base, LetterCase);
+							_BaseConversion_uint16(Source, Base, LetterCase);
 							return;
 						}
 					//
@@ -2571,8 +2602,9 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[Base];
-						Flash::CopyBaseChars(StringBases,Base,LetterCase);
+						char* StringBases;
+						StringBases = new char[Base];
+						Flash::CopyBaseChars(StringBases, Base, LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2584,7 +2616,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 						char buffer[17];
 						uint8_t counter = 0;
-						int8_t x = Source;
+						int16_t x = Source;
 						bool sign_flag = 1;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -2614,6 +2646,8 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 							counter++;
 							x/=Base;
 						}
+
+						delete StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2680,7 +2714,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 						if(IntFormat == IntFormat::Absolute)
 						{
-							_BaseConversion_uint8(Source, Base, LetterCase);
+							_BaseConversion_uint32(Source, Base, LetterCase);
 							return;
 						}
 					//
@@ -2691,8 +2725,9 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[Base];
-						Flash::CopyBaseChars(StringBases,Base,LetterCase);
+						char* StringBases;
+						StringBases = new char[Base];
+						Flash::CopyBaseChars(StringBases, Base, LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2704,7 +2739,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 						char buffer[33];
 						uint8_t counter = 0;
-						int8_t x = Source;
+						int32_t x = Source;
 						bool sign_flag = 1;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -2734,6 +2769,8 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 							counter++;
 							x/=Base;
 						}
+
+						delete StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2798,7 +2835,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 						if(IntFormat == IntFormat::Absolute)
 						{
-							_BaseConversion_uint8(Source, Base, LetterCase);
+							_BaseConversion_uint64(Source, Base, LetterCase);
 							return;
 						}
 					//
@@ -2809,8 +2846,9 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char StringBases[Base];
-						Flash::CopyBaseChars(StringBases,Base,LetterCase);
+						char* StringBases;
+						StringBases = new char[Base];
+						Flash::CopyBaseChars(StringBases, Base, LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2822,7 +2860,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 						char buffer[65];
 						uint8_t counter = 0;
-						int8_t x = Source;
+						int64_t x = Source;
 						bool sign_flag = 1;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -2852,6 +2890,8 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 							counter++;
 							x/=Base;
 						}
+
+						delete StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 

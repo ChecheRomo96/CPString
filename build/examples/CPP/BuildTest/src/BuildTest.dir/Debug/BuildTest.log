@@ -1,0 +1,4 @@
+﻿  Building Custom Rule C:/Users/USER/Dropbox/GitHub/C++/CPString/examples/CPP/BuildTest/src/CMakeLists.txt
+  main.cpp
+C:\Users\USER\Dropbox\GitHub\C++\CPString\examples\CPP\BuildTest\src\main.cpp(5,27): warning C4305: 'inicializando': truncamiento de 'double' a 'float'
+  BuildTest.vcxproj -> C:\Users\USER\Dropbox\GitHub\C++\CPString\build\examples\CPP\BuildTest\src\Debug\BuildTest.exe

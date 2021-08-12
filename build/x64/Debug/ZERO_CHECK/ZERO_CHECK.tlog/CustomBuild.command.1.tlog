@@ -1,0 +1,10 @@
+^C:\USERS\USER\DROPBOX\GITHUB\C++\CPSTRING\BUILD\CMAKEFILES\835D824848F4EE4C31AA8BC31A62FC23\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/USER/Dropbox/GitHub/C++/CPString -BC:/Users/USER/Dropbox/GitHub/C++/CPString/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/USER/Dropbox/GitHub/C++/CPString/build/CPString.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

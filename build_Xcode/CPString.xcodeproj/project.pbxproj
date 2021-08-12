@@ -1,0 +1,1070 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		AFC111FBBEBD4E3CA7263C3D /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 62E4F2B9A4D541078490F405 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				0B456EE0D61145FA4AC1DDDD /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		D9E6CF3F63D14CF19D6A652B /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8785F6903F6B48E2A0B73D6C /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				D797BEAAB40BE3F6F2679E95 /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				DDC455DD59924ECEBBB0555A /* PBXTargetDependency */,
+				C4362BE8DF054B85904C4E87 /* PBXTargetDependency */,
+				1568271521A2451885E0A576 /* PBXTargetDependency */,
+				37C7038325E049C6B0624C8F /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		41E087971C32412A9E001719 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A77E9FBED94C46B0BFCFBFD3 /* main.cpp */; };
+		8213D79BFF76440BAE80B782 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F604EF49F356416B9380E1E2 /* main.cpp */; };
+		C21FDC618EE845B3A59AE143 /* CPString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6CD6B98A088A405981FF788D /* CPString.cpp */; };
+		CD98615F7C7E4C4588B181C4 /* CPString_Flash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D70DA8C875B54ECA922A7381 /* CPString_Flash.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7A8A82A4808648E580161E6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5366A644F584EA3B9E5CA6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DD04E9FA05F4179BF2E3A27;
+			remoteInfo = IntegerConversion;
+		};
+		A1899671363549B69F3AABB8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5366A644F584EA3B9E5CA6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE46248ABC5C4A2789A09BCF;
+			remoteInfo = CPString;
+		};
+		C928D89FC8B046DEAA5452DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5366A644F584EA3B9E5CA6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFC111FBBEBD4E3CA7263C3D;
+			remoteInfo = ZERO_CHECK;
+		};
+		D21F70DA5CE042D894EB4BB1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5366A644F584EA3B9E5CA6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE46248ABC5C4A2789A09BCF;
+			remoteInfo = CPString;
+		};
+		E81BBFF162134EDD80BC4AB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5366A644F584EA3B9E5CA6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54FC31BE4D2F4192AA3F05BE;
+			remoteInfo = BuildTest;
+		};
+		F6F1092B431A4F74A7AE8DBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5366A644F584EA3B9E5CA6E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE46248ABC5C4A2789A09BCF;
+			remoteInfo = CPString;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		20EB143957AE46F7BD615CA9 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		5CCA611D4AD74E08B3A80361 /* libCPString.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libCPString.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CD6B98A088A405981FF788D /* CPString.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CPString.cpp; path = src/CPString.cpp; sourceTree = SOURCE_ROOT; };
+		8EED983DC2E443EA8D9370AC /* BuildTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = BuildTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A77E9FBED94C46B0BFCFBFD3 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = examples/CPP/BuildTest/src/main.cpp; sourceTree = SOURCE_ROOT; };
+		BE38313883F34CA98E5C4725 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		C9BF098AD56844F0A6284190 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = examples/CPP/BuildTest/src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D70DA8C875B54ECA922A7381 /* CPString_Flash.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = CPString_Flash.cpp; path = src/Flash/CPString_Flash.cpp; sourceTree = SOURCE_ROOT; };
+		DBBF157D99AE4D9482DB2691 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = examples/CPP/IntegerConversion/src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		F071455554794D52AAF91C9A /* IntegerConversion */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = IntegerConversion; sourceTree = BUILT_PRODUCTS_DIR; };
+		F604EF49F356416B9380E1E2 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = examples/CPP/IntegerConversion/src/main.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		01590F1F7C0F47F8ADBEC405 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0366E8EFC73C461BB5DE0E93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E1313EC76864EEE928A403F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0600298CFAD44819A2BE2FE3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1DE024078CAE43B8954C2DB1 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				A77E9FBED94C46B0BFCFBFD3 /* main.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		2E6C9045FA3B4506A07EBA3F /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				6CD6B98A088A405981FF788D /* CPString.cpp */,
+				D70DA8C875B54ECA922A7381 /* CPString_Flash.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		6244239C7C8E4DE496AD3AE8 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				F604EF49F356416B9380E1E2 /* main.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		63D68C3061724E67973E2547 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8EED983DC2E443EA8D9370AC /* BuildTest */,
+				5CCA611D4AD74E08B3A80361 /* libCPString.a */,
+				F071455554794D52AAF91C9A /* IntegerConversion */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7529E94B3AA44233820BFF52 /* BuildTest */ = {
+			isa = PBXGroup;
+			children = (
+				1DE024078CAE43B8954C2DB1 /* Source Files */,
+				C9BF098AD56844F0A6284190 /* CMakeLists.txt */,
+			);
+			name = BuildTest;
+			sourceTree = "<group>";
+		};
+		9D1966D635DA4153B60277E9 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		9E27910330A64C85A5A83221 /* CPString */ = {
+			isa = PBXGroup;
+			children = (
+				2E6C9045FA3B4506A07EBA3F /* Source Files */,
+				BE38313883F34CA98E5C4725 /* CMakeLists.txt */,
+			);
+			name = CPString;
+			sourceTree = "<group>";
+		};
+		A981CD20AA6743C68F83C869 /* IntegerConversion */ = {
+			isa = PBXGroup;
+			children = (
+				6244239C7C8E4DE496AD3AE8 /* Source Files */,
+				DBBF157D99AE4D9482DB2691 /* CMakeLists.txt */,
+			);
+			name = IntegerConversion;
+			sourceTree = "<group>";
+		};
+		C920AC1A4E154B1D9B006C76 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				9D1966D635DA4153B60277E9 /* CMake Rules */,
+				20EB143957AE46F7BD615CA9 /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		CEDA9F34628F447A80E36870 = {
+			isa = PBXGroup;
+			children = (
+				C920AC1A4E154B1D9B006C76 /* ALL_BUILD */,
+				9E27910330A64C85A5A83221 /* CPString */,
+				7529E94B3AA44233820BFF52 /* BuildTest */,
+				A981CD20AA6743C68F83C869 /* IntegerConversion */,
+				63D68C3061724E67973E2547 /* Products */,
+				0600298CFAD44819A2BE2FE3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2DD04E9FA05F4179BF2E3A27 /* IntegerConversion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D87D4C35857E4B02B1908459 /* Build configuration list for PBXNativeTarget "IntegerConversion" */;
+			buildPhases = (
+				822A1388CA72496D9CA92396 /* Sources */,
+				01590F1F7C0F47F8ADBEC405 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D17AEA1B96C04D69A5EF9445 /* PBXTargetDependency */,
+			);
+			name = IntegerConversion;
+			productName = IntegerConversion;
+			productReference = F071455554794D52AAF91C9A /* IntegerConversion */;
+			productType = "com.apple.product-type.tool";
+		};
+		54FC31BE4D2F4192AA3F05BE /* BuildTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40F3413FFC124933B8F265DD /* Build configuration list for PBXNativeTarget "BuildTest" */;
+			buildPhases = (
+				718F5EF40FC145CEA385B948 /* Sources */,
+				0366E8EFC73C461BB5DE0E93 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9AB1A0D9D2384030823FA687 /* PBXTargetDependency */,
+			);
+			name = BuildTest;
+			productName = BuildTest;
+			productReference = 8EED983DC2E443EA8D9370AC /* BuildTest */;
+			productType = "com.apple.product-type.tool";
+		};
+		BE46248ABC5C4A2789A09BCF /* CPString */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59609B613B6642C791A922EC /* Build configuration list for PBXNativeTarget "CPString" */;
+			buildPhases = (
+				969FA0F2933145C48BDE4551 /* Sources */,
+				9E1313EC76864EEE928A403F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CPString;
+			productName = CPString;
+			productReference = 5CCA611D4AD74E08B3A80361 /* libCPString.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E5366A644F584EA3B9E5CA6E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = E318E02C94BA42D4A7AF734E /* Build configuration list for PBXProject "CPString" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEDA9F34628F447A80E36870;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				D9E6CF3F63D14CF19D6A652B /* ALL_BUILD */,
+				54FC31BE4D2F4192AA3F05BE /* BuildTest */,
+				BE46248ABC5C4A2789A09BCF /* CPString */,
+				2DD04E9FA05F4179BF2E3A27 /* IntegerConversion */,
+				AFC111FBBEBD4E3CA7263C3D /* ZERO_CHECK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0B456EE0D61145FA4AC1DDDD /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+				"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/CMakeFiles/ZERO_CHECK",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nif test \"$CONFIGURATION\" = \"Debug\"; then :\n  cd /Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build\n  make -f /Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/CMakeScripts/ReRunCMake.make\nfi\nif test \"$CONFIGURATION\" = \"Release\"; then :\n  cd /Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build\n  make -f /Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/CMakeScripts/ReRunCMake.make\nfi\nif test \"$CONFIGURATION\" = \"MinSizeRel\"; then :\n  cd /Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build\n  make -f /Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/CMakeScripts/ReRunCMake.make\nfi\nif test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :\n  cd /Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build\n  make -f /Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/CMakeScripts/ReRunCMake.make\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D797BEAAB40BE3F6F2679E95 /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+				"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/CMakeFiles/ALL_BUILD",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nif test \"$CONFIGURATION\" = \"Debug\"; then :\n  cd /Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"Release\"; then :\n  cd /Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"MinSizeRel\"; then :\n  cd /Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build\n  echo Build\\ all\\ projects\nfi\nif test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :\n  cd /Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build\n  echo Build\\ all\\ projects\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		718F5EF40FC145CEA385B948 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41E087971C32412A9E001719 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		822A1388CA72496D9CA92396 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8213D79BFF76440BAE80B782 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		969FA0F2933145C48BDE4551 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C21FDC618EE845B3A59AE143 /* CPString.cpp in Sources */,
+				CD98615F7C7E4C4588B181C4 /* CPString_Flash.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1568271521A2451885E0A576 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54FC31BE4D2F4192AA3F05BE /* BuildTest */;
+			targetProxy = E81BBFF162134EDD80BC4AB9 /* PBXContainerItemProxy */;
+		};
+		37C7038325E049C6B0624C8F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2DD04E9FA05F4179BF2E3A27 /* IntegerConversion */;
+			targetProxy = 7A8A82A4808648E580161E6C /* PBXContainerItemProxy */;
+		};
+		9AB1A0D9D2384030823FA687 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE46248ABC5C4A2789A09BCF /* CPString */;
+			targetProxy = A1899671363549B69F3AABB8 /* PBXContainerItemProxy */;
+		};
+		C4362BE8DF054B85904C4E87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE46248ABC5C4A2789A09BCF /* CPString */;
+			targetProxy = F6F1092B431A4F74A7AE8DBF /* PBXContainerItemProxy */;
+		};
+		D17AEA1B96C04D69A5EF9445 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE46248ABC5C4A2789A09BCF /* CPString */;
+			targetProxy = D21F70DA5CE042D894EB4BB1 /* PBXContainerItemProxy */;
+		};
+		DDC455DD59924ECEBBB0555A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFC111FBBEBD4E3CA7263C3D /* ZERO_CHECK */;
+			targetProxy = C928D89FC8B046DEAA5452DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0F88131B451D45A8A09B0A3C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/build";
+			};
+			name = RelWithDebInfo;
+		};
+		140998D9A289458E97EB3A3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		1F87F03CC3204AC9AE11DC23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		27DCFBE352D941C69E4F1B96 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		344AAADCBB434FDE879A4411 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		437BFC22B0EC498FA1712FBD /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/src",
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"'-std=gnu++14'",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/src/MinSizeRel/libCPString.a",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = IntegerConversion;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/examples/CPP/IntegerConversion/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		580DAD5DF1FC4CEAA11C2CE8 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		612E61AE6527448CB59DEF06 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		61CC3069A2784EEFA1B34236 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/src",
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = "   '-std=gnu++14' ";
+				OTHER_LIBTOOLFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = CPString;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		807AF26098224E3B866BAC0C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/src",
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"'-std=gnu++14'",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/src/MinSizeRel/libCPString.a",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = BuildTest;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/examples/CPP/BuildTest/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		884923B4F1934216ABE41354 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/src",
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"'-std=gnu++14'",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/src/RelWithDebInfo/libCPString.a",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = IntegerConversion;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/examples/CPP/IntegerConversion/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		969C5CBAA1D04F41920B17EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/src",
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"'-std=gnu++14'",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/src/Release/libCPString.a",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = BuildTest;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/examples/CPP/BuildTest/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		9955D2A3E5CA4233AECC8B8C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/src",
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"'-std=gnu++14'",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/src/RelWithDebInfo/libCPString.a",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = BuildTest;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/examples/CPP/BuildTest/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		99E2BA6B81C843218035EB0D /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		AF3F714C9B934B20B3A0DC24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/build";
+			};
+			name = Debug;
+		};
+		B0041D69A352443782E50D19 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		B2A2A7FC0D004B04AFE5FA4D /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/src",
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"'-std=gnu++14'",
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = CPString;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = RelWithDebInfo;
+		};
+		BB4CAB9A0D0C4A8FABF2714C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/src",
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"'-std=gnu++14'",
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = CPString;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = MinSizeRel;
+		};
+		BC092455B4954F8391D630FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/src",
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "   '-std=gnu++14' ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/src/Debug/libCPString.a",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = BuildTest;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/examples/CPP/BuildTest/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		C65B105C14D74BAE9E280DDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/src",
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"'-std=gnu++14'",
+				);
+				OTHER_LIBTOOLFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = CPString;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		CFB3DE1B18AC432F89584E43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/build";
+			};
+			name = Release;
+		};
+		D4BE5596AF6645D8A00F3E8B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/src",
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "   '-std=gnu++14' ";
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/src/Debug/libCPString.a",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = IntegerConversion;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/examples/CPP/IntegerConversion/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		DB6C35F0875A4262981335F0 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/build";
+			};
+			name = MinSizeRel;
+		};
+		FB49CF2647FE4E80BEAB5BED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/src",
+					"$(inherited)",
+				);
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"'-std=gnu++14'",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/src/Release/libCPString.a",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = IntegerConversion;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/josemanuelromoperedo/Dropbox/GitHub/C++/CPString/build/examples/CPP/IntegerConversion/src";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40F3413FFC124933B8F265DD /* Build configuration list for PBXNativeTarget "BuildTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC092455B4954F8391D630FF /* Debug */,
+				969C5CBAA1D04F41920B17EC /* Release */,
+				807AF26098224E3B866BAC0C /* MinSizeRel */,
+				9955D2A3E5CA4233AECC8B8C /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		59609B613B6642C791A922EC /* Build configuration list for PBXNativeTarget "CPString" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				61CC3069A2784EEFA1B34236 /* Debug */,
+				C65B105C14D74BAE9E280DDD /* Release */,
+				BB4CAB9A0D0C4A8FABF2714C /* MinSizeRel */,
+				B2A2A7FC0D004B04AFE5FA4D /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		62E4F2B9A4D541078490F405 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				344AAADCBB434FDE879A4411 /* Debug */,
+				1F87F03CC3204AC9AE11DC23 /* Release */,
+				580DAD5DF1FC4CEAA11C2CE8 /* MinSizeRel */,
+				99E2BA6B81C843218035EB0D /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8785F6903F6B48E2A0B73D6C /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				140998D9A289458E97EB3A3A /* Debug */,
+				27DCFBE352D941C69E4F1B96 /* Release */,
+				612E61AE6527448CB59DEF06 /* MinSizeRel */,
+				B0041D69A352443782E50D19 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D87D4C35857E4B02B1908459 /* Build configuration list for PBXNativeTarget "IntegerConversion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4BE5596AF6645D8A00F3E8B /* Debug */,
+				FB49CF2647FE4E80BEAB5BED /* Release */,
+				437BFC22B0EC498FA1712FBD /* MinSizeRel */,
+				884923B4F1934216ABE41354 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E318E02C94BA42D4A7AF734E /* Build configuration list for PBXProject "CPString" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF3F714C9B934B20B3A0DC24 /* Debug */,
+				CFB3DE1B18AC432F89584E43 /* Release */,
+				DB6C35F0875A4262981335F0 /* MinSizeRel */,
+				0F88131B451D45A8A09B0A3C /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E5366A644F584EA3B9E5CA6E /* Project object */;
+}

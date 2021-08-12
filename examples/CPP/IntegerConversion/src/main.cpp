@@ -6,11 +6,11 @@ int main()
     std::cout<<CPString::string("Hello this code snippet will test base conversion.\n");
     std::cout<<CPString::string("We'll convert ints and uints to multiple bases.\n");
 
-    uint a;
+    uint32_t a;
 
     std::cout<<CPString::string("Give me a positive integer.\n\n");
     std::cin>>a;
-    std::cout<<"\nYou gave me the number "<<(uint)a<<".\n\n";
+    std::cout<<"\nYou gave me the number "<<(unsigned int)a<<".\n\n";
     
     std::cout<<CPString::string("We'll store this value as a uint variable called a.\n\n");
     std::cout<<CPString::string("Printing a on base 2  { string(a,2 ) }: ")<<CPString::string(a,2 )<<".\n";
@@ -31,11 +31,11 @@ int main()
     std::cout<<CPString::string("Printing a on base 10 { string(a,10) }: ")<<CPString::string(a,10)<<".\n";
     std::cout<<CPString::string("Printing a on base 16 { string(a,16) }: ")<<CPString::string(a,16)<<".\n";
     
-    int b;
+    int32_t b;
 
   	std::cout<<CPString::string("\nNow give me a negative integer.\n\n");
     std::cin>>b;
-    std::cout<<"\nYou gave me the number "<<(uint)b<<".\n\n";
+    std::cout<<"\nYou gave me the number "<<b<<".\n\n";
     
     std::cout<<CPString::string("We'll store this value as a int variable called b.\n");
     std::cout<<CPString::string("Printing b on base 2  { string(b,2 ) }: ")<<CPString::string(b,2 )<<".\n";
@@ -56,6 +56,6 @@ int main()
     std::cout<<CPString::string("Printing b on base 8  { string(b,8 ) }: ")<<CPString::string(b,8 )<<".\n";
     std::cout<<CPString::string("Printing b on base 10 { string(b,10) }: ")<<CPString::string(b,10)<<".\n";
     std::cout<<CPString::string("Printing b on base 16 { string(b,16) }: ")<<CPString::string(b,16)<<".\n";
-    
+
     return 0;
 }
