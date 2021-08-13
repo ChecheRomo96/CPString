@@ -5,7 +5,8 @@ using namespace CPString;
 void setup()
 {
 	Serial.begin();
-	Serial.println(string("Hello World!"));
+	Serial.print(F("CPString version: "));
+	Serial.println(CPString_Version);
 }
 
 void loop()
