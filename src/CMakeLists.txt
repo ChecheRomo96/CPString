@@ -28,7 +28,7 @@ target_include_directories(
 )
 
 # CPString install process
-if(CPSTRING_INSTALL STREQUAL "ON")
+if( INSTALL STREQUAL "ON")
 
 	install(
 		FILES ${HEADERS_LIST} 

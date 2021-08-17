@@ -1,18 +1,17 @@
 cmake_minimum_required(VERSION 3.14)
 
-project(CPString VERSION 1.0.0 LANGUAGES CXX)
+project(CPString VERSION 0.0.1 LANGUAGES CXX)
 
-set_target_properties(
-	CPString PROPERTIES
-	SOVERSION 0
-	VERSION 0.0.1
-)
+message("Building ${CMAKE_PROJECT_NAME} Version = ${CMAKE_PROJECT_VERSION}...")
+string(TOUPPER ${CMAKE_PROJECT_NAME} PROJECT_NAME_UPPER)
+add_definitions( -D${PROJECT_NAME_UPPER}_VERSION="${CMAKE_PROJECT_VERSION}" )
 
 set(CMAKE_CXX_STANDARD 14) 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_subdirectory(src)
 
-if( CPSTRING_BUILD_EXAMPLES  STREQUAL "ON")
+if( BUILD_EXAMPLES  STREQUAL "ON")
+	message("Building ${CMAKE_PROJECT_NAME} Examples...")
 	add_subdirectory(examples)
 endif()

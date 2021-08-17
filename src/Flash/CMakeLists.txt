@@ -12,11 +12,11 @@ list( APPEND HEADERS_LIST "${CMAKE_CURRENT_LIST_DIR}/CPString_FlashDefinitions.h
 set(CPSTRING_SOURCES "${CPSTRING_SOURCES}" PARENT_SCOPE)
 
 # CPString install process
-if(CPSTRING_INSTALL STREQUAL "ON")
+if( INSTALL STREQUAL "ON")
 
 	install(
 		FILES ${HEADERS_LIST} 
 		DESTINATION ${CMAKE_INSTALL_PREFIX}/include/CPString/Flash
 	)
-
+	
 endif()

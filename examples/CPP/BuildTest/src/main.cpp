@@ -2,7 +2,6 @@
 
 int main()
 {
-    std::cout<<"CPString version:"<<CPString_VERSION<<std::endl;
-    
+    std::cout<<"This project uses CPString version: "<<CPSTRING_VERSION<<std::endl;
     return 0;
 }
