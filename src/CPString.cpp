@@ -1382,7 +1382,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 		CPString::string& CPString::string::operator=(const float Source)
 		{
 			uint8_t Precision = 4;
-			
+
 			////////////////////////////////////////////////////////////////////////////////////////////
 			// Float to String Conversion
 			////////////////////////////////////////////////////////////////////////////////////////////
@@ -1828,7 +1828,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 			// Arduino String and std::string
 
 		        #if defined(ARDUINO) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
-					return _string[i];
+					return &_string[i];
 		        #endif
 			//
 			////////////////////////////////////////////////////////////////////////////////////////////
