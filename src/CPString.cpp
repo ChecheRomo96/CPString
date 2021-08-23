@@ -1970,7 +1970,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 				// Getting up the number of chars that are going to be maintained
 				////////////////////////////////////////////////////////////////////////////////////////
 				//
-			        if(Size<_size)
+			        if(Size < size())
 			        {
 			        	_string.remove(Size, OldLength);
 			        }
