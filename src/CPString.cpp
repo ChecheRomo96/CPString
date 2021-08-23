@@ -184,7 +184,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 			CPString::string& CPString::string::operator=(const String& Source)
 		    {
-		        if(&_string != &Surce)
+		        if(&_string != &Source)
 		        {
 					_string = Source;
 		        }
