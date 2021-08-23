@@ -149,7 +149,7 @@
 						// Arduino String
 
 							#if defined(ARDUINO)
-								String& operator String() const;
+								operator String() const;
 							#endif
 						//
 						////////////////////////////////////////////////////////////////////////////////////
