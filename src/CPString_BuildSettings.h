@@ -5,6 +5,7 @@
     // Arduino IDE
 
         #if defined(ARDUINO)
+            #include <Arduino.h>
             #define PROGMEM_MACRO PROGMEM
         #endif
     //
