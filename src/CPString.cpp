@@ -1931,8 +1931,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 	    // Arduino String
 
 	        #if defined(ARDUINO)
-				const char x = _string.charAt(n);
-				return x;
+				return _string.charAt(n);
 			#endif
 	    //
 	    ////////////////////////////////////////////////////////////////////////////////////////////////
