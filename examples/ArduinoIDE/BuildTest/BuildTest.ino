@@ -2,9 +2,9 @@
 
 void setup()
 {
-	Serial.begin();
+	Serial.begin(115200);
 	Serial.print(F("This project uses CPString version:"));
-	Serial.println(CPString_Version);
+	Serial.println(CPSTRING_VERSION);
 }
 
 void loop()
