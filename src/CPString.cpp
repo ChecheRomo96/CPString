@@ -1916,7 +1916,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 	    ////////////////////////////////////////////////////////////////////////////////////////////////
 	}
 
-	char& CPString::string::at(uint8_t pos)
+	char& CPString::string::at(unsigned int pos)
 	{
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		// at Implementations
@@ -1950,7 +1950,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 	}
 
-	const char& CPString::string::at(uint16_t n) const
+	const char& CPString::string::at(unsigned int n) const
 	{
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		// at Implementations
