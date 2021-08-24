@@ -12,6 +12,8 @@ add_subdirectory(src)
 
 target_compile_definitions(CPString PUBLIC ${PROJECT_NAME_UPPER}_VERSION="${PROJECT_VERSION}" )
 
+message(${PROJECT_NAME_UPPER}_VERSION)
+
 if( BUILD_EXAMPLES  STREQUAL "ON")
 	message("Building ${CMAKE_PROJECT_NAME} Examples...")
 	add_subdirectory(examples)
