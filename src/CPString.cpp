@@ -6,7 +6,6 @@
 
 bool CPString::LetterCase::Mode = CPString::LetterCase::Upper;
 bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
-bool CPString::buffer
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Global Methods
