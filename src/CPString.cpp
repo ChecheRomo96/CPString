@@ -1932,7 +1932,7 @@ bool CPString::buffer
 	    // Arduino String
 
 	        #if defined(ARDUINO)
-				return &_string.charAt(n);
+				return _string[n];
 			#endif
 	    //
 	    ////////////////////////////////////////////////////////////////////////////////////////////////
