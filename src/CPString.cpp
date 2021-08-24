@@ -1941,7 +1941,8 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 				if(n < _size)
 				{
-					return _buffer[n];
+					const char x = _buffer[n];
+					return x;
 				}
 		        return '\0';
 			#endif
