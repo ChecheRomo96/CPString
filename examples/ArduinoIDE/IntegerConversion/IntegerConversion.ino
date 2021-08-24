@@ -107,7 +107,7 @@ void setup()
     Serial.print(F("Printing a on base 16 { string(a,16) }: ")); Serial.print(string(a,16)); Serial.print(F(".\n"));
     
 
-    Serial.print(string("\nNow give me a negative integer.\n\n"));
+    Serial.print(string("\nNow give me a negative integer.\n"));
     int32_t b = GetSerialData();
     Serial.print("\nYou gave me the number "); Serial.print((int32_t)b); Serial.print(".\n\n");
     
