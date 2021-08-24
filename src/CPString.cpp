@@ -6,6 +6,7 @@
 
 bool CPString::LetterCase::Mode = CPString::LetterCase::Upper;
 bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
+bool CPString::buffer
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Global Methods
@@ -1931,7 +1932,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 	    // Arduino String
 
 	        #if defined(ARDUINO)
-				return _string.charAt(n);
+				return &_string.charAt(n);
 			#endif
 	    //
 	    ////////////////////////////////////////////////////////////////////////////////////////////////
