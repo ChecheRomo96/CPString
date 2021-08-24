@@ -239,7 +239,7 @@
 					unsigned int length() const;
 					const char* c_str() const;
 					char& at(unsigned int n);
-					const char& at(uint16_t n) const;
+					const char& at(unsigned int n) const;
 					void resize(unsigned int Size, char new_chars = ' ');
 				//
 				////////////////////////////////////////////////////////////////////////////////////////////
