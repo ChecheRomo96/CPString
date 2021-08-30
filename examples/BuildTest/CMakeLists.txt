@@ -1,2 +1,1 @@
-add_executable( BuildTest main.cpp ) 
-target_link_libraries( BuildTest PUBLIC CPString )
+add_subdirectory(CPP)
