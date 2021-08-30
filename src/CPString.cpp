@@ -2541,7 +2541,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						if(x > 0)
+						if(x >= 0)
 						{
 							sign_flag = 0;
 							x*=-1;
