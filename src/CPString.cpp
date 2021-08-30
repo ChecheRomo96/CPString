@@ -2555,11 +2555,20 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						while(x < 0)
+						if(x == 0)
 						{
-							buffer[counter] = StringBases[(-x)%Base];
-							counter++;
-							x/=Base;
+							buffer[0] = '0';
+							counter = 1;
+
+						}
+						else
+						{
+							while(x < 0)
+							{
+								buffer[counter] = StringBases[(-x)%Base];
+								counter++;
+								x/=Base;
+							}
 						}
 
 						delete StringBases;
