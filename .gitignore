@@ -1,5 +1,9 @@
-
+# Ignore Mac Specific files
 .DS_Store
+
+# Ignore build folder
+build/
+
 desktop.ini
 examples/.DS_Store
 examples/CPP/.DS_Store
