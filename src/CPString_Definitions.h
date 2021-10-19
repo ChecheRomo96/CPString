@@ -5,18 +5,21 @@
     
 	namespace CrossPlatformString
 	{
-		namespace LetterCase
+		namespace NumberConversion
 		{
-			extern bool Mode;
-			static constexpr bool Lower = 0;
-			static constexpr bool Upper = 1;
-		}
+			namespace LetterCase
+			{
+				extern bool Mode;
+				static constexpr bool Lower = 0;
+				static constexpr bool Upper = 1;
+			}
 
-		namespace IntFormat
-		{
-			extern bool Mode;
-			static constexpr bool Signed = 0;
-			static constexpr bool Absolute = 1;
+			namespace IntFormat
+			{
+				extern bool Mode;
+				static constexpr bool Signed = 0;
+				static constexpr bool Absolute = 1;
+			}
 		}
 	}
 	

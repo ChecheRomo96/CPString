@@ -97,7 +97,7 @@ void setup()
     Serial.print(F("\nBy default the letters on the output are Upper case.\n"));
     Serial.print(F("We can change that by calling SetLetterCase(LetterCase::Lower)\n\n"));
 
-    SetLetterCase(LetterCase::Lower);
+    SetLetterCase(NumberConversion::LetterCase::Lower);
     Serial.print(F("Let's print the values of a again\n\n"));
 
     Serial.print(F("Printing a on base 2  { string(a,2 ) }: ")); Serial.print(string(a,2 )); Serial.print(F(".\n"));
@@ -121,7 +121,7 @@ void setup()
     Serial.print(F("\nBy default int conversion is signed.\n"));
     Serial.print(F("We can change that by calling SetIntFormat(IntFormat::Absolute)\n\n"));
 
-    SetIntFormat(IntFormat::Absolute);
+    SetIntFormat(NumberConversion::IntFormat::Absolute);
     
     Serial.print(string("Let's print the values of b again\n\n"));
 

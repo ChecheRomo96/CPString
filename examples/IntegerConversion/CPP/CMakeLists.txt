@@ -1,2 +1,2 @@
-add_subdirectory(BuildTest)
-add_subdirectory(IntegerConversion)
+add_executable( CPString_IntegerConversion main.cpp ) 
+target_link_libraries( CPString_IntegerConversion PUBLIC CPString )

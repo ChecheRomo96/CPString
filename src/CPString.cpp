@@ -4,40 +4,40 @@
 #include <stdio.h>
 #include <math.h>
 
-bool CPString::LetterCase::Mode = CPString::LetterCase::Upper;
-bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
+bool CPString::NumberConversion::LetterCase::Mode = CPString::NumberConversion::LetterCase::Upper;
+bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::IntFormat::Mode;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Global Methods
 
 	void CPString::SetLetterCase(bool Mode)
 	{
-		CPString::LetterCase::Mode = Mode;
+		CPString::NumberConversion::LetterCase::Mode = Mode;
 	}
 
 	void CPString::SetLetterCase_Upper()
 	{
-		CPString::LetterCase::Mode = CPString::LetterCase::Upper;
+		CPString::NumberConversion::LetterCase::Mode = CPString::NumberConversion::LetterCase::Upper;
 	}
 
 	void CPString::SetLetterCase_Lower()
 	{
-		CPString::LetterCase::Mode = CPString::LetterCase::Lower;
+		CPString::NumberConversion::LetterCase::Mode = CPString::NumberConversion::LetterCase::Lower;
 	}
 
 	void CPString::SetIntFormat(bool Mode)
 	{
-		CPString::IntFormat::Mode = Mode;
+		CPString::NumberConversion::IntFormat::Mode = Mode;
 	}
 
 	void CPString::SetIntFormat_Signed()
 	{
-		CPString::IntFormat::Mode = CPString::IntFormat::Signed;
+		CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::IntFormat::Signed;
 	}
 
 	void CPString::SetIntFormat_Absolute()
 	{
-		CPString::IntFormat::Mode = CPString::IntFormat::Absolute;
+		CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::IntFormat::Absolute;
 	}
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -49,10 +49,17 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 		CPString::string::string()
 		{
 			////////////////////////////////////////////////////////////////////////////////////////////
-		    // Arduino String and std::string
+		    // Arduino String
 
-		        #if defined(ARDUINO) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
-					_string = "";
+		        #if defined(ARDUINO)
+					_string = String("");
+		        #endif
+		    //
+		    ////////////////////////////////////////////////////////////////////////////////////////////
+		    // std::string
+
+		        #if  defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
+					_string = std::string("");
 		        #endif
 		    //
 		    ////////////////////////////////////////////////////////////////////////////////////////////
@@ -1558,15 +1565,40 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 			CPString::string& CPString::string::operator+=(const CPString::string& rhs)
 			{
-				unsigned int a = length();
-				resize( a + 1 + rhs.length());
 
-				for(uint8_t i = 0; i < rhs.length() + 1; i++)
-				{
-					(*this)[a+i] = rhs[i];
-				}
+				////////////////////////////////////////////////////////////////////////////////////////////
+			    // Arduino String
 
-				(*this)[a + rhs.length()] = '\0';
+			        #if defined(ARDUINO)||defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
+						_string += rhs;
+			        #endif
+			    //
+			    ////////////////////////////////////////////////////////////////////////////////////////////
+			    // PSoC Creator
+			    
+			       	unsigned int a = length();
+					unsigned int b = rhs.length();
+
+					if((a == 1)&&(b == 1))
+					{
+						(*this) = "";
+					}
+					else
+					{
+
+						resize( a + b - 1);
+
+						for(uint8_t i = 0; i < b; i++)
+						{
+							(*this)[a+i-1] = rhs[i];
+						}
+
+					}
+			    //
+			    ////////////////////////////////////////////////////////////////////////////////////////////
+
+				
+
 
 				return (*this);
 			}
@@ -1822,7 +1854,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 			////////////////////////////////////////////////////////////////////////////////////////////
 		}
 
-		const char& CPString::string::operator[](const unsigned int i) const
+		const char CPString::string::operator[](const unsigned int i) const
 		{
 			////////////////////////////////////////////////////////////////////////////////////////////
 			// Arduino String and std::string
@@ -1916,7 +1948,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 	    ////////////////////////////////////////////////////////////////////////////////////////////////
 	}
 
-	char& CPString::string::at(unsigned int n)
+	char CPString::string::at(unsigned int n)
 	{
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		// at Implementations
@@ -1931,7 +1963,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 	    // Arduino String
 
 	        #if defined(ARDUINO)
-				return _string[n];
+				return _string.charAt(n);
 			#endif
 	    //
 	    ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1950,7 +1982,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 	}
 
-	const char& CPString::string::at(unsigned int n) const
+	const char CPString::string::at(unsigned int n) const
 	{
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		// at Implementations
@@ -2006,7 +2038,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 				//
 			        if(Size < size())
 			        {
-			        	_string.remove(Size, OldLength);
+			        	_string.remove(Size, OldLength-Size);
 			        }
 			        else
 			        {
@@ -2504,7 +2536,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						if(IntFormat == IntFormat::Absolute)
+						if(IntFormat == NumberConversion::IntFormat::Absolute)
 						{
 							_BaseConversion_uint8(Source, Base, LetterCase);
 							return;
@@ -2634,7 +2666,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						if(IntFormat == IntFormat::Absolute)
+						if(IntFormat == NumberConversion::IntFormat::Absolute)
 						{
 							_BaseConversion_uint16(Source, Base, LetterCase);
 							return;
@@ -2757,7 +2789,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						if(IntFormat == IntFormat::Absolute)
+						if(IntFormat == NumberConversion::IntFormat::Absolute)
 						{
 							_BaseConversion_uint32(Source, Base, LetterCase);
 							return;
@@ -2878,7 +2910,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						if(IntFormat == IntFormat::Absolute)
+						if(IntFormat == NumberConversion::IntFormat::Absolute)
 						{
 							_BaseConversion_uint64(Source, Base, LetterCase);
 							return;
