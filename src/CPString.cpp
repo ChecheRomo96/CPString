@@ -4,40 +4,40 @@
 #include <stdio.h>
 #include <math.h>
 
-bool CPString::NumberConversion::LetterCase::Mode = CPString::NumberConversion::LetterCase::Upper;
-bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::IntFormat::Mode;
+bool CPString::LetterCase::Mode = CPString::LetterCase::Upper;
+bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Global Methods
 
 	void CPString::SetLetterCase(bool Mode)
 	{
-		CPString::NumberConversion::LetterCase::Mode = Mode;
+		CPString::LetterCase::Mode = Mode;
 	}
 
 	void CPString::SetLetterCase_Upper()
 	{
-		CPString::NumberConversion::LetterCase::Mode = CPString::NumberConversion::LetterCase::Upper;
+		CPString::LetterCase::Mode = CPString::LetterCase::Upper;
 	}
 
 	void CPString::SetLetterCase_Lower()
 	{
-		CPString::NumberConversion::LetterCase::Mode = CPString::NumberConversion::LetterCase::Lower;
+		CPString::LetterCase::Mode = CPString::LetterCase::Lower;
 	}
 
 	void CPString::SetIntFormat(bool Mode)
 	{
-		CPString::NumberConversion::IntFormat::Mode = Mode;
+		CPString::IntFormat::Mode = Mode;
 	}
 
 	void CPString::SetIntFormat_Signed()
 	{
-		CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::IntFormat::Signed;
+		CPString::IntFormat::Mode = CPString::IntFormat::Signed;
 	}
 
 	void CPString::SetIntFormat_Absolute()
 	{
-		CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::IntFormat::Absolute;
+		CPString::IntFormat::Mode = CPString::IntFormat::Absolute;
 	}
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2536,7 +2536,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						if(IntFormat == NumberConversion::IntFormat::Absolute)
+						if(IntFormat == IntFormat::Absolute)
 						{
 							_BaseConversion_uint8(Source, Base, LetterCase);
 							return;
@@ -2666,7 +2666,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						if(IntFormat == NumberConversion::IntFormat::Absolute)
+						if(IntFormat == IntFormat::Absolute)
 						{
 							_BaseConversion_uint16(Source, Base, LetterCase);
 							return;
@@ -2789,7 +2789,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						if(IntFormat == NumberConversion::IntFormat::Absolute)
+						if(IntFormat == IntFormat::Absolute)
 						{
 							_BaseConversion_uint32(Source, Base, LetterCase);
 							return;
@@ -2910,7 +2910,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						if(IntFormat == NumberConversion::IntFormat::Absolute)
+						if(IntFormat == IntFormat::Absolute)
 						{
 							_BaseConversion_uint64(Source, Base, LetterCase);
 							return;

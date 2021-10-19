@@ -79,38 +79,38 @@
 						////////////////////////////////////////////////////////////////////////////////////
 						// unsigned int
 
-							string(const uint8_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
+							string(const uint8_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
 							string(const uint8_t Source, const char* format, unsigned int Size);
 							string& operator=(const uint8_t Source);
 
-							string(const uint16_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
+							string(const uint16_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
 							string(const uint16_t Source, const char* format, unsigned int Size);
 							string& operator=(const uint16_t Source);
 
-							string(const uint32_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
+							string(const uint32_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
 							string(const uint32_t Source, const char* format, unsigned int Size);
 							string& operator=(const uint32_t Source);
 
-							string(const uint64_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
+							string(const uint64_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
 							string(const uint64_t Source, const char* format, unsigned int Size);
 							string& operator=(const uint64_t Source);
 						//
 						////////////////////////////////////////////////////////////////////////////////////
 						// signed int
 
-							string(const int8_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool Absolute = CPString::NumberConversion::IntFormat::Mode);
+							string(const int8_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool Absolute = CPString::IntFormat::Mode);
 							string(const int8_t Source, const char* format, unsigned int Size);
 							string& operator=(const int8_t Source);
 
-							string(const int16_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool Absolute = CPString::NumberConversion::IntFormat::Mode);
+							string(const int16_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool Absolute = CPString::IntFormat::Mode);
 							string(const int16_t Source, const char* format, unsigned int Size);
 							string& operator=(const int16_t Source);
 
-							string(const int32_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool Absolute = CPString::NumberConversion::IntFormat::Mode);
+							string(const int32_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool Absolute = CPString::IntFormat::Mode);
 							string(const int32_t Source, const char* format, unsigned int Size);
 							string& operator=(const int32_t Source);
 
-							string(const int64_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool Absolute = CPString::NumberConversion::IntFormat::Mode);
+							string(const int64_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool Absolute = CPString::IntFormat::Mode);
 							string(const int64_t Source, const char* format, unsigned int Size);
 							string& operator=(const int64_t Source);
 						//
@@ -246,16 +246,16 @@
 			
 			private:
 			
-				void _BaseConversion_uint8 (const uint8_t  Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
-				void _BaseConversion_uint16(const uint16_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
-				void _BaseConversion_uint32(const uint32_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
-				void _BaseConversion_uint64(const uint64_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
+				void _BaseConversion_uint8 (const uint8_t  Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
+				void _BaseConversion_uint16(const uint16_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
+				void _BaseConversion_uint32(const uint32_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
+				void _BaseConversion_uint64(const uint64_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode);
 
 			
-				void _BaseConversion_int8 (const int8_t  Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool IntFormat = CPString::NumberConversion::IntFormat::Signed);
-				void _BaseConversion_int16(const int16_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool IntFormat = CPString::NumberConversion::IntFormat::Signed);
-				void _BaseConversion_int32(const int32_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool IntFormat = CPString::NumberConversion::IntFormat::Signed);
-				void _BaseConversion_int64(const int64_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool IntFormat = CPString::NumberConversion::IntFormat::Signed);
+				void _BaseConversion_int8 (const int8_t  Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool IntFormat = CPString::IntFormat::Signed);
+				void _BaseConversion_int16(const int16_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool IntFormat = CPString::IntFormat::Signed);
+				void _BaseConversion_int32(const int32_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool IntFormat = CPString::IntFormat::Signed);
+				void _BaseConversion_int64(const int64_t Source, uint8_t Base = 10, bool LetterCase = CPString::LetterCase::Mode, bool IntFormat = CPString::IntFormat::Signed);
 
 		};
 	}
