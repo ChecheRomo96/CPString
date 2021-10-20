@@ -37,7 +37,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 	void CPString::SetIntFormat_Absolute()
 	{
-		CPString::IntFormat::Mode = CPString::IntFormat::Absolute;
+		CPString::IntFormat::Mode = CPString::NumberConversion::IntFormat::Absolute;
 	}
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2536,7 +2536,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						if(IntFormat == IntFormat::Absolute)
+						if(IntFormat == NumberConversion::IntFormat::Absolute)
 						{
 							_BaseConversion_uint8(Source, Base, LetterCase);
 							return;
@@ -2666,7 +2666,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						if(IntFormat == IntFormat::Absolute)
+						if(IntFormat == NumberConversion::IntFormat::Absolute)
 						{
 							_BaseConversion_uint16(Source, Base, LetterCase);
 							return;
@@ -2789,7 +2789,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						if(IntFormat == IntFormat::Absolute)
+						if(IntFormat == NumberConversion::IntFormat::Absolute)
 						{
 							_BaseConversion_uint32(Source, Base, LetterCase);
 							return;
@@ -2910,7 +2910,7 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						if(IntFormat == IntFormat::Absolute)
+						if(IntFormat == NumberConversion::IntFormat::Absolute)
 						{
 							_BaseConversion_uint64(Source, Base, LetterCase);
 							return;
