@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <math.h>
 
-bool CPString::LetterCase::Mode = CPString::LetterCase::Upper;
+bool CPString::NumberConversion::LetterCase::Mode = CPString::NumberConversion::LetterCase::Upper;
 bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::IntFormat::Mode;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -12,17 +12,17 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 
 	void CPString::SetLetterCase(bool Mode)
 	{
-		CPString::LetterCase::Mode = Mode;
+		CPString::NumberConversion::LetterCase::Mode = Mode;
 	}
 
 	void CPString::SetLetterCase_Upper()
 	{
-		CPString::LetterCase::Mode = CPString::LetterCase::Upper;
+		CPString::NumberConversion::LetterCase::Mode = CPString::NumberConversion::LetterCase::Upper;
 	}
 
 	void CPString::SetLetterCase_Lower()
 	{
-		CPString::LetterCase::Mode = CPString::LetterCase::Lower;
+		CPString::NumberConversion::LetterCase::Mode = CPString::NumberConversion::LetterCase::Lower;
 	}
 
 	void CPString::SetIntFormat(bool Mode)
