@@ -414,7 +414,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							sprintf(buffer,Format,Source);
 							buffer[Size] = '\0';
 							_string = buffer;
-							delete buffer;
+							delete [] buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -511,7 +511,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							sprintf(buffer, Format, Source);
 							buffer[Size] = '\0';
 							_string = buffer;
-							delete buffer;
+							delete[] buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -608,7 +608,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							sprintf(buffer, Format, Source);
 							buffer[Size] = '\0';
 							_string = buffer;
-							delete buffer;
+							delete[] buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -705,7 +705,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							sprintf(buffer, Format, Source);
 							buffer[Size] = '\0';
 							_string = buffer;
-							delete buffer;
+							delete[] buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -807,7 +807,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							sprintf(buffer, Format, Source);
 							buffer[Size] = '\0';
 							_string = buffer;
-							delete buffer;
+							delete[] buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -904,7 +904,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							sprintf(buffer, Format, Source);
 							buffer[Size] = '\0';
 							_string = buffer;
-							delete buffer;
+							delete[] buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -1001,7 +1001,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							sprintf(buffer, Format, Source);
 							buffer[Size] = '\0';
 							_string = buffer;
-							delete buffer;
+							delete[] buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -1098,7 +1098,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							sprintf(buffer, Format, Source);
 							buffer[Size] = '\0';
 							_string = buffer;
-							delete buffer;
+							delete[] buffer;
 				        #endif
 					//
 					////////////////////////////////////////////////////////////////////////////////////
@@ -1567,38 +1567,26 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 			{
 
 				////////////////////////////////////////////////////////////////////////////////////////////
-			    // Arduino String
-
-			        #if defined(ARDUINO)||defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
-						_string += rhs;
-			        #endif
-			    //
-			    ////////////////////////////////////////////////////////////////////////////////////////////
-			    // PSoC Creator
+			    // Cross Compatible code
 			    
 			       	unsigned int a = length();
 					unsigned int b = rhs.length();
 
-					if((a == 1)&&(b == 1))
+					if(a + b == 2)
 					{
-						(*this) = "";
+						return;
 					}
 					else
 					{
-
 						resize( a + b - 1);
 
 						for(uint8_t i = 0; i < b; i++)
 						{
 							(*this)[a+i-1] = rhs[i];
 						}
-
 					}
 			    //
 			    ////////////////////////////////////////////////////////////////////////////////////////////
-
-				
-
 
 				return (*this);
 			}
@@ -2203,7 +2191,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							x/=Base;
 						}
 
-						delete StringBases;
+						delete[] StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2293,7 +2281,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							x/=Base;
 						}
 
-						delete StringBases;
+						delete[] StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2382,7 +2370,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							x/=Base;
 						}
 
-						delete StringBases;
+						delete[] StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2472,7 +2460,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							x/=Base;
 						}
 
-						delete StringBases;
+						delete[] StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2603,7 +2591,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							}
 						}
 
-						delete StringBases;
+						delete[] StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2724,7 +2712,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							x/=Base;
 						}
 
-						delete StringBases;
+						delete[] StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2847,7 +2835,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							x/=Base;
 						}
 
-						delete StringBases;
+						delete[] StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -2968,7 +2956,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 							x/=Base;
 						}
 
-						delete StringBases;
+						delete[] StringBases;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
