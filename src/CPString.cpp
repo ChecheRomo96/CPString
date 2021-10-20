@@ -5,7 +5,7 @@
 #include <math.h>
 
 bool CPString::LetterCase::Mode = CPString::LetterCase::Upper;
-bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
+bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::IntFormat::Mode;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Global Methods
@@ -27,17 +27,17 @@ bool CPString::IntFormat::Mode = CPString::IntFormat::Mode;
 
 	void CPString::SetIntFormat(bool Mode)
 	{
-		CPString::IntFormat::Mode = Mode;
+		CPString::NumberConversion::IntFormat::Mode = Mode;
 	}
 
 	void CPString::SetIntFormat_Signed()
 	{
-		CPString::IntFormat::Mode = CPString::IntFormat::Signed;
+		CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::IntFormat::Signed;
 	}
 
 	void CPString::SetIntFormat_Absolute()
 	{
-		CPString::IntFormat::Mode = CPString::NumberConversion::IntFormat::Absolute;
+		CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::IntFormat::Absolute;
 	}
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
