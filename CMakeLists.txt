@@ -14,7 +14,7 @@ target_compile_definitions(CPString PUBLIC ${PROJECT_NAME_UPPER}_VERSION="${PROJ
 
 message(${PROJECT_NAME_UPPER}_VERSION)
 
-if( CPString_BUILD_EXAMPLES  STREQUAL "ON")
+if( CPSTRING_BUILD_EXAMPLES  STREQUAL "ON")
 	message("Building ${CMAKE_PROJECT_NAME} Examples...")
 	add_subdirectory(examples)
 endif()

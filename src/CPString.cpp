@@ -2,6 +2,7 @@
 
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 
 bool CPString::NumberConversion::LetterCase::Mode = CPString::NumberConversion::LetterCase::Upper;
@@ -1195,14 +1196,14 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 			        	// Convert the Precision argument to a CPString::string
 
 					        string *str = NULL;
-					        str = new string(Precision);
+					        str = new string("3");
 					    //
 					    ////////////////////////////////////////////////////////////////////////////////////
 			        	// copy the data from the newly creates string
 					        
 					        for(uint8_t i = 0; i < str->length(); i++)
 					        {
-					            _Format[offset+i] = str->CharAt(i);
+					            _Format[offset+i] = str->at(i);
 					        }
 					    //
 					    ////////////////////////////////////////////////////////////////////////////////////
@@ -1231,7 +1232,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 			    	////////////////////////////////////////////////////////////////////////////////////
 					// PSoC Creator
 
-				        uint8_t len = log10(Source)+Precision+3; 
+				        uint8_t len = log10(Source)+3+3; 
 				        char buff[len];
 			    	//
 			    	////////////////////////////////////////////////////////////////////////////////////
@@ -1326,7 +1327,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					        
 					        for(uint8_t i = 0; i < str->length(); i++)
 					        {
-					            _Format[offset+i] = str->CharAt(i);
+					            _Format[offset+i] = str->at(i);
 					        }
 					    //
 					    ////////////////////////////////////////////////////////////////////////////////////
@@ -1438,7 +1439,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					        
 					        for(uint8_t i = 0; i < str->length(); i++)
 					        {
-					            _Format[offset+i] = str->CharAt(i);
+					            _Format[offset+i] = str->at(i);
 					        }
 					    //
 					    ////////////////////////////////////////////////////////////////////////////////////
@@ -1547,14 +1548,24 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 		
 		bool CPString::string::operator==(const string& rhs) const
 		{
-			if(strcmp(_string.c_str(),rhs.c_str())==0){return 1;}
-			else{return 0;}
+            #if defined(ARDUINO)||defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
+    			if(strcmp(_string.c_str(),rhs.c_str())==0){return 1;}
+    			else{return 0;}
+            #elif defined(PSOC_CREATOR)
+                if(strcmp(_buffer,rhs.c_str())==0){return 1;}
+    			else{return 0;}
+            #endif
 		}
 
 		bool CPString::string::operator!=(const string& rhs) const
 		{
-			if(strcmp(_string.c_str(),rhs.c_str())==0){return 0;}
-			else{return 1;}
+            #if defined(ARDUINO)||defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
+    			if(strcmp(_string.c_str(),rhs.c_str())==0){return 0;}
+    			else{return 1;}
+            #elif defined(PSOC_CREATOR)
+                if(strcmp(_buffer,rhs.c_str())==0){return 0;}
+    			else{return 1;}
+            #endif
 		}
 	//
     ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1574,7 +1585,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 
 					if(a + b == 2)
 					{
-						return;
+						return (*this);
 					}
 					else
 					{
@@ -1602,13 +1613,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 			CPString::string& CPString::string::operator+=(const char* rhs)
 			{
 				string tmp(rhs);
-				unsigned int a = length();
-				resize( a + 1 + tmp.length());
-
-				for(uint8_t i = 0; i < tmp.length() + 1; i++)
-				{
-					(*this)[a+i] = rhs[i];
-				}
+				(*this) += tmp;
 
 				return (*this);
 			}
@@ -2117,9 +2122,9 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				// delete the current buffer and allocate a new one
 				////////////////////////////////////////////////////////////////////////////////////////
 				//
-			        Clear();
-			        _buffer = new char[Size+1];
+			        free(_buffer);
 			        _size = Size+1;
+			        _buffer = (char*)malloc(sizeof(char)*(_size));
 			    //
 				////////////////////////////////////////////////////////////////////////////////////////
 
@@ -2127,10 +2132,15 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				// Copying Data
 				////////////////////////////////////////////////////////////////////////////////////////
 			    //
-					for(uint16_t i = 0; i < Size; i++)
-					{
-						_buffer[i] = tmp[i];
-					}
+                
+                    if(_buffer == NULL ){_size  = 0;}
+                    else
+                    {
+    					for(uint16_t i = 0; i < Size; i++)
+    					{
+    						_buffer[i] = tmp[i];
+    					}
+                    }
 				//
 				////////////////////////////////////////////////////////////////////////////////////////
 

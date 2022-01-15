@@ -6,6 +6,7 @@
 
         #if defined(ARDUINO)
             #include <Arduino.h>
+            #include <stdint.h>
             #define PROGMEM_MACRO PROGMEM
             #define CPSTRING_VERSION "0.0.1"
         #endif
@@ -15,7 +16,9 @@
     
         #if defined(PSOC_CREATOR)
             #include <string.h>
+            #include <stdint.h>
             #define PROGMEM_MACRO
+            #define CPSTRING_VERSION "0.0.1"
         #endif
     //
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

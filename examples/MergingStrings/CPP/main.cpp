@@ -3,9 +3,9 @@
 int main()
 {
     
-  CPString::string str = " Hello ";
+  CPString::string str("Hello ");
 
-  str += "Wolrd";
+  str += CPString::string("Wolrd");
 
   std::cout<<str;
 }
