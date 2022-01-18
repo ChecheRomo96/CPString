@@ -32,7 +32,7 @@
 # Append Source
 
 	add_subdirectory(src)
-	target_compile_definitions(CPSTring INTERFACE ${PROJECT_NAME_UPPER}_VERSION="${PROJECT_VERSION}" )
+	target_compile_definitions(CPString INTERFACE ${PROJECT_NAME_UPPER}_VERSION="${PROJECT_VERSION}" )
 #
 ######################################################################################################
 # Compile Configuration
