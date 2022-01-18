@@ -13,7 +13,7 @@
 		message("Building ${PROJECT_NAME} Version = ${PROJECT_VERSION}...")
 		
 		string(TOUPPER ${PROJECT_NAME} PROJECT_NAME_UPPER)
-		add_definitions( -D${PROJECT_NAME_UPPER}_VERSION="${CMAKE_PROJECT_VERSION}" )
+		#add_definitions( -D${PROJECT_NAME_UPPER}_VERSION="${CMAKE_PROJECT_VERSION}" )
 	#
 	##################################################################################################
 	# Set up C++ Version
@@ -32,6 +32,7 @@
 # Append Source
 
 	add_subdirectory(src)
+	target_compile_definitions(CPSTring INTERFACE ${PROJECT_NAME_UPPER}_VERSION="${PROJECT_VERSION}" )
 #
 ######################################################################################################
 # Compile Configuration
