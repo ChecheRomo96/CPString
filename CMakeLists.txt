@@ -1,20 +1,46 @@
-cmake_minimum_required(VERSION 3.14)
+######################################################################################################
+# Setting up the project
 
-project(CPString VERSION 0.0.1 LANGUAGES CXX)
+	##################################################################################################
+	# C Make Minimum Version
+		
+		cmake_minimum_required(VERSION 3.14)
+	#
+	##################################################################################################
+	# Project Name Version and Languaje, print and add preprocessor flag
+		
+		project(CPString VERSION 0.0.1 LANGUAGES CXX)
+		message("Building ${PROJECT_NAME} Version = ${PROJECT_VERSION}...")
+		
+		string(TOUPPER ${PROJECT_NAME} PROJECT_NAME_UPPER)
+		add_definitions( -D${PROJECT_NAME_UPPER}_VERSION="${CMAKE_PROJECT_VERSION}" )
+	#
+	##################################################################################################
+	# Set up C++ Version
 
-message("Building ${PROJECT_NAME} Version = ${PROJECT_VERSION}...")
-string(TOUPPER ${PROJECT_NAME} PROJECT_NAME_UPPER)
+		set(CMAKE_CXX_STANDARD 14) 
+		set(CMAKE_CXX_STANDARD_REQUIRED ON)
+	#
+	##################################################################################################
+#
+######################################################################################################
+# Compile Configuration
 
-set(CMAKE_CXX_STANDARD 14) 
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+	set(CPSTRING_BUILD_EXAMPLES TRUE CACHE BOOL "Build CPString Examples")
+#
+######################################################################################################
+# Append Source
 
-add_subdirectory(src)
+	add_subdirectory(src)
+#
+######################################################################################################
+# Compile Configuration
 
-target_compile_definitions(CPString PUBLIC ${PROJECT_NAME_UPPER}_VERSION="${PROJECT_VERSION}" )
+	if( ${CPSTRING_BUILD_EXAMPLES} )
+		message("Building ${CMAKE_PROJECT_NAME} Examples...")
+		add_subdirectory(examples)
+	endif()
+#
+######################################################################################################
 
-message(${PROJECT_NAME_UPPER}_VERSION)
-
-if( CPSTRING_BUILD_EXAMPLES  STREQUAL "ON")
-	message("Building ${CMAKE_PROJECT_NAME} Examples...")
-	add_subdirectory(examples)
-endif()
+	
