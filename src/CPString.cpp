@@ -153,6 +153,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 						{
 							_buffer[i] = Source[i];
 						}
+						buffer[size] = '\0';
 
 			        #endif
 			    //
