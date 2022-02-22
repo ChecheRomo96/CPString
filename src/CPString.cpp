@@ -8,6 +8,9 @@
 bool CPString::NumberConversion::LetterCase::Mode = CPString::NumberConversion::LetterCase::Upper;
 bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::IntFormat::Mode;
 
+
+
+/*
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Global Methods
 
@@ -153,7 +156,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 						{
 							_buffer[i] = Source[i];
 						}
-						buffer[size] = '\0';
+						_buffer[size] = '\0';
 
 			        #endif
 			    //
@@ -3020,3 +3023,4 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 	////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
