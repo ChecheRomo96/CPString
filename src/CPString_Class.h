@@ -82,38 +82,30 @@
 
 							string(const uint8_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
 							string(const uint8_t Source, const char* format, unsigned int Size);
-							string& operator=(const uint8_t Source);
 
 							string(const uint16_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
 							string(const uint16_t Source, const char* format, unsigned int Size);
-							string& operator=(const uint16_t Source);
 
 							string(const uint32_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
 							string(const uint32_t Source, const char* format, unsigned int Size);
-							string& operator=(const uint32_t Source);
 
 							string(const uint64_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
 							string(const uint64_t Source, const char* format, unsigned int Size);
-							string& operator=(const uint64_t Source);
 						//
 						////////////////////////////////////////////////////////////////////////////////////
 						// signed int
 
 							string(const int8_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool Absolute = CPString::NumberConversion::IntFormat::Mode);
 							string(const int8_t Source, const char* format, unsigned int Size);
-							string& operator=(const int8_t Source);
 
 							string(const int16_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool Absolute = CPString::NumberConversion::IntFormat::Mode);
 							string(const int16_t Source, const char* format, unsigned int Size);
-							string& operator=(const int16_t Source);
 
 							string(const int32_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool Absolute = CPString::NumberConversion::IntFormat::Mode);
 							string(const int32_t Source, const char* format, unsigned int Size);
-							string& operator=(const int32_t Source);
 
 							string(const int64_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool Absolute = CPString::NumberConversion::IntFormat::Mode);
 							string(const int64_t Source, const char* format, unsigned int Size);
-							string& operator=(const int64_t Source);
 						//
 						////////////////////////////////////////////////////////////////////////////////////
 					//
@@ -122,7 +114,6 @@
 
 						explicit string(const float Source);
 						string(const float Source, uint8_t precision);
-						string& operator=(const float Source);
 					//
 					////////////////////////////////////////////////////////////////////////////////////////
 					// double
@@ -175,46 +166,11 @@
 						//
 						////////////////////////////////////////////////////////////////////////////////////
 						// char*
-							string& operator+=(const char* rhs);
+							//string& operator+=(const char* rhs);
 							//string& operator-=(const string& rhs);
 
-							string operator+(const char* rhs) const;
+							//string operator+(const char* rhs) const;
 							//string operator-(const string& rhs) const;
-						//
-						////////////////////////////////////////////////////////////////////////////////////
-						// Integers
-
-							////////////////////////////////////////////////////////////////////////////////////
-							// unsigned int
-
-								string& operator+=(const uint8_t rhs);
-								string operator+(const uint8_t rhs) const;
-
-								string& operator+=(const uint16_t rhs);
-								string operator+(const uint16_t rhs) const;
-
-								string& operator+=(const uint32_t rhs);
-								string operator+(const uint32_t rhs) const;
-
-								string& operator+=(const uint64_t rhs);
-								string operator+(const uint64_t rhs) const;
-							//
-							////////////////////////////////////////////////////////////////////////////////////
-							// signed int
-
-								string& operator+=(const int8_t rhs);
-								string operator+(const int8_t rhs) const;
-
-								string& operator+=(const int16_t rhs);
-								string operator+(const int16_t rhs) const;
-
-								string& operator+=(const int32_t rhs);
-								string operator+(const int32_t rhs) const;
-
-								string& operator+=(const int64_t rhs);
-								string operator+(const int64_t rhs) const;
-							//
-							////////////////////////////////////////////////////////////////////////////////////
 						//
 						////////////////////////////////////////////////////////////////////////////////////
 					//
