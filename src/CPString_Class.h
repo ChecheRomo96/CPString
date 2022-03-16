@@ -70,7 +70,7 @@
 					//
 					////////////////////////////////////////////////////////////////////////////////////////
 					// char *
-						explicit string(const char* Source);
+						string(const char* Source);
 						string(const char* Source, unsigned int Size);
 						string& operator=(const char* Source);
 					//
