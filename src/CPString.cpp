@@ -335,7 +335,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					{
 						(*this)[i] = Source[i];
 					}
-					(*this)[length()+1] ='\0';
+					(*this)[length()] ='\0';
 				}
 		    //
 		    ////////////////////////////////////////////////////////////////////////////////////////////
