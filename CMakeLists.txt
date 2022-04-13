@@ -10,7 +10,7 @@
 	# Project Name Version and Languaje, print and add preprocessor flag
 		
 		project(CPString VERSION 0.0.1 LANGUAGES CXX)
-		message("Building ${PROJECT_NAME} Version = ${PROJECT_VERSION}...")
+		message(STATUS "Building ${PROJECT_NAME} Version = ${PROJECT_VERSION}...")
 		
 		string(TOUPPER ${PROJECT_NAME} PROJECT_NAME_UPPER)
 		#add_definitions( -D${PROJECT_NAME_UPPER}_VERSION="${CMAKE_PROJECT_VERSION}" )
