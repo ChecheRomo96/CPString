@@ -2,19 +2,34 @@
 #define CROSS_PLATFORM_STRING_BUILD_SETTINGS_H
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // CPString Version
+
+        #ifndef CPSTRING_VERSION
+            #define CPSTRING_VERSION "0.0.1"
+        #endif
+
+    //
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Arduino IDE
 
         #if defined(ARDUINO)
             #include <Arduino.h>
+        #endif
+    //
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // AVR 
 
-            #if defined(__avr__)
-                #include <avr/pgmspace.h>
+        #if defined(__avr__)
+            
+            #include <avr/pgmspace.h>
+            
+            #ifndef PROGMEM_MACRO
                 #define PROGMEM_MACRO PROGMEM
-            #elif defined(ESP32)
-                #define PROGMEM_MACRO 
             #endif
-
-            #define CPSTRING_VERSION "0.0.1"
+        #else
+            #ifndef PROGMEM_MACRO
+                #define PROGMEM_MACRO
+            #endif
         #endif
     //
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -23,8 +38,6 @@
         #if defined(PSOC_CREATOR)
             #include <string.h>
             #include <stdint.h>
-            #define PROGMEM_MACRO
-            #define CPSTRING_VERSION "0.0.1"
         #endif
     //
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -34,16 +47,6 @@
             #include <string>
             #include <sstream>
             #include <iostream>
-            #define PROGMEM_MACRO
-        #endif
-    //
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Unknown System
-    
-        #if !defined(PROGMEM_MACRO)
-            
-            #error "Unknown System!!!"
-            
         #endif
     //
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
