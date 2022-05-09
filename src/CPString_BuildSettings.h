@@ -41,7 +41,7 @@
         #endif
     //
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // Desktop C++
+    // Building as a target for a desktop system
     
         #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
             #include <string>
