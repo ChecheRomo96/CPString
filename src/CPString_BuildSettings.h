@@ -5,7 +5,7 @@
     // CPString Version
 
         #ifndef CPSTRING_VERSION
-            #define CPSTRING_VERSION "0.0.1"
+            #define CPSTRING_VERSION "1.0.0"
         #endif
 
     //
