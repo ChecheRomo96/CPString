@@ -241,13 +241,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 		    
 				else
 				{
-					uint16_t len = strlen(Source)+1;
-					resize(len);
-					for(uint16_t i = 0; i < len-1 ; i++)
-					{
-						(*this)[i] = Source[i];
-					}
-					(*this)[len] = '\0';
+					(*this) = string(Source,strlen(Source));
 				}
 		    //
 		    ////////////////////////////////////////////////////////////////////////////////////////////
@@ -290,9 +284,13 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				{
 					bool flag = 0;
 
-					if(Source[Size] != '\0')
+					if(Size == 0){flag = 1;}
+					else
 					{
-						flag = 1;
+						if(Source[Size] != '\0')
+						{
+							flag = 1;
+						}
 					}
 
 					resize(Size+flag);
@@ -1570,10 +1568,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 
 	        #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
 
-	        	unsigned int OldLength = size();
-
 	        	_string.resize(Size, new_chars);
-
 			#endif
 	    //
 	    ////////////////////////////////////////////////////////////////////////////////////////////////
