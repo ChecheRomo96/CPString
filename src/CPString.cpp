@@ -1552,7 +1552,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 			    	{
 			    		if(new_size < OldLength)
 				        {
-				        	_string.remove(new_size, OldLength-new_size);
+				        	_string.remove(new_size-1, OldLength-new_size);
 				        }
 				        else
 				        {
