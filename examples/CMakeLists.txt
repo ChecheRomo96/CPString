@@ -1,3 +1,3 @@
-add_subdirectory(BuildTest)
-add_subdirectory(IntegerConversion)
-add_subdirectory(MergingStrings)
+add_subdirectory(1_BuildTest)
+add_subdirectory(2_IntegerConversion)
+add_subdirectory(3_MergingStrings)

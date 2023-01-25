@@ -107,7 +107,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 // Copy Constructor and Equality Operator
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////
-    // string
+    // CPString::string
 
 		CPString::string::string(const string& Source)
 		{
@@ -152,11 +152,11 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 			        #if defined(PSOC_CREATOR)
 
 						resize(Source.length()+1);
-						for(uint16_t i = 0; i < _size; i++)
+						for(uint16_t i = 0; i < Source.length(); i++)
 						{
 							_buffer[i] = Source[i];
 						}
-						_buffer[size] = '\0';
+						_buffer[Source.length()] = '\0';
 
 			        #endif
 			    //
@@ -241,11 +241,13 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 		    
 				else
 				{
-					resize(strlen(Source)+1);
-					for(uint16_t i = 0; i < length() + 1 ; i++)
+					uint16_t len = strlen(Source)+1;
+					resize(len);
+					for(uint16_t i = 0; i < len-1 ; i++)
 					{
 						(*this)[i] = Source[i];
 					}
+					(*this)[len-1] = '\0';
 				}
 		    //
 		    ////////////////////////////////////////////////////////////////////////////////////////////
@@ -1298,18 +1300,19 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 			       	unsigned int a = length();
 					unsigned int b = rhs.length();
 
-					if(a + b == 2)
+					if(a + b == 0)
 					{
 						return (*this);
 					}
 					else
 					{
-						resize( a + b - 1);
+						resize( a + b + 1);
 
 						for(uint8_t i = 0; i < b; i++)
 						{
-							(*this)[a+i-1] = rhs[i];
+							(*this)[a+i] = rhs[i];
 						}
+						(*this)[a+b] = '\0';
 					}
 			    //
 			    ////////////////////////////////////////////////////////////////////////////////////////////
@@ -1420,7 +1423,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 	    
 	        #if defined(PSOC_CREATOR)
 				
-				if((_buffer != NULL)&&(_size > 1))
+				if(_buffer != NULL)
 				{
 					return strlen(_buffer);
 				}
