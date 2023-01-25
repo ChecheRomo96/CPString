@@ -247,7 +247,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					{
 						(*this)[i] = Source[i];
 					}
-					(*this)[len-1] = '\0';
+					(*this)[len] = '\0';
 				}
 		    //
 		    ////////////////////////////////////////////////////////////////////////////////////////////
