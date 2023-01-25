@@ -241,7 +241,13 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 		    
 				else
 				{
-					(*this) = string(Source,strlen(Source));
+					uint16_t len = strlen(Source)+1;
+					resize(len);
+					for(uint16_t i = 0; i < len-1 ; i++)
+					{
+						(*this)[i] = Source[i];
+					}
+					(*this)[len-1] = '\0';
 				}
 		    //
 		    ////////////////////////////////////////////////////////////////////////////////////////////
@@ -284,25 +290,21 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				{
 					bool flag = 0;
 
-					if(Size == 0){flag = 1;}
-					else
+					if(Source[Size-1] != '\0')
 					{
-						if(Source[Size] != '\0')
-						{
-							flag = 1;
-						}
+						flag = 1;
 					}
 
 					resize(Size+flag);
 
-					for(uint16_t i = 0; i < Size+flag; i++)
+					for(uint16_t i = 0; i < Size; i++)
 					{
 						(*this)[i] = Source[i];
 					}
 
 					if(flag)
 					{
-						(*this)[Size+flag] = '\0';
+						(*this)[Size] = '\0';
 					}
 				}
 		    //
@@ -330,13 +332,12 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 		    
 				else
 				{
-					uint16_t len = strlen(Source);
-					resize(len+1);
+					resize(strlen(Source)+1);
 					for(uint16_t i = 0; i < length(); i++)
 					{
 						(*this)[i] = Source[i];
 					}
-					(*this)[len] ='\0';
+					(*this)[length()] ='\0';
 				}
 		    //
 		    ////////////////////////////////////////////////////////////////////////////////////////////
@@ -1293,7 +1294,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 			CPString::string& CPString::string::operator+=(const CPString::string& rhs)
 			{
 
-				////////////////////////////////////////////////////////////////////////////////////////////
+				////////////////////////////////////////////////////////////////////////////////////////
 			    // Cross Compatible code
 			    
 			       	unsigned int a = length();
@@ -1305,7 +1306,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					}
 					else
 					{
-						resize( a + b + 1);
+						resize( a + b );
 
 						for(uint8_t i = 0; i < b; i++)
 						{
@@ -1314,7 +1315,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 						(*this)[a+b] = '\0';
 					}
 			    //
-			    ////////////////////////////////////////////////////////////////////////////////////////////
+			    ////////////////////////////////////////////////////////////////////////////////////////
 
 				return (*this);
 			}
@@ -1526,7 +1527,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 	    ////////////////////////////////////////////////////////////////////////////////////////////////
 	}
 
-	void CPString::string::resize(unsigned int Size, char new_chars)
+	void CPString::string::resize(unsigned int new_size, char new_chars)
 	{
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		// Resize Implementation
@@ -1547,17 +1548,26 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				// Getting up the number of chars that are going to be maintained
 				////////////////////////////////////////////////////////////////////////////////////////
 				//
-			        if(Size < size())
-			        {
-			        	_string.remove(Size, OldLength-Size);
-			        }
-			        else
-			        {
-						for(uint16_t i = OldLength; i < Size; i++)
-						{
-							_string += new_chars;
-						}			        	
-			        }
+			    	if(new_size != OldLength)
+			    	{
+			    		if(new_size < OldLength)
+				        {
+				        	_string.remove(new_size, OldLength-new_size);
+				        }
+				        else
+				        {
+				        	char buffer[new_size - OldLength + 1];
+
+							for(uint16_t i = 0; i < new_size-OldLength; i++)
+							{
+								buffer[OldLength + i] = new_chars;
+							}
+
+							buffer[new_size-OldLength] = '\0';
+
+							_string += buffer;
+				        }
+			    	}
 				//
 				////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1568,7 +1578,10 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 
 	        #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
 
+	        	unsigned int OldLength = size();
+
 	        	_string.resize(Size, new_chars);
+
 			#endif
 	    //
 	    ////////////////////////////////////////////////////////////////////////////////////////////////
