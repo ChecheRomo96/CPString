@@ -332,12 +332,13 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 		    
 				else
 				{
-					resize(strlen(Source)+1);
+					uint16_t len = strlen(Source);
+					resize(len+1);
 					for(uint16_t i = 0; i < length(); i++)
 					{
 						(*this)[i] = Source[i];
 					}
-					(*this)[length()] ='\0';
+					(*this)[len] ='\0';
 				}
 		    //
 		    ////////////////////////////////////////////////////////////////////////////////////////////
