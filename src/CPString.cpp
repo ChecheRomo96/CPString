@@ -1550,7 +1550,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 								buffer[i] = new_chars;
 							}
 
-							buffer[new_size] = '\0';
+							buffer[new_size - OldLength] = '\0';
 
 							_string += buffer;
 				        }
