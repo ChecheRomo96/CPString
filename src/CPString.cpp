@@ -290,21 +290,21 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				{
 					bool flag = 0;
 
-					if(Source[Size-1] != '\0')
+					if(Source[Size] != '\0')
 					{
 						flag = 1;
 					}
 
 					resize(Size+flag);
 
-					for(uint16_t i = 0; i < Size; i++)
+					for(uint16_t i = 0; i < Size+flag; i++)
 					{
 						(*this)[i] = Source[i];
 					}
 
 					if(flag)
 					{
-						(*this)[Size] = '\0';
+						(*this)[Size+flag] = '\0';
 					}
 				}
 		    //
