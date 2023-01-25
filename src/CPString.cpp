@@ -1543,7 +1543,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 			    		}
 			    		else if(new_size < OldLength)
 				        {
-				        	_string.remove(new_size-1, OldLength-new_size);
+				        	_string.remove(new_size, OldLength-new_size);
 				        }
 				        else
 				        {
@@ -1551,12 +1551,17 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 
 							for(uint16_t i = 0; i < new_size-OldLength; i++)
 							{
-								buffer[i] = new_chars;
+								buffer[i] = ' ';
 							}
 
 							buffer[new_size - OldLength] = '\0';
 
 							_string += buffer;
+
+							for(uint16_t i = OldLength i < new_size; i++)
+							{
+								_string[i] = new_chars;
+							}
 				        }
 			    	}
 				//
