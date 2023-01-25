@@ -1312,7 +1312,6 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 						{
 							(*this)[a+i] = rhs[i];
 						}
-						(*this)[a+b] = '\0';
 					}
 			    //
 			    ////////////////////////////////////////////////////////////////////////////////////////
