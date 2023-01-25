@@ -241,13 +241,12 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 		    
 				else
 				{
-					uint16_t len = strlen(Source)+1;
+					uint16_t len = strlen(Source);
 					resize(len);
-					for(uint16_t i = 0; i < len-1 ; i++)
+					for(uint16_t i = 0; i < len ; i++)
 					{
 						(*this)[i] = Source[i];
 					}
-					(*this)[len-1] = '\0';
 				}
 		    //
 		    ////////////////////////////////////////////////////////////////////////////////////////////
