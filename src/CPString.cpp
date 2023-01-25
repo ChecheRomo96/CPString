@@ -319,12 +319,13 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 		    
 				else
 				{
-					resize(strlen(Source)+1);
-					for(uint16_t i = 0; i < length(); i++)
+					uint16_t len = strlen(Source);
+					resize(len);
+
+					for(uint16_t i = 0; i < len; i++)
 					{
 						(*this)[i] = Source[i];
 					}
-					(*this)[length()] ='\0';
 				}
 		    //
 		    ////////////////////////////////////////////////////////////////////////////////////////////
