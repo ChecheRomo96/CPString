@@ -1547,10 +1547,10 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 
 							for(uint16_t i = 0; i < new_size-OldLength; i++)
 							{
-								buffer[OldLength + i] = new_chars;
+								buffer[i] = new_chars;
 							}
 
-							buffer[new_size-OldLength] = '\0';
+							buffer[new_size] = '\0';
 
 							_string += buffer;
 				        }
