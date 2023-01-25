@@ -1558,7 +1558,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 
 							_string += buffer;
 
-							for(uint16_t i = OldLength i < new_size; i++)
+							for(uint16_t i = OldLength; i < new_size; i++)
 							{
 								_string[i] = new_chars;
 							}
