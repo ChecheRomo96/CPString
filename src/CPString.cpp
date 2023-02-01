@@ -1716,9 +1716,10 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 						Serial.print(", ");
 						while(x > 0)
 						{
-							Serial.print(x%Base);
+							uint8_t ch = x%Base;
+							Serial.print(ch);
 							Serial.print(", ");
-							buffer[counter] = Flash::CopyBaseChar(x%Base,LetterCase);
+							buffer[counter] = Flash::CopyBaseChar(ch,LetterCase);
 							counter++;
 							x/=Base;
 						}
