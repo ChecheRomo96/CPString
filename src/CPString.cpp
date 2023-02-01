@@ -1701,13 +1701,14 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
+						Serial.print("Source: ");
+						Serial.print(Source);
+						Serial.print(", Base: ");
+						Serial.print(Base);
+						Serial.print(", ");
+						
 						while(Source > 0)
 						{
-							Serial.print("Source: ");
-							Serial.print(Source);
-							Serial.print(", Base: ");
-							Serial.print(Base);
-							Serial.print(", ");
 							Serial.print(Source % 16);
 							Serial.print(", ");
 							buffer[counter] = Flash::CopyBaseChar(Source%Base,LetterCase);
