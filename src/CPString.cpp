@@ -139,28 +139,12 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 	    {
 	        if(this != &Source)
 	        {
-	        	////////////////////////////////////////////////////////////////////////////////////////
-			    // Arduino String and std::string
-
-			        #if defined(ARDUINO) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
-						_string = Source;
-			        #endif
-			    //
-			    ////////////////////////////////////////////////////////////////////////////////////////
-			    // PSoC Creator
-			    
-			        #if defined(PSOC_CREATOR)
-
-						resize(Source.length()+1);
-						for(uint16_t i = 0; i < Source.length(); i++)
-						{
-							_buffer[i] = Source[i];
-						}
-						_buffer[Source.length()] = '\0';
-
-			        #endif
-			    //
-			    ////////////////////////////////////////////////////////////////////////////////////////
+				resize(Source.length());
+				for(uint16_t i = 0; i < Source.length(); i++)
+				{
+					(*this)[i] = Source[i];
+				}
+				(*this)[Source.length()] = '\0';
 	        }
 	        return *this;
 	    }
