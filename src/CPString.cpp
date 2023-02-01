@@ -1591,10 +1591,17 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 			    //
 			        if((_buffer != NULL)&&(_size > 1))
 					{
-						if(Size==sizeof(_buffer))
+						if(new_size==_size-1)
 						{
 							return;
 						}
+					}
+
+					if(new_size == 0)
+					{
+						if(_buffer != NULL){free(_buffer);}
+						_buffer = NULL;
+						_size = 0;
 					}
 			    //
 			    ////////////////////////////////////////////////////////////////////////////////////////
@@ -1611,7 +1618,8 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				// setting up a char buffer
 				////////////////////////////////////////////////////////////////////////////////////////
 			    // 
-					char tmp[Size+1];
+                    CPVector::vector<char> tmp;
+                    tmp.resize(new_size+1);
 				//
 				////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1620,7 +1628,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				////////////////////////////////////////////////////////////////////////////////////////
 				//
 			        uint16_t MaintainedData = OldLength;
-			        if(Size<_size){MaintainedData = Size;}
+			        if(new_size<_size){MaintainedData = new_size;}
 				//
 				////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1633,12 +1641,12 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 						tmp[i] = _buffer[i];
 					}
 
-					for(uint16_t i = MaintainedData; i < Size; i++)
+					for(uint16_t i = MaintainedData; i < new_size; i++)
 					{
 						tmp[i] = new_chars;
 					}
 
-					tmp[Size] =  '\0';
+					tmp[new_size] =  '\0';
 				//
 				////////////////////////////////////////////////////////////////////////////////////////
 		        
@@ -1646,8 +1654,8 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				// delete the current buffer and allocate a new one
 				////////////////////////////////////////////////////////////////////////////////////////
 				//
-			        free(_buffer);
-			        _size = Size+1;
+					if(_buffer!=NULL){free(_buffer);}
+			        _size = new_size+1;
 			        _buffer = (char*)malloc(sizeof(char)*(_size));
 			    //
 				////////////////////////////////////////////////////////////////////////////////////////
@@ -1657,14 +1665,17 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				////////////////////////////////////////////////////////////////////////////////////////
 			    //
                 
-                    if(_buffer == NULL ){_size  = 0;}
+                    if( _buffer == NULL ){_size  = 0;}
                     else
                     {
-    					for(uint16_t i = 0; i < Size; i++)
+    					for(uint16_t i = 0; i < _size; i++)
     					{
     						_buffer[i] = tmp[i];
     					}
                     }
+                    
+                    tmp.clear();
+
 				//
 				////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1694,9 +1705,8 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						char* StringBases;
-						StringBases = new char[Base];
-						Flash::CopyBaseChars(StringBases,Base,LetterCase);
+						//CPVector::vector<char> StringBases;
+						//Flash::CopyBaseChars(StringBases,Base,LetterCase);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -1720,12 +1730,12 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 
 						while(x > 0)
 						{
-							buffer[counter] = StringBases[x%Base];
+							buffer[counter] = Flash::CopyBaseChar(x%Base,LetterCase);
 							counter++;
 							x/=Base;
 						}
 
-						delete[] StringBases;
+						//StringBases.clear();
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -1734,35 +1744,20 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						resize(counter+1);
+						resize(counter);
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
 					////////////////////////////////////////////////////////////////////////////////////
 					// Copying the data
 					////////////////////////////////////////////////////////////////////////////////////
-					// Arduino String and std::String
+					// Cross Compatible Code
 	        			
-	        			#if defined(ARDUINO) || defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__APPLE__) || defined(linux)
-
-							for(uint8_t i = 0; i < counter; i++)
-							{
-								(*this)[i] = buffer[(counter-1)-i];
-							}
-							(*this)[counter] = '\0';
-						#endif
-					//
-					////////////////////////////////////////////////////////////////////////////////////
-					// PSoC Creator
-
-						#if defined(PSOC_CREATOR)
-
-							for(uint8_t i = 0; i < counter; i++)
-							{
-								_buffer[i] = buffer[(counter-1)-i];
-							}
-							_buffer[counter] = '\0';
-						#endif
+	        			for(uint8_t i = 0; i < counter; i++)
+						{
+							(*this)[i] = buffer[(counter-1)-i];
+						}
+						(*this)[counter] = '\0';
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 				//
