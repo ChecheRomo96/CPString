@@ -1706,10 +1706,10 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 						Serial.print(", Base: ");
 						Serial.print(Base);
 						Serial.print(", ");
-						
+
 						while(Source > 0)
 						{
-							Serial.print(Source % 16);
+							Serial.print((Source+16) % 16);
 							Serial.print(", ");
 							buffer[counter] = Flash::CopyBaseChar(Source%Base,LetterCase);
 							counter++;
