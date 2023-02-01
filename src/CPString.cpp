@@ -1711,7 +1711,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 						{
 							Serial.print((Source+16) % 16);
 							Serial.print(", ");
-							buffer[counter] = Flash::CopyBaseChar(Source%Base,LetterCase);
+							buffer[counter] = Flash::CopyBaseChar((Source+Base)%Base,LetterCase);
 							counter++;
 							Source/=Base;
 						}
