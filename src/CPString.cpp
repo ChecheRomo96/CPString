@@ -1677,7 +1677,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 		////////////////////////////////////////////////////////////////////////////////////////////////
 		// uint8_t
 
-			void CPString::string::_BaseConversion_uint8(const uint8_t  Source, uint8_t Base, bool LetterCase)
+			void CPString::string::_BaseConversion_uint8( uint8_t  Source, uint8_t Base, bool LetterCase)
 			{
 				////////////////////////////////////////////////////////////////////////////////////////
 				// Convetring to char representation to any Base 
@@ -1692,7 +1692,6 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 
 						char buffer[9];
 						uint8_t counter = 0;
-						uint8_t x = (uint8_t)Source;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
@@ -1704,11 +1703,11 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 
 						while(x > 0)
 						{
-							Serial.print(x % 16);
+							Serial.print(Source % 16);
 							Serial.print(", ");
-							buffer[counter] = Flash::CopyBaseChar(x%Base,LetterCase);
+							buffer[counter] = Flash::CopyBaseChar(Source%Base,LetterCase);
 							counter++;
-							x/=Base;
+							Source/=Base;
 						}
 
 						//StringBases.clear();

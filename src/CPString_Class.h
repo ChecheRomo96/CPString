@@ -203,7 +203,7 @@
 			
 			private:
 			
-				void _BaseConversion_uint8 (const uint8_t  Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
+				void _BaseConversion_uint8 (uint8_t  Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
 				void _BaseConversion_uint16(const uint16_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
 				void _BaseConversion_uint32(const uint32_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
 				void _BaseConversion_uint64(const uint64_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
