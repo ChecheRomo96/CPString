@@ -1711,7 +1711,9 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					// This is done to count the number of char's needed
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
-
+						Serial.print("Base: ");
+						Serial.print(Base);
+						Serial.print(", ");
 						while(x > 0)
 						{
 							Serial.print(x%Base);
