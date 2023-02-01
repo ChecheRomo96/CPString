@@ -1701,7 +1701,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						while(x > 0)
+						while(Source > 0)
 						{
 							Serial.print(Source % 16);
 							Serial.print(", ");
