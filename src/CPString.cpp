@@ -1692,7 +1692,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 
 						char buffer[9];
 						uint8_t counter = 0;
-						uint8_t x = Source;
+						uint8_t x = (uint8_t)Source;
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
