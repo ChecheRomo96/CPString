@@ -1685,17 +1685,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 			    // This process has multiple steps 
 
 					////////////////////////////////////////////////////////////////////////////////////
-					// Getting the required chars from Flash Memory
-					////////////////////////////////////////////////////////////////////////////////////
-					// Cross Compatible code
-
-						//CPVector::vector<char> StringBases;
-						//Flash::CopyBaseChars(StringBases,Base,LetterCase);
-					//
-					////////////////////////////////////////////////////////////////////////////////////
-
-					////////////////////////////////////////////////////////////////////////////////////
-					// Initialize a buffer, max size would be 254 or 255 in Base 2
+					// Initialize a buffer, max size would be 0b11111111 in Base 2
 					// In such case size would be 8 for the data plus a null char
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
@@ -1711,15 +1701,12 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					// This is done to count the number of char's needed
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
-						Serial.print("Base: ");
-						Serial.print(Base);
-						Serial.print(", ");
+
 						while(x > 0)
 						{
-							uint8_t ch = x%Base;
-							Serial.print(ch);
+							Serial.print(x%Base);
 							Serial.print(", ");
-							buffer[counter] = Flash::CopyBaseChar(ch,LetterCase);
+							buffer[counter] = Flash::CopyBaseChar(x%Base,LetterCase);
 							counter++;
 							x/=Base;
 						}
