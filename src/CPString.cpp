@@ -1394,10 +1394,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 	    
 	        #if defined(PSOC_CREATOR)
 				
-				if(_buffer != NULL)
-				{
-					return strlen(_buffer);
-				}
+				return _size;
 	        #endif
 	    //
 	    ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1407,6 +1404,14 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 
 	unsigned int CPString::string::length() const
 	{
+    
+	    #if defined(PSOC_CREATOR)
+        	if(_buffer != NULL)
+        	{
+        		return strlen(_buffer);
+        	}
+	    #endif
+        
 		return size();
 	}
 
@@ -1583,9 +1588,13 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 
 					if(new_size == 0)
 					{
-						if(_buffer != NULL){free(_buffer);}
+						if(_buffer != NULL)
+                        {
+                            free(_buffer);
+                        }
 						_buffer = NULL;
 						_size = 0;
+                        return;
 					}
 			    //
 			    ////////////////////////////////////////////////////////////////////////////////////////
@@ -1701,22 +1710,13 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 					////////////////////////////////////////////////////////////////////////////////////
 					// Cross Compatible code
 
-						Serial.print("Source: ");
-						Serial.print(Source);
-						Serial.print(", Base: ");
-						Serial.print(Base);
-						Serial.print(", ");
-
 						while(Source > 0)
 						{
-							Serial.print((Source+16) % 16);
-							Serial.print(", ");
 							buffer[counter] = Flash::CopyBaseChar((Source+Base)%Base,LetterCase);
 							counter++;
 							Source/=Base;
 						}
 
-						//StringBases.clear();
 					//
 					////////////////////////////////////////////////////////////////////////////////////
 
