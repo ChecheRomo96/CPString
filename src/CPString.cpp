@@ -1851,7 +1851,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				{
 					while(Source > 0)
 					{
-						buffer[counter] = Flash::CopyBaseChar(Source%Base, LetterCase);
+						buffer[counter] = Flash::CopyBaseChar((Source+Base)%Base, LetterCase);
 						counter++;
 						Source/=Base;
 					}
@@ -1900,7 +1900,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				{
 					while(Source > 0)
 					{
-						buffer[counter] = Flash::CopyBaseChar(Source%Base, LetterCase);
+						buffer[counter] = Flash::CopyBaseChar((Source+Base)%Base, LetterCase);
 						counter++;
 						Source/=Base;
 					}
@@ -1949,7 +1949,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				{
 					while(Source > 0)
 					{
-						buffer[counter] = Flash::CopyBaseChar(Source%Base, LetterCase);
+						buffer[counter] = Flash::CopyBaseChar((Source+Base)%Base, LetterCase);
 						counter++;
 						Source/=Base;
 					}
