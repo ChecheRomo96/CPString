@@ -1834,14 +1834,16 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				char buffer[8];
 				uint8_t counter = 0;
 				bool sign_flag = 0;
+				uint8_t sourceAbs = Source;
 
 				if(Source < 0)
 				{
+					sourceAbs *= -1;
 					sign_flag = 1;
 					Source*=-1;
 				}
 
-				if(Source == 0)
+				if(sourceAbs == 0)
 				{
 					buffer[0] = '0';
 					counter = 1;
@@ -1849,11 +1851,11 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				}
 				else
 				{
-					while(Source > 0)
+					while(sourceAbs > 0)
 					{
-						buffer[counter] = Flash::CopyBaseChar((Source+Base)%Base, LetterCase);
+						buffer[counter] = Flash::CopyBaseChar((sourceAbs+Base)%Base, LetterCase);
 						counter++;
-						Source/=Base;
+						sourceAbs/=Base;
 					}
 				}
 
