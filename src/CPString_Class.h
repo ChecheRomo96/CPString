@@ -204,15 +204,15 @@
 			private:
 			
 				void _BaseConversion_uint8 (uint8_t  Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
-				void _BaseConversion_uint16(const uint16_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
-				void _BaseConversion_uint32(const uint32_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
-				void _BaseConversion_uint64(const uint64_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
+				void _BaseConversion_uint16(uint16_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
+				void _BaseConversion_uint32(uint32_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
+				void _BaseConversion_uint64(uint64_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode);
 
 			
-				void _BaseConversion_int8 (const int8_t  Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool IntFormat = CPString::NumberConversion::IntFormat::Signed);
-				void _BaseConversion_int16(const int16_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool IntFormat = CPString::NumberConversion::IntFormat::Signed);
-				void _BaseConversion_int32(const int32_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool IntFormat = CPString::NumberConversion::IntFormat::Signed);
-				void _BaseConversion_int64(const int64_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool IntFormat = CPString::NumberConversion::IntFormat::Signed);
+				void _BaseConversion_int8 (int8_t  Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool IntFormat = CPString::NumberConversion::IntFormat::Signed);
+				void _BaseConversion_int16(int16_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool IntFormat = CPString::NumberConversion::IntFormat::Signed);
+				void _BaseConversion_int32(int32_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool IntFormat = CPString::NumberConversion::IntFormat::Signed);
+				void _BaseConversion_int64(int64_t Source, uint8_t Base = 10, bool LetterCase = CPString::NumberConversion::LetterCase::Mode, bool IntFormat = CPString::NumberConversion::IntFormat::Signed);
 
 		};
 	}
