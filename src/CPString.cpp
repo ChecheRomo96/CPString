@@ -1885,7 +1885,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				char buffer[16];
 				uint8_t counter = 0;
 				bool sign_flag = 0;
-				uint8_t sourceAbs = Source;
+				uint16_t sourceAbs = Source;
 
 				if(Source < 0)
 				{
@@ -1936,7 +1936,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				char buffer[32];
 				uint8_t counter = 0;
 				bool sign_flag = 0;
-				uint8_t sourceAbs = Source;
+				uint32_t sourceAbs = Source;
 
 				if(Source < 0)
 				{
@@ -1987,7 +1987,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				char buffer[64];
 				uint8_t counter = 0;
 				bool sign_flag = 0;
-				uint8_t sourceAbs = Source;
+				uint64_t sourceAbs = Source;
 
 				if(Source < 0)
 				{
