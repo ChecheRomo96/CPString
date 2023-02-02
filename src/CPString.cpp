@@ -1588,14 +1588,11 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 
 					if(new_size == 0)
 					{
-						if(_buffer != NULL)
-                        {
-                            free(_buffer);
-                        }
-						_buffer = NULL;
-						_size = 0;
-                        return;
-					}
+			        	if(_buffer!=NULL){free(_buffer);}
+			        	_buffer = NULL;
+			        	_size = 0;
+			        	return;
+			        }
 			    //
 			    ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1611,8 +1608,16 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				// setting up a char buffer
 				////////////////////////////////////////////////////////////////////////////////////////
 			    // 
-                    CPVector::vector<char> tmp;
-                    tmp.resize(new_size+1);
+			    	char* tmp = NULL;
+			        tmp = (char*)malloc(sizeof(char)*(new_size+1));
+			        
+			        if(tmp == NULL)
+			        {
+			        	if(_buffer!=NULL){free(_buffer);}
+			        	_buffer = NULL;
+			        	_size = 0;
+			        	return;
+			        }
 				//
 				////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1644,32 +1649,13 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 				////////////////////////////////////////////////////////////////////////////////////////
 		        
 				////////////////////////////////////////////////////////////////////////////////////////
-				// delete the current buffer and allocate a new one
+				// delete the current buffer and reference the previously allocated buffer
 				////////////////////////////////////////////////////////////////////////////////////////
 				//
 					if(_buffer!=NULL){free(_buffer);}
 			        _size = new_size+1;
-			        _buffer = (char*)malloc(sizeof(char)*(_size));
+			        _buffer = tmp;
 			    //
-				////////////////////////////////////////////////////////////////////////////////////////
-
-			    ////////////////////////////////////////////////////////////////////////////////////////
-				// Copying Data
-				////////////////////////////////////////////////////////////////////////////////////////
-			    //
-                
-                    if( _buffer == NULL ){_size  = 0;}
-                    else
-                    {
-    					for(uint16_t i = 0; i < _size; i++)
-    					{
-    						_buffer[i] = tmp[i];
-    					}
-                    }
-                    
-                    tmp.clear();
-
-				//
 				////////////////////////////////////////////////////////////////////////////////////////
 
 			#endif

@@ -1,7 +1,7 @@
 #ifndef CROSS_PLATFORM_STRING_FLASH_H
 #define CROSS_PLATFORM_STRING_FLASH_H
 
-	#include <CPString_BuildSettings.h>s
+	#include <CPString_BuildSettings.h>
 	
 	#include "CPString_FlashDefinitions.h"
 	
