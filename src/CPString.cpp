@@ -225,7 +225,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 		    
 				else
 				{
-					uint16_t len = strlen(Source);
+					auto len = static_cast<uint16_t>(strlen(Source));
 					resize(len);
 					for(uint16_t i = 0; i < len ; i++)
 					{
@@ -1565,7 +1565,7 @@ bool CPString::NumberConversion::IntFormat::Mode = CPString::NumberConversion::I
 
 	        	unsigned int OldLength = size();
 
-	        	_string.resize(Size, new_chars);
+	        	_string.resize(new_size, new_chars);
 
 			#endif
 	    //
